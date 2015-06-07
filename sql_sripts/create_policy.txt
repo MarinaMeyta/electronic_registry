@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS 'main'.'policy' (
+	'policy_series' CHAR(10) PRIMARY KEY NOT NULL,
+	'patient_id' CHAR(10) NOT NULL,
+	'insurance_agency' CHAR(100),
+	FOREIGN KEY (patient_id) REFERENCES patient(patient_id)
+);

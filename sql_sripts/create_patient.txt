@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS 'main'.'patient' (
+	'patient_id' CHAR(10) PRIMARY KEY NOT NULL,
+	'name' CHAR(10) NOT NULL,
+	'passport_series' CHAR(10) NOT NULL,
+	'policy_series' CHAR(10) NOT NULL,
+	FOREIGN KEY (passport_series) REFERENCES passport(passport_series),
+	FOREIGN KEY (policy_series) REFERENCES policy(policy_series)
+);
