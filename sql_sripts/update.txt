@@ -1,4 +1,4 @@
-UPDATE passport
-SET patient_id = '0000000002'
-WHERE passport_series = '6909367268';
+UPDATE 'employee'
+SET employee_name = 'Павлов Сергей Анатольевич'
+WHERE employee_id = '2000000002';
 

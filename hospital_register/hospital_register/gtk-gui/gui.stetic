@@ -462,28 +462,6 @@
         <property name="MemberName" />
         <property name="HasWindow">False</property>
         <child>
-          <widget class="Gtk.ComboBoxEntry" id="comboboxentry2">
-            <property name="MemberName" />
-            <property name="IsTextCombo">True</property>
-            <property name="Items" translatable="yes" />
-          </widget>
-          <packing>
-            <property name="X">152</property>
-            <property name="Y">67</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.ComboBoxEntry" id="comboboxentry3">
-            <property name="MemberName" />
-            <property name="IsTextCombo">True</property>
-            <property name="Items" translatable="yes" />
-          </widget>
-          <packing>
-            <property name="X">151</property>
-            <property name="Y">114</property>
-          </packing>
-        </child>
-        <child>
           <widget class="Gtk.ComboBoxEntry" id="comboboxentry6">
             <property name="MemberName" />
             <property name="IsTextCombo">True</property>
@@ -651,6 +629,47 @@
           <packing>
             <property name="X">270</property>
             <property name="Y">345</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBox" id="combobox2">
+            <property name="MemberName" />
+            <property name="WidthRequest">191</property>
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes">хирург
+офтальмолог
+терапевт
+гинеколог
+отолоринголог
+кадиолог
+эндокринолог
+аллерголог
+венеролог
+невролог
+рентгенолог
+уролог
+физиотерапевт
+травматолог
+ревматолог
+околог
+гастероэнтеролог</property>
+            <signal name="Changed" handler="OnCombobox2Changed" />
+          </widget>
+          <packing>
+            <property name="X">150</property>
+            <property name="Y">111</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBox" id="combobox3">
+            <property name="MemberName" />
+            <property name="WidthRequest">191</property>
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes" />
+          </widget>
+          <packing>
+            <property name="X">151</property>
+            <property name="Y">63</property>
           </packing>
         </child>
       </widget>

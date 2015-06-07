@@ -1,0 +1,4 @@
+UPDATE employee
+SET 'employee_name' = 'Павлов Сергей Анатольевич'
+WHERE 'employee_id' = '2000000002';
+
