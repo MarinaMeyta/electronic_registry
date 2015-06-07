@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+    <target-gtk-version>2.12</target-gtk-version>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Debug/hospital_register.exe" internal="true" />
+    <widget-library name="MonoDevelop.Database.ConnectionManager, Version=2.6.0.0, Culture=neutral" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="380 246">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.Fixed" id="fixed7">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Image" id="image4">
+            <property name="MemberName" />
+            <property name="Pixbuf">stock:gtk-dialog-authentication Menu</property>
+          </widget>
+          <packing>
+            <property name="X">144</property>
+            <property name="Y">26</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label19">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">ВХОД</property>
+          </widget>
+          <packing>
+            <property name="X">174</property>
+            <property name="Y">21</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entryPassword">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">169</property>
+            <property name="Y">132</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label20">
+            <property name="MemberName" />
+            <property name="Xalign">1</property>
+            <property name="LabelProp" translatable="yes">Пароль  
+администратора:</property>
+          </widget>
+          <packing>
+            <property name="X">38</property>
+            <property name="Y">123</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.RadioButton" id="radiobutton1">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Label" translatable="yes">Я пациент</property>
+            <property name="DrawIndicator">True</property>
+            <property name="HasLabel">True</property>
+            <property name="UseUnderline">True</property>
+            <property name="Group">group1</property>
+          </widget>
+          <packing>
+            <property name="X">34</property>
+            <property name="Y">52</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.RadioButton" id="radiobutton2">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Label" translatable="yes">Я админ</property>
+            <property name="DrawIndicator">True</property>
+            <property name="HasLabel">True</property>
+            <property name="UseUnderline">True</property>
+            <property name="Group">group1</property>
+          </widget>
+          <packing>
+            <property name="X">34</property>
+            <property name="Y">83</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button2">
+            <property name="MemberName" />
+            <property name="WidthRequest">141</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Войти</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnEnterButtonClicked" />
+          </widget>
+          <packing>
+            <property name="X">119</property>
+            <property name="Y">185</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="hospital_register.PatientRegisterWindow" design-size="658 838">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">PatientRegisterWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed6">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="label6">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Уважаемый посетитель поликлиники "Медстар"!
+
+Поскольку мы не обнаружили Вас в базе пациентов,
+просим Вас пройти обязательную регистрацию,
+заполнив форму ниже.*</property>
+          </widget>
+          <packing>
+            <property name="X">127</property>
+            <property name="Y">62</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label4">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">РЕГИСТРАЦИЯ ПАЦИЕНТА</property>
+          </widget>
+          <packing>
+            <property name="X">221</property>
+            <property name="Y">22</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label3">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">ПАССПОРТНЫЕ ДАННЫЕ</property>
+          </widget>
+          <packing>
+            <property name="X">224</property>
+            <property name="Y">170</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Image" id="image2">
+            <property name="MemberName" />
+            <property name="WidthRequest">45</property>
+            <property name="HeightRequest">45</property>
+            <property name="Pixbuf">stock:gtk-edit Menu</property>
+          </widget>
+          <packing>
+            <property name="X">160</property>
+            <property name="Y">8</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label5">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Ф.И.О. пациента:</property>
+          </widget>
+          <packing>
+            <property name="X">175</property>
+            <property name="Y">214</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry1">
+            <property name="MemberName" />
+            <property name="WidthRequest">266</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">309</property>
+            <property name="Y">209</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry2">
+            <property name="MemberName" />
+            <property name="Tooltip" translatable="yes">Например: 20.12.1988</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">309</property>
+            <property name="Y">244</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBoxEntry" id="comboboxentry1">
+            <property name="MemberName" />
+            <property name="WidthRequest">65</property>
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes">М
+Ж</property>
+          </widget>
+          <packing>
+            <property name="X">309</property>
+            <property name="Y">278</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label9">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Пол:</property>
+          </widget>
+          <packing>
+            <property name="X">260</property>
+            <property name="Y">282</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label8">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Дата рождения:</property>
+          </widget>
+          <packing>
+            <property name="X">181</property>
+            <property name="Y">247</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry3">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="MaxLength">4</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">308</property>
+            <property name="Y">317</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry4">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="MaxLength">6</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">307</property>
+            <property name="Y">355</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry5">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="MaxLength">6</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">308</property>
+            <property name="Y">393</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label10">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Серия пасспорта:</property>
+          </widget>
+          <packing>
+            <property name="X">170</property>
+            <property name="Y">319</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label11">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Номер пасспорта:</property>
+          </widget>
+          <packing>
+            <property name="X">166</property>
+            <property name="Y">357</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label12">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Код подразделения:</property>
+          </widget>
+          <packing>
+            <property name="X">148</property>
+            <property name="Y">394</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label14">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Адрес места жительства:</property>
+          </widget>
+          <packing>
+            <property name="X">114</property>
+            <property name="Y">471</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry6">
+            <property name="MemberName" />
+            <property name="Tooltip" translatable="yes">Например: 20.01.2015</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">308</property>
+            <property name="Y">433</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry7">
+            <property name="MemberName" />
+            <property name="WidthRequest">266</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">308</property>
+            <property name="Y">467</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label15">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">СТРАХОВОЙ МЕДИЦИНСКИЙ ПОЛИС</property>
+          </widget>
+          <packing>
+            <property name="X">197</property>
+            <property name="Y">517</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry8">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">306</property>
+            <property name="Y">556</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry9">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">306</property>
+            <property name="Y">591</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry10">
+            <property name="MemberName" />
+            <property name="WidthRequest">266</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">307</property>
+            <property name="Y">628</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label16">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Серия полиса:</property>
+          </widget>
+          <packing>
+            <property name="X">186</property>
+            <property name="Y">558</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label13">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Дата выдачи:</property>
+          </widget>
+          <packing>
+            <property name="X">197</property>
+            <property name="Y">436</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label18">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Страховая компания:</property>
+          </widget>
+          <packing>
+            <property name="X">136</property>
+            <property name="Y">630</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label17">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Номер полиса:</property>
+          </widget>
+          <packing>
+            <property name="X">182</property>
+            <property name="Y">592</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button1">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Зарегестрироваться</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">227</property>
+            <property name="Y">693</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label7">
+            <property name="MemberName" />
+            <property name="HeightRequest">79</property>
+            <property name="LabelProp" translatable="yes">* Обработка ПДн осуществляется на основании
+ФЗ №157 от 27.07.2006 "О персональных данных".</property>
+          </widget>
+          <packing>
+            <property name="X">142</property>
+            <property name="Y">729</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="hospital_register.EnrollWindow" design-size="729 422">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">EnrollWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed8">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.ComboBoxEntry" id="comboboxentry2">
+            <property name="MemberName" />
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes" />
+          </widget>
+          <packing>
+            <property name="X">152</property>
+            <property name="Y">67</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBoxEntry" id="comboboxentry3">
+            <property name="MemberName" />
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes" />
+          </widget>
+          <packing>
+            <property name="X">151</property>
+            <property name="Y">114</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBoxEntry" id="comboboxentry6">
+            <property name="MemberName" />
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes" />
+          </widget>
+          <packing>
+            <property name="X">491</property>
+            <property name="Y">116</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBoxEntry" id="comboboxentry4">
+            <property name="MemberName" />
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes" />
+          </widget>
+          <packing>
+            <property name="X">490</property>
+            <property name="Y">70</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label24">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Дата приема:</property>
+          </widget>
+          <packing>
+            <property name="X">387</property>
+            <property name="Y">74</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label25">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Время приема:</property>
+          </widget>
+          <packing>
+            <property name="X">377</property>
+            <property name="Y">119</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label22">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Ф.И.О. врача:</property>
+          </widget>
+          <packing>
+            <property name="X">47</property>
+            <property name="Y">70</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label23">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Специальность:</property>
+          </widget>
+          <packing>
+            <property name="X">31</property>
+            <property name="Y">116</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label21">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">ЗАПИСЬ НА ПРИЕМ</property>
+          </widget>
+          <packing>
+            <property name="X">302</property>
+            <property name="Y">27</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Image" id="image6">
+            <property name="MemberName" />
+            <property name="WidthRequest">43</property>
+            <property name="HeightRequest">43</property>
+            <property name="Pixbuf">stock:stock_task Menu</property>
+          </widget>
+          <packing>
+            <property name="X">257</property>
+            <property name="Y">13</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button3">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Посмотреть расписание</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">271</property>
+            <property name="Y">165</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label26">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">ПАССПОРТНЫЕ ДАННЫЕ</property>
+          </widget>
+          <packing>
+            <property name="X">281</property>
+            <property name="Y">216</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entrySeries">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="MaxLength">4</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">367</property>
+            <property name="Y">252</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entryNumber">
+            <property name="MemberName" />
+            <property name="Tooltip" translatable="yes" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="MaxLength">6</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">367</property>
+            <property name="Y">297</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label27">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Серия пасспорта:</property>
+          </widget>
+          <packing>
+            <property name="X">238</property>
+            <property name="Y">252</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label28">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Номер пасспорта:</property>
+          </widget>
+          <packing>
+            <property name="X">233</property>
+            <property name="Y">298</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button4">
+            <property name="MemberName" />
+            <property name="WidthRequest">180</property>
+            <property name="HeightRequest">39</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">ЗАПИСАТЬСЯ</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnEnrollButtonClicked" />
+          </widget>
+          <packing>
+            <property name="X">270</property>
+            <property name="Y">345</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="hospital_register.PasswordErrorWindow" design-size="275 118">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">PasswordErrorWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">ПАРОЛЬ НЕВЕРНЫЙ!</property>
+          </widget>
+          <packing>
+            <property name="X">76</property>
+            <property name="Y">45</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Image" id="image1">
+            <property name="MemberName" />
+            <property name="WidthRequest">25</property>
+            <property name="HeightRequest">25</property>
+            <property name="Pixbuf">stock:gtk-cancel Menu</property>
+          </widget>
+          <packing>
+            <property name="X">46</property>
+            <property name="Y">42</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="hospital_register.AdminWindow" design-size="391 203">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">AdminWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed2">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="label2">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Привет, админ!</property>
+          </widget>
+          <packing>
+            <property name="X">131</property>
+            <property name="Y">90</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="hospital_register.TalonWindow" design-size="386 231">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">TalonWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed3">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="label3">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">ХВАТАЙ ТАЛОН!</property>
+          </widget>
+          <packing>
+            <property name="X">128</property>
+            <property name="Y">98</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Image" id="image2">
+            <property name="MemberName" />
+            <property name="Pixbuf">stock:gtk-apply Menu</property>
+          </widget>
+          <packing>
+            <property name="X">100</property>
+            <property name="Y">98</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
