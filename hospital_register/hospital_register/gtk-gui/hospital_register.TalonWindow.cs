@@ -5,8 +5,8 @@ namespace hospital_register
 	public partial class TalonWindow
 	{
 		private global::Gtk.Fixed fixed3;
-		private global::Gtk.Label label3;
-		private global::Gtk.Image image2;
+		private global::Gtk.Image image1;
+		private global::Gtk.Label label18;
 
 		protected virtual void Build ()
 		{
@@ -20,27 +20,27 @@ namespace hospital_register
 			this.fixed3.Name = "fixed3";
 			this.fixed3.HasWindow = false;
 			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.label3 = new global::Gtk.Label ();
-			this.label3.Name = "label3";
-			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("ХВАТАЙ ТАЛОН!");
-			this.fixed3.Add (this.label3);
-			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed3 [this.label3]));
-			w1.X = 128;
-			w1.Y = 98;
+			this.image1 = new global::Gtk.Image ();
+			this.image1.Name = "image1";
+			this.image1.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-apply", global::Gtk.IconSize.Menu);
+			this.fixed3.Add (this.image1);
+			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed3 [this.image1]));
+			w1.X = 104;
+			w1.Y = 118;
 			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.image2 = new global::Gtk.Image ();
-			this.image2.Name = "image2";
-			this.image2.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-apply", global::Gtk.IconSize.Menu);
-			this.fixed3.Add (this.image2);
-			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed3 [this.image2]));
-			w2.X = 100;
-			w2.Y = 98;
+			this.label18 = new global::Gtk.Label ();
+			this.label18.Name = "label18";
+			this.label18.LabelProp = global::Mono.Unix.Catalog.GetString ("ХВАТАЙ ТАЛОН!");
+			this.fixed3.Add (this.label18);
+			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed3 [this.label18]));
+			w2.X = 132;
+			w2.Y = 115;
 			this.Add (this.fixed3);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 386;
-			this.DefaultHeight = 231;
+			this.DefaultWidth = 355;
+			this.DefaultHeight = 264;
 			this.Show ();
 		}
 	}

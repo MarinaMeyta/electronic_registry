@@ -61,6 +61,7 @@ public partial class MainWindow
 		this.radiobutton1 = new global::Gtk.RadioButton (global::Mono.Unix.Catalog.GetString ("Я пациент"));
 		this.radiobutton1.CanFocus = true;
 		this.radiobutton1.Name = "radiobutton1";
+		this.radiobutton1.Active = false;
 		this.radiobutton1.DrawIndicator = true;
 		this.radiobutton1.UseUnderline = true;
 		this.radiobutton1.Group = new global::GLib.SList (global::System.IntPtr.Zero);
@@ -72,6 +73,7 @@ public partial class MainWindow
 		this.radiobutton2 = new global::Gtk.RadioButton (global::Mono.Unix.Catalog.GetString ("Я админ"));
 		this.radiobutton2.CanFocus = true;
 		this.radiobutton2.Name = "radiobutton2";
+		this.radiobutton2.Active = false;
 		this.radiobutton2.DrawIndicator = true;
 		this.radiobutton2.UseUnderline = true;
 		this.radiobutton2.Group = this.radiobutton1.Group;
