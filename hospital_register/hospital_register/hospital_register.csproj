@@ -85,6 +85,8 @@
     <Compile Include="gtk-gui\hospital_register.AdminWindow.cs" />
     <Compile Include="TalonWindow.cs" />
     <Compile Include="gtk-gui\hospital_register.TalonWindow.cs" />
+    <Compile Include="TimetableWindow.cs" />
+    <Compile Include="gtk-gui\hospital_register.TimetableWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

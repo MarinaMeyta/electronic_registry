@@ -61,22 +61,18 @@ namespace hospital_register
 
 				using (SqliteCommand search_specialist_cmd = new SqliteCommand (search_specialist, dbConnection)) {
 
+
+
 					SqliteDataReader reader = search_specialist_cmd.ExecuteReader ();
-					List<string> list_of_specialists = new List<string> ();
 
 					while (reader.Read ()) {
-						list_of_specialists.Add (reader.GetString (0));
-					}
-
-					for (int i = 0; i < list_of_specialists.Count; i++) {
-						combobox3.AppendText (list_of_specialists [i]);
+						combobox3.AppendText (reader.GetString (0));
 					}
 
 
 				}
 				dbConnection.Close ();
 			}
-
 
 
 

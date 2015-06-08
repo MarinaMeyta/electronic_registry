@@ -185,6 +185,7 @@ namespace hospital_register
 			this.combobox2.AppendText (global::Mono.Unix.Catalog.GetString ("ревматолог"));
 			this.combobox2.AppendText (global::Mono.Unix.Catalog.GetString ("околог"));
 			this.combobox2.AppendText (global::Mono.Unix.Catalog.GetString ("гастероэнтеролог"));
+			this.combobox2.AppendText (global::Mono.Unix.Catalog.GetString ("дерматолог"));
 			this.combobox2.WidthRequest = 191;
 			this.combobox2.Name = "combobox2";
 			this.fixed8.Add (this.combobox2);
