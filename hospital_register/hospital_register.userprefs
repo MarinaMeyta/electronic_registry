@@ -1,15 +1,30 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="hospital_register/EnrollWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="hospital_register/TimetableWindow.cs">
     <Files>
       <File FileName="hospital_register/AdminWindow.cs" Line="1" Column="1" />
-      <File FileName="hospital_register/MainWindow.cs" Line="24" Column="19" />
+      <File FileName="hospital_register/MainWindow.cs" Line="49" Column="47" />
       <File FileName="hospital_register/EnrollWindow.cs" Line="77" Column="4" />
       <File FileName="hospital_register/PasswordErrorWindow.cs" Line="1" Column="1" />
       <File FileName="hospital_register/PatientRegisterWindow.cs" Line="1" Column="1" />
-      <File FileName="hospital_register/Program.cs" Line="2" Column="1" />
+      <File FileName="hospital_register/Program.cs" Line="1" Column="1" />
       <File FileName="hospital_register/TalonWindow.cs" Line="1" Column="1" />
+      <File FileName="hospital_register/TimetableWindow.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="hospital_register" expanded="True">
+            <Node name="TimetableWindow.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ConnectionManagerPad">
+        <State expanded="True">
+          <Node name="hospital_register_connection" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

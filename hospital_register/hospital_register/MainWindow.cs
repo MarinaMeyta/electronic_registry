@@ -44,4 +44,11 @@ public partial class MainWindow: Gtk.Window
 
 	}
 	
+	protected void OnRadiobutton2Toggled (object sender, EventArgs e)
+	{
+		// активировать поле для ввода пароля админа
+		entryPassword.Sensitive = !entryPassword.Sensitive;
+	}
+
+
 }

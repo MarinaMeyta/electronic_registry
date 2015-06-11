@@ -78,6 +78,12 @@ namespace hospital_register
 
 
 		}
+
+		protected void OnButtonCheckTimetableClicked (object sender, EventArgs e)
+		{
+			hospital_register.TimetableWindow timetable_win = new TimetableWindow ();
+			timetable_win.Show ();
+		}
 	}
 }
 

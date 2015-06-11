@@ -13,7 +13,7 @@ namespace hospital_register
 		private global::Gtk.Label label23;
 		private global::Gtk.Label label21;
 		private global::Gtk.Image image6;
-		private global::Gtk.Button button3;
+		private global::Gtk.Button buttonCheckTimetable;
 		private global::Gtk.Label label26;
 		private global::Gtk.Entry entrySeries;
 		private global::Gtk.Entry entryNumber;
@@ -22,6 +22,7 @@ namespace hospital_register
 		private global::Gtk.Button button4;
 		private global::Gtk.ComboBox combobox2;
 		private global::Gtk.ComboBox combobox3;
+		private global::Gtk.Image image7;
 
 		protected virtual void Build ()
 		{
@@ -99,13 +100,13 @@ namespace hospital_register
 			w8.X = 257;
 			w8.Y = 13;
 			// Container child fixed8.Gtk.Fixed+FixedChild
-			this.button3 = new global::Gtk.Button ();
-			this.button3.CanFocus = true;
-			this.button3.Name = "button3";
-			this.button3.UseUnderline = true;
-			this.button3.Label = global::Mono.Unix.Catalog.GetString ("Посмотреть расписание");
-			this.fixed8.Add (this.button3);
-			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.button3]));
+			this.buttonCheckTimetable = new global::Gtk.Button ();
+			this.buttonCheckTimetable.CanFocus = true;
+			this.buttonCheckTimetable.Name = "buttonCheckTimetable";
+			this.buttonCheckTimetable.UseUnderline = true;
+			this.buttonCheckTimetable.Label = global::Mono.Unix.Catalog.GetString ("Посмотреть расписание");
+			this.fixed8.Add (this.buttonCheckTimetable);
+			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.buttonCheckTimetable]));
 			w9.X = 271;
 			w9.Y = 165;
 			// Container child fixed8.Gtk.Fixed+FixedChild
@@ -200,13 +201,22 @@ namespace hospital_register
 			global::Gtk.Fixed.FixedChild w17 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.combobox3]));
 			w17.X = 151;
 			w17.Y = 63;
+			// Container child fixed8.Gtk.Fixed+FixedChild
+			this.image7 = new global::Gtk.Image ();
+			this.image7.Name = "image7";
+			this.image7.Pixbuf = new global::Gdk.Pixbuf (global::System.IO.Path.Combine (global::System.AppDomain.CurrentDomain.BaseDirectory, "./getClientLogoMini.png"));
+			this.fixed8.Add (this.image7);
+			global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.image7]));
+			w18.X = 440;
+			w18.Y = 6;
 			this.Add (this.fixed8);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 729;
+			this.DefaultWidth = 732;
 			this.DefaultHeight = 422;
 			this.Show ();
+			this.buttonCheckTimetable.Clicked += new global::System.EventHandler (this.OnButtonCheckTimetableClicked);
 			this.button4.Clicked += new global::System.EventHandler (this.OnEnrollButtonClicked);
 			this.combobox2.Changed += new global::System.EventHandler (this.OnCombobox2Changed);
 		}
