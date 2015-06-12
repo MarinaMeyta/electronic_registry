@@ -10,7 +10,6 @@ namespace hospital_register
 		private global::Gtk.Image image2;
 		private global::Gtk.Label label5;
 		private global::Gtk.Entry entry1;
-		private global::Gtk.Entry entry2;
 		private global::Gtk.Label label9;
 		private global::Gtk.Label label8;
 		private global::Gtk.Entry entry3;
@@ -20,7 +19,6 @@ namespace hospital_register
 		private global::Gtk.Label label11;
 		private global::Gtk.Label label12;
 		private global::Gtk.Label label14;
-		private global::Gtk.Entry entry6;
 		private global::Gtk.Entry entry7;
 		private global::Gtk.Label label15;
 		private global::Gtk.Entry entry8;
@@ -35,6 +33,12 @@ namespace hospital_register
 		private global::Gtk.Label label6;
 		private global::Gtk.Image image7;
 		private global::Gtk.ComboBox combobox1;
+		private global::Gtk.ComboBox combobox11;
+		private global::Gtk.Entry entry6;
+		private global::Gtk.Entry entry11;
+		private global::Gtk.Entry entry12;
+		private global::Gtk.ComboBox combobox13;
+		private global::Gtk.Entry entry13;
 
 		protected virtual void Build ()
 		{
@@ -87,38 +91,28 @@ namespace hospital_register
 			this.entry1.CanFocus = true;
 			this.entry1.Name = "entry1";
 			this.entry1.IsEditable = true;
+			this.entry1.MaxLength = 50;
 			this.entry1.InvisibleChar = '•';
 			this.fixed6.Add (this.entry1);
 			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry1]));
 			w5.X = 309;
 			w5.Y = 209;
 			// Container child fixed6.Gtk.Fixed+FixedChild
-			this.entry2 = new global::Gtk.Entry ();
-			this.entry2.TooltipMarkup = "Например: 20.12.1988";
-			this.entry2.CanFocus = true;
-			this.entry2.Name = "entry2";
-			this.entry2.IsEditable = true;
-			this.entry2.InvisibleChar = '•';
-			this.fixed6.Add (this.entry2);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry2]));
-			w6.X = 309;
-			w6.Y = 244;
-			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label9 = new global::Gtk.Label ();
 			this.label9.Name = "label9";
 			this.label9.LabelProp = global::Mono.Unix.Catalog.GetString ("Пол:");
 			this.fixed6.Add (this.label9);
-			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label9]));
-			w7.X = 260;
-			w7.Y = 282;
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label9]));
+			w6.X = 260;
+			w6.Y = 282;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label8 = new global::Gtk.Label ();
 			this.label8.Name = "label8";
 			this.label8.LabelProp = global::Mono.Unix.Catalog.GetString ("Дата рождения:");
 			this.fixed6.Add (this.label8);
-			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label8]));
-			w8.X = 181;
-			w8.Y = 247;
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label8]));
+			w7.X = 181;
+			w7.Y = 247;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.entry3 = new global::Gtk.Entry ();
 			this.entry3.CanFocus = true;
@@ -127,9 +121,9 @@ namespace hospital_register
 			this.entry3.MaxLength = 4;
 			this.entry3.InvisibleChar = '•';
 			this.fixed6.Add (this.entry3);
-			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry3]));
-			w9.X = 308;
-			w9.Y = 317;
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry3]));
+			w8.X = 308;
+			w8.Y = 317;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.entry4 = new global::Gtk.Entry ();
 			this.entry4.CanFocus = true;
@@ -138,9 +132,9 @@ namespace hospital_register
 			this.entry4.MaxLength = 6;
 			this.entry4.InvisibleChar = '•';
 			this.fixed6.Add (this.entry4);
-			global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry4]));
-			w10.X = 307;
-			w10.Y = 355;
+			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry4]));
+			w9.X = 307;
+			w9.Y = 355;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.entry5 = new global::Gtk.Entry ();
 			this.entry5.CanFocus = true;
@@ -149,134 +143,127 @@ namespace hospital_register
 			this.entry5.MaxLength = 6;
 			this.entry5.InvisibleChar = '•';
 			this.fixed6.Add (this.entry5);
-			global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry5]));
-			w11.X = 308;
-			w11.Y = 393;
+			global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry5]));
+			w10.X = 308;
+			w10.Y = 393;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label10 = new global::Gtk.Label ();
 			this.label10.Name = "label10";
 			this.label10.LabelProp = global::Mono.Unix.Catalog.GetString ("Серия пасспорта:");
 			this.fixed6.Add (this.label10);
-			global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label10]));
-			w12.X = 170;
-			w12.Y = 319;
+			global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label10]));
+			w11.X = 170;
+			w11.Y = 319;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label11 = new global::Gtk.Label ();
 			this.label11.Name = "label11";
 			this.label11.LabelProp = global::Mono.Unix.Catalog.GetString ("Номер пасспорта:");
 			this.fixed6.Add (this.label11);
-			global::Gtk.Fixed.FixedChild w13 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label11]));
-			w13.X = 166;
-			w13.Y = 357;
+			global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label11]));
+			w12.X = 166;
+			w12.Y = 357;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label12 = new global::Gtk.Label ();
 			this.label12.Name = "label12";
 			this.label12.LabelProp = global::Mono.Unix.Catalog.GetString ("Код подразделения:");
 			this.fixed6.Add (this.label12);
-			global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label12]));
-			w14.X = 148;
-			w14.Y = 394;
+			global::Gtk.Fixed.FixedChild w13 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label12]));
+			w13.X = 148;
+			w13.Y = 394;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label14 = new global::Gtk.Label ();
 			this.label14.Name = "label14";
 			this.label14.LabelProp = global::Mono.Unix.Catalog.GetString ("Адрес места жительства:");
 			this.fixed6.Add (this.label14);
-			global::Gtk.Fixed.FixedChild w15 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label14]));
-			w15.X = 114;
-			w15.Y = 471;
-			// Container child fixed6.Gtk.Fixed+FixedChild
-			this.entry6 = new global::Gtk.Entry ();
-			this.entry6.TooltipMarkup = "Например: 20.01.2015";
-			this.entry6.CanFocus = true;
-			this.entry6.Name = "entry6";
-			this.entry6.IsEditable = true;
-			this.entry6.InvisibleChar = '•';
-			this.fixed6.Add (this.entry6);
-			global::Gtk.Fixed.FixedChild w16 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry6]));
-			w16.X = 308;
-			w16.Y = 433;
+			global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label14]));
+			w14.X = 114;
+			w14.Y = 471;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.entry7 = new global::Gtk.Entry ();
 			this.entry7.WidthRequest = 266;
 			this.entry7.CanFocus = true;
 			this.entry7.Name = "entry7";
 			this.entry7.IsEditable = true;
+			this.entry7.MaxLength = 100;
 			this.entry7.InvisibleChar = '•';
 			this.fixed6.Add (this.entry7);
-			global::Gtk.Fixed.FixedChild w17 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry7]));
-			w17.X = 308;
-			w17.Y = 467;
+			global::Gtk.Fixed.FixedChild w15 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry7]));
+			w15.X = 308;
+			w15.Y = 467;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label15 = new global::Gtk.Label ();
 			this.label15.Name = "label15";
 			this.label15.LabelProp = global::Mono.Unix.Catalog.GetString ("СТРАХОВОЙ МЕДИЦИНСКИЙ ПОЛИС");
 			this.fixed6.Add (this.label15);
-			global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label15]));
-			w18.X = 197;
-			w18.Y = 517;
+			global::Gtk.Fixed.FixedChild w16 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label15]));
+			w16.X = 197;
+			w16.Y = 517;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.entry8 = new global::Gtk.Entry ();
 			this.entry8.CanFocus = true;
 			this.entry8.Name = "entry8";
 			this.entry8.IsEditable = true;
+			this.entry8.MaxLength = 5;
 			this.entry8.InvisibleChar = '•';
 			this.fixed6.Add (this.entry8);
-			global::Gtk.Fixed.FixedChild w19 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry8]));
-			w19.X = 306;
-			w19.Y = 556;
+			global::Gtk.Fixed.FixedChild w17 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry8]));
+			w17.X = 306;
+			w17.Y = 556;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.entry9 = new global::Gtk.Entry ();
 			this.entry9.CanFocus = true;
 			this.entry9.Name = "entry9";
 			this.entry9.IsEditable = true;
+			this.entry9.MaxLength = 6;
 			this.entry9.InvisibleChar = '•';
 			this.fixed6.Add (this.entry9);
-			global::Gtk.Fixed.FixedChild w20 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry9]));
-			w20.X = 306;
-			w20.Y = 591;
+			global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry9]));
+			w18.X = 306;
+			w18.Y = 591;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.entry10 = new global::Gtk.Entry ();
 			this.entry10.WidthRequest = 266;
 			this.entry10.CanFocus = true;
 			this.entry10.Name = "entry10";
 			this.entry10.IsEditable = true;
+			this.entry10.MaxLength = 50;
 			this.entry10.InvisibleChar = '•';
 			this.fixed6.Add (this.entry10);
-			global::Gtk.Fixed.FixedChild w21 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry10]));
-			w21.X = 307;
-			w21.Y = 628;
+			global::Gtk.Fixed.FixedChild w19 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry10]));
+			w19.X = 307;
+			w19.Y = 628;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label16 = new global::Gtk.Label ();
 			this.label16.Name = "label16";
 			this.label16.LabelProp = global::Mono.Unix.Catalog.GetString ("Серия полиса:");
 			this.fixed6.Add (this.label16);
-			global::Gtk.Fixed.FixedChild w22 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label16]));
-			w22.X = 186;
-			w22.Y = 558;
+			global::Gtk.Fixed.FixedChild w20 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label16]));
+			w20.X = 186;
+			w20.Y = 558;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label13 = new global::Gtk.Label ();
 			this.label13.Name = "label13";
 			this.label13.LabelProp = global::Mono.Unix.Catalog.GetString ("Дата выдачи:");
 			this.fixed6.Add (this.label13);
-			global::Gtk.Fixed.FixedChild w23 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label13]));
-			w23.X = 197;
-			w23.Y = 436;
+			global::Gtk.Fixed.FixedChild w21 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label13]));
+			w21.X = 197;
+			w21.Y = 436;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label18 = new global::Gtk.Label ();
 			this.label18.Name = "label18";
 			this.label18.LabelProp = global::Mono.Unix.Catalog.GetString ("Страховая компания:");
 			this.fixed6.Add (this.label18);
-			global::Gtk.Fixed.FixedChild w24 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label18]));
-			w24.X = 136;
-			w24.Y = 630;
+			global::Gtk.Fixed.FixedChild w22 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label18]));
+			w22.X = 136;
+			w22.Y = 630;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label17 = new global::Gtk.Label ();
 			this.label17.Name = "label17";
 			this.label17.LabelProp = global::Mono.Unix.Catalog.GetString ("Номер полиса:");
 			this.fixed6.Add (this.label17);
-			global::Gtk.Fixed.FixedChild w25 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label17]));
-			w25.X = 182;
-			w25.Y = 592;
+			global::Gtk.Fixed.FixedChild w23 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label17]));
+			w23.X = 182;
+			w23.Y = 592;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.registerButton = new global::Gtk.Button ();
 			this.registerButton.CanFocus = true;
@@ -284,34 +271,34 @@ namespace hospital_register
 			this.registerButton.UseUnderline = true;
 			this.registerButton.Label = global::Mono.Unix.Catalog.GetString ("Зарегестрироваться");
 			this.fixed6.Add (this.registerButton);
-			global::Gtk.Fixed.FixedChild w26 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.registerButton]));
-			w26.X = 227;
-			w26.Y = 693;
+			global::Gtk.Fixed.FixedChild w24 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.registerButton]));
+			w24.X = 227;
+			w24.Y = 693;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label7 = new global::Gtk.Label ();
 			this.label7.HeightRequest = 79;
 			this.label7.Name = "label7";
 			this.label7.LabelProp = global::Mono.Unix.Catalog.GetString ("* Обработка ПДн осуществляется на основании\nФЗ №157 от 27.07.2006 \"О персональных данных\".");
 			this.fixed6.Add (this.label7);
-			global::Gtk.Fixed.FixedChild w27 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label7]));
-			w27.X = 142;
-			w27.Y = 729;
+			global::Gtk.Fixed.FixedChild w25 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label7]));
+			w25.X = 142;
+			w25.Y = 729;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.label6 = new global::Gtk.Label ();
 			this.label6.Name = "label6";
 			this.label6.LabelProp = global::Mono.Unix.Catalog.GetString ("Уважаемый посетитель поликлиники \"Медстар\"!\n\nПоскольку мы не обнаружили Вас в базе пациентов,\nпросим Вас пройти обязательную регистрацию,\nзаполнив форму ниже.*");
 			this.fixed6.Add (this.label6);
-			global::Gtk.Fixed.FixedChild w28 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label6]));
-			w28.X = 128;
-			w28.Y = 71;
+			global::Gtk.Fixed.FixedChild w26 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.label6]));
+			w26.X = 128;
+			w26.Y = 71;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.image7 = new global::Gtk.Image ();
 			this.image7.Name = "image7";
 			this.image7.Pixbuf = new global::Gdk.Pixbuf (global::System.IO.Path.Combine (global::System.AppDomain.CurrentDomain.BaseDirectory, "./getClientLogoMini.png"));
 			this.fixed6.Add (this.image7);
-			global::Gtk.Fixed.FixedChild w29 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.image7]));
-			w29.X = 405;
-			w29.Y = 3;
+			global::Gtk.Fixed.FixedChild w27 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.image7]));
+			w27.X = 405;
+			w27.Y = 3;
 			// Container child fixed6.Gtk.Fixed+FixedChild
 			this.combobox1 = global::Gtk.ComboBox.NewText ();
 			this.combobox1.AppendText (global::Mono.Unix.Catalog.GetString ("М"));
@@ -319,14 +306,105 @@ namespace hospital_register
 			this.combobox1.WidthRequest = 52;
 			this.combobox1.Name = "combobox1";
 			this.fixed6.Add (this.combobox1);
-			global::Gtk.Fixed.FixedChild w30 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.combobox1]));
+			global::Gtk.Fixed.FixedChild w28 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.combobox1]));
+			w28.X = 308;
+			w28.Y = 277;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.combobox11 = global::Gtk.ComboBox.NewText ();
+			this.combobox11.AppendText (global::Mono.Unix.Catalog.GetString ("января"));
+			this.combobox11.AppendText (global::Mono.Unix.Catalog.GetString ("февраля"));
+			this.combobox11.AppendText (global::Mono.Unix.Catalog.GetString ("марта"));
+			this.combobox11.AppendText (global::Mono.Unix.Catalog.GetString ("апреля"));
+			this.combobox11.AppendText (global::Mono.Unix.Catalog.GetString ("мая"));
+			this.combobox11.AppendText (global::Mono.Unix.Catalog.GetString ("июня"));
+			this.combobox11.AppendText (global::Mono.Unix.Catalog.GetString ("июля"));
+			this.combobox11.AppendText (global::Mono.Unix.Catalog.GetString ("августа"));
+			this.combobox11.AppendText (global::Mono.Unix.Catalog.GetString ("сентября"));
+			this.combobox11.AppendText (global::Mono.Unix.Catalog.GetString ("октября"));
+			this.combobox11.AppendText (global::Mono.Unix.Catalog.GetString ("ноября"));
+			this.combobox11.AppendText (global::Mono.Unix.Catalog.GetString ("декабря"));
+			this.combobox11.WidthRequest = 102;
+			this.combobox11.Name = "combobox11";
+			this.fixed6.Add (this.combobox11);
+			global::Gtk.Fixed.FixedChild w29 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.combobox11]));
+			w29.X = 365;
+			w29.Y = 243;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.entry6 = new global::Gtk.Entry ();
+			this.entry6.TooltipMarkup = "Месяц";
+			this.entry6.WidthRequest = 38;
+			this.entry6.CanFocus = true;
+			this.entry6.Name = "entry6";
+			this.entry6.IsEditable = true;
+			this.entry6.MaxLength = 2;
+			this.entry6.InvisibleChar = '•';
+			this.fixed6.Add (this.entry6);
+			global::Gtk.Fixed.FixedChild w30 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry6]));
 			w30.X = 308;
-			w30.Y = 277;
+			w30.Y = 245;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.entry11 = new global::Gtk.Entry ();
+			this.entry11.TooltipMarkup = "Год";
+			this.entry11.WidthRequest = 96;
+			this.entry11.CanFocus = true;
+			this.entry11.Name = "entry11";
+			this.entry11.IsEditable = true;
+			this.entry11.MaxLength = 4;
+			this.entry11.InvisibleChar = '•';
+			this.fixed6.Add (this.entry11);
+			global::Gtk.Fixed.FixedChild w31 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry11]));
+			w31.X = 477;
+			w31.Y = 246;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.entry12 = new global::Gtk.Entry ();
+			this.entry12.TooltipMarkup = "Месяц";
+			this.entry12.WidthRequest = 38;
+			this.entry12.CanFocus = true;
+			this.entry12.Name = "entry12";
+			this.entry12.IsEditable = true;
+			this.entry12.MaxLength = 2;
+			this.entry12.InvisibleChar = '•';
+			this.fixed6.Add (this.entry12);
+			global::Gtk.Fixed.FixedChild w32 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry12]));
+			w32.X = 307;
+			w32.Y = 431;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.combobox13 = global::Gtk.ComboBox.NewText ();
+			this.combobox13.AppendText (global::Mono.Unix.Catalog.GetString ("января"));
+			this.combobox13.AppendText (global::Mono.Unix.Catalog.GetString ("февраля"));
+			this.combobox13.AppendText (global::Mono.Unix.Catalog.GetString ("марта"));
+			this.combobox13.AppendText (global::Mono.Unix.Catalog.GetString ("апреля"));
+			this.combobox13.AppendText (global::Mono.Unix.Catalog.GetString ("мая"));
+			this.combobox13.AppendText (global::Mono.Unix.Catalog.GetString ("июня"));
+			this.combobox13.AppendText (global::Mono.Unix.Catalog.GetString ("июля"));
+			this.combobox13.AppendText (global::Mono.Unix.Catalog.GetString ("августа"));
+			this.combobox13.AppendText (global::Mono.Unix.Catalog.GetString ("сентября"));
+			this.combobox13.AppendText (global::Mono.Unix.Catalog.GetString ("октября"));
+			this.combobox13.AppendText (global::Mono.Unix.Catalog.GetString ("ноября"));
+			this.combobox13.AppendText (global::Mono.Unix.Catalog.GetString ("декабря"));
+			this.combobox13.WidthRequest = 102;
+			this.combobox13.Name = "combobox13";
+			this.fixed6.Add (this.combobox13);
+			global::Gtk.Fixed.FixedChild w33 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.combobox13]));
+			w33.X = 365;
+			w33.Y = 430;
+			// Container child fixed6.Gtk.Fixed+FixedChild
+			this.entry13 = new global::Gtk.Entry ();
+			this.entry13.WidthRequest = 96;
+			this.entry13.CanFocus = true;
+			this.entry13.Name = "entry13";
+			this.entry13.IsEditable = true;
+			this.entry13.MaxLength = 4;
+			this.entry13.InvisibleChar = '•';
+			this.fixed6.Add (this.entry13);
+			global::Gtk.Fixed.FixedChild w34 = ((global::Gtk.Fixed.FixedChild)(this.fixed6 [this.entry13]));
+			w34.X = 476;
+			w34.Y = 433;
 			this.Add (this.fixed6);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 658;
+			this.DefaultWidth = 665;
 			this.DefaultHeight = 828;
 			this.Show ();
 			this.registerButton.Clicked += new global::System.EventHandler (this.OnRegisterButtonClicked);

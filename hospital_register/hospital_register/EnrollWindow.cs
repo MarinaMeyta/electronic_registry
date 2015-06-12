@@ -30,6 +30,16 @@ namespace hospital_register
 
 		}
 
+		protected bool CheckNumericStringFormat (string num_str) 
+		{
+			try {
+				long temp = Convert.ToInt64 (num_str);	
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
+		}
+
 		protected void OnEnrollButtonClicked (object sender, EventArgs e)
 		{
 			string passport = entrySeries.Text + entryNumber.Text;
@@ -42,7 +52,9 @@ namespace hospital_register
 			    doctor_name != "" &&
 			    speciality != "" &&
 			    date != "" &&
-			    time != "") 
+			    time != "" &&
+			    CheckNumericStringFormat (passport) == true &&
+			    passport.Length == 10) 
 			{
 				using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
 					dbConnection.Open ();
