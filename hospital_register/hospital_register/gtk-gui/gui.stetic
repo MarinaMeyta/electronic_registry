@@ -670,6 +670,7 @@
             <property name="WidthRequest">191</property>
             <property name="IsTextCombo">True</property>
             <property name="Items" translatable="yes" />
+            <signal name="Changed" handler="OnCombobox3Changed" />
           </widget>
           <packing>
             <property name="X">151</property>
@@ -692,6 +693,7 @@
             <property name="WidthRequest">191</property>
             <property name="IsTextCombo">True</property>
             <property name="Items" translatable="yes" />
+            <signal name="Changed" handler="OnCombobox4Changed" />
           </widget>
           <packing>
             <property name="X">495</property>

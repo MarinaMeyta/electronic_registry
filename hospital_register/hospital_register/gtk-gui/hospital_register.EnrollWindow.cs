@@ -221,6 +221,8 @@ namespace hospital_register
 			this.buttonCheckTimetable.Clicked += new global::System.EventHandler (this.OnButtonCheckTimetableClicked);
 			this.enrollButton.Clicked += new global::System.EventHandler (this.OnEnrollButtonClicked);
 			this.combobox2.Changed += new global::System.EventHandler (this.OnCombobox2Changed);
+			this.combobox3.Changed += new global::System.EventHandler (this.OnCombobox3Changed);
+			this.combobox4.Changed += new global::System.EventHandler (this.OnCombobox4Changed);
 		}
 	}
 }

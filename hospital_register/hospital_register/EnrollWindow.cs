@@ -117,6 +117,33 @@ namespace hospital_register
 			timetable_win.Show ();
 		}
 
+		protected void OnCombobox3Changed (object sender, EventArgs e)
+		{
+			string doctor_name = combobox3.ActiveText;
+
+			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+				dbConnection.Open ();
+
+				string search_date = "select distinct reception_day from 'timetables'" +
+					"where employee_id = (select employee_id from 'employee'" +
+					"where employee_name = '"+ doctor_name +"');";
+
+				using (SqliteCommand search_date_cmd = new SqliteCommand (search_date, dbConnection)) {
+				
+					SqliteDataReader reader = search_date_cmd.ExecuteReader ();
+
+					while (reader.Read ()) {
+						combobox4.AppendText (reader.GetString (0));
+					}
+				}
+				dbConnection.Close ();
+			}
+		}
+
+		protected void OnCombobox4Changed (object sender, EventArgs e)
+		{
+			combobox5.AppendText ("some time");
+		}
 	}
 }
 
