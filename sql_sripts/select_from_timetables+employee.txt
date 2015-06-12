@@ -1,0 +1,3 @@
+select employee_name, reception_day, speciality 
+from 'timetables', 'employee'
+where 'timetables'.'employee_id' = 'employee'.'employee_id';

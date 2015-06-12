@@ -1,13 +1,13 @@
-INSERT INTO employee (
-	employee_id,
-	employee_name,
-	timetable_id,
-	speciality
+INSERT INTO 'employee' (
+	'employee_id',
+	'employee_name',
+	'speciality',
+	'office_number'
 )
 
 VALUES (
-	'2000000004',
-	'Сидоренко Игорь Викторович',
-	'3000000001',
-	'хирург'
+	'2000000001',
+	'Лещук Мария Григорьевна',
+	'офтальмолог',
+	'201'
 );

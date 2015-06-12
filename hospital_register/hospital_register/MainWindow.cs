@@ -36,12 +36,6 @@ public partial class MainWindow: Gtk.Window
 			hospital_register.EnrollWindow enroll_win = new EnrollWindow ();
 			enroll_win.Show ();
 		}
-
-//		hospital_register.PatientRegisterWindow reg_win = new PatientRegisterWindow ();
-//		reg_win.Show ();
-
-
-
 	}
 	
 	protected void OnRadiobutton2Toggled (object sender, EventArgs e)
@@ -51,4 +45,8 @@ public partial class MainWindow: Gtk.Window
 	}
 
 
+	protected void OnRadiobutton1Toggled (object sender, EventArgs e)
+	{
+		entryPassword.Text = "";
+	}
 }

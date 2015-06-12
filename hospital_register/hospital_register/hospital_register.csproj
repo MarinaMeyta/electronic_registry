@@ -87,6 +87,17 @@
     <Compile Include="gtk-gui\hospital_register.TalonWindow.cs" />
     <Compile Include="TimetableWindow.cs" />
     <Compile Include="gtk-gui\hospital_register.TimetableWindow.cs" />
+    <Compile Include="RegisterSuccessWindow.cs" />
+    <Compile Include="gtk-gui\hospital_register.RegisterSuccessWindow.cs" />
+    <Compile Include="RegisterFailWindow.cs" />
+    <Compile Include="gtk-gui\hospital_register.RegisterFailWindow.cs" />
+    <Compile Include="EnrollFailWindow.cs" />
+    <Compile Include="gtk-gui\hospital_register.EnrollFailWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Content Include="getClientLogoMini.png">
+      <DeployService-UseProjectRelativePath>True</DeployService-UseProjectRelativePath>
+    </Content>
+  </ItemGroup>
 </Project>

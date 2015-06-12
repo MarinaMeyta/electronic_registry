@@ -97,6 +97,7 @@
             <property name="HasLabel">True</property>
             <property name="UseUnderline">True</property>
             <property name="Group">group1</property>
+            <signal name="Toggled" handler="OnRadiobutton1Toggled" />
           </widget>
           <packing>
             <property name="X">37</property>
@@ -196,19 +197,6 @@
           <packing>
             <property name="X">309</property>
             <property name="Y">244</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.ComboBoxEntry" id="comboboxentry1">
-            <property name="MemberName" />
-            <property name="WidthRequest">65</property>
-            <property name="IsTextCombo">True</property>
-            <property name="Items" translatable="yes">М
-Ж</property>
-          </widget>
-          <packing>
-            <property name="X">309</property>
-            <property name="Y">278</property>
           </packing>
         </child>
         <child>
@@ -424,12 +412,13 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button1">
+          <widget class="Gtk.Button" id="registerButton">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Зарегестрироваться</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnRegisterButtonClicked" />
           </widget>
           <packing>
             <property name="X">227</property>
@@ -472,6 +461,19 @@
             <property name="Y">3</property>
           </packing>
         </child>
+        <child>
+          <widget class="Gtk.ComboBox" id="combobox1">
+            <property name="MemberName" />
+            <property name="WidthRequest">52</property>
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes">М
+Ж</property>
+          </widget>
+          <packing>
+            <property name="X">308</property>
+            <property name="Y">277</property>
+          </packing>
+        </child>
       </widget>
     </child>
   </widget>
@@ -483,28 +485,6 @@
       <widget class="Gtk.Fixed" id="fixed8">
         <property name="MemberName" />
         <property name="HasWindow">False</property>
-        <child>
-          <widget class="Gtk.ComboBoxEntry" id="comboboxentry6">
-            <property name="MemberName" />
-            <property name="IsTextCombo">True</property>
-            <property name="Items" translatable="yes" />
-          </widget>
-          <packing>
-            <property name="X">491</property>
-            <property name="Y">116</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.ComboBoxEntry" id="comboboxentry4">
-            <property name="MemberName" />
-            <property name="IsTextCombo">True</property>
-            <property name="Items" translatable="yes" />
-          </widget>
-          <packing>
-            <property name="X">490</property>
-            <property name="Y">70</property>
-          </packing>
-        </child>
         <child>
           <widget class="Gtk.Label" id="label24">
             <property name="MemberName" />
@@ -639,7 +619,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button4">
+          <widget class="Gtk.Button" id="enrollButton">
             <property name="MemberName" />
             <property name="WidthRequest">180</property>
             <property name="HeightRequest">39</property>
@@ -704,6 +684,30 @@
           <packing>
             <property name="X">440</property>
             <property name="Y">6</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBox" id="combobox4">
+            <property name="MemberName" />
+            <property name="WidthRequest">191</property>
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes" />
+          </widget>
+          <packing>
+            <property name="X">495</property>
+            <property name="Y">66</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBox" id="combobox5">
+            <property name="MemberName" />
+            <property name="WidthRequest">191</property>
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes" />
+          </widget>
+          <packing>
+            <property name="X">495</property>
+            <property name="Y">113</property>
           </packing>
         </child>
       </widget>
@@ -1309,6 +1313,160 @@
           <packing>
             <property name="Position">2</property>
             <property name="AutoSize">True</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="hospital_register.RegisterSuccessWindow" design-size="496 208">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">RegisterSuccessWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed2">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Image" id="image1">
+            <property name="MemberName" />
+            <property name="WidthRequest">30</property>
+            <property name="HeightRequest">30</property>
+            <property name="Pixbuf">stock:gtk-apply Menu</property>
+          </widget>
+          <packing>
+            <property name="X">56</property>
+            <property name="Y">81</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Поздравляем с успешной регистрацией 
+	      в поликлинике "Медстар"!</property>
+          </widget>
+          <packing>
+            <property name="X">93</property>
+            <property name="Y">83</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Image" id="image2">
+            <property name="MemberName" />
+            <property name="Pixbuf">file:./getClientLogoMini.png</property>
+          </widget>
+          <packing>
+            <property name="X">391</property>
+            <property name="Y">71</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="hospital_register.RegisterFailWindow" design-size="448 236">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">RegisterFailWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed3">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="label2">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">ОШИБКА РЕГИСТРАЦИИ</property>
+          </widget>
+          <packing>
+            <property name="X">122</property>
+            <property name="Y">47</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Image" id="image4">
+            <property name="MemberName" />
+            <property name="Pixbuf">file:./getClientLogoMini.png</property>
+          </widget>
+          <packing>
+            <property name="X">299</property>
+            <property name="Y">25</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Image" id="image3">
+            <property name="MemberName" />
+            <property name="WidthRequest">30</property>
+            <property name="HeightRequest">30</property>
+            <property name="Pixbuf">stock:gtk-dialog-warning Menu</property>
+          </widget>
+          <packing>
+            <property name="X">86</property>
+            <property name="Y">39</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label3">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Возможные причины:
+1) Такой пациент уже есть в базе;
+2) Неправильно запеолненный бланк регистрации. 
+
+Проверьте правильность заполнения бланка.
+Все поля должны быть заполнены.</property>
+          </widget>
+          <packing>
+            <property name="X">50</property>
+            <property name="Y">87</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="hospital_register.EnrollFailWindow" design-size="391 299">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">EnrollFailWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed4">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Image" id="image5">
+            <property name="MemberName" />
+            <property name="Pixbuf">stock:gtk-cancel Menu</property>
+          </widget>
+          <packing>
+            <property name="X">69</property>
+            <property name="Y">107</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label4">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">ОШИБКА ЗАПИСИ</property>
+          </widget>
+          <packing>
+            <property name="X">113</property>
+            <property name="Y">105</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Image" id="image6">
+            <property name="MemberName" />
+            <property name="Pixbuf">file:./getClientLogoMini.png</property>
+          </widget>
+          <packing>
+            <property name="X">248</property>
+            <property name="Y">86</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label5">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Проверьте правильность заполнения
+			полей для записи</property>
+          </widget>
+          <packing>
+            <property name="X">61</property>
+            <property name="Y">165</property>
           </packing>
         </child>
       </widget>

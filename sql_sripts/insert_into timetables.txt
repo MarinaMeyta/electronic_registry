@@ -1,0 +1,14 @@
+insert into 'timetables' (
+	timetable_id,
+	employee_id,
+	reception_day,
+	reception_begining,
+	reception_ending)
+	
+values (
+	'3000000001',
+	'2000000001',
+	'2015-06-12',
+	'15:00',
+	'15:30'
+);

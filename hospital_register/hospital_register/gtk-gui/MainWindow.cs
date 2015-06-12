@@ -109,6 +109,7 @@ public partial class MainWindow
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.button2.Clicked += new global::System.EventHandler (this.OnEnterButtonClicked);
+		this.radiobutton1.Toggled += new global::System.EventHandler (this.OnRadiobutton1Toggled);
 		this.radiobutton2.Toggled += new global::System.EventHandler (this.OnRadiobutton2Toggled);
 	}
 }
