@@ -38,42 +38,35 @@ namespace hospital_register
 			string date = combobox4.ActiveText;
 			string time = combobox5.ActiveText;
 
+			if (passport != "" &&
+			    doctor_name != "" &&
+			    speciality != "" &&
+			    date != "" &&
+			    time != "") 
+			{
+				using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+					dbConnection.Open ();
 
-			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
-				dbConnection.Open ();
+					string search_patient = "SELECT patient_id FROM patient WHERE passport_series = '" + passport + "';";
 
-				string search_patient = "SELECT patient_id FROM patient WHERE passport_series = '" + passport + "';";
+					using (SqliteCommand search_patient_cmd = new SqliteCommand (search_patient, dbConnection)) {
 
-				using (SqliteCommand search_patient_cmd = new SqliteCommand (search_patient, dbConnection)) {
+						object reader = search_patient_cmd.ExecuteScalar ();
 
-					object reader = search_patient_cmd.ExecuteScalar ();
-
-					if (reader != null) {
-						if (passport != null &&
-						    doctor_name != null &&
-						    speciality != null
-						    // date != null &&
-						    // time ! = null
-						    ) {
-
-							GetTalon (doctor_name, speciality, date, time);
-
+						if (reader != null) {
+								GetTalon (doctor_name, speciality, date, time);
 						} else {
-							hospital_register.EnrollFailWindow err = new EnrollFailWindow ();
-							err.Show ();
+							hospital_register.PatientRegisterWindow reg_win = new PatientRegisterWindow ();
+							reg_win.Show ();
 						}
-				
-					} else {
-						hospital_register.PatientRegisterWindow reg_win = new PatientRegisterWindow ();
-						reg_win.Show ();
+
 					}
-
+					dbConnection.Close ();
 				}
-				dbConnection.Close ();
+			} else {
+				hospital_register.EnrollFailWindow err = new EnrollFailWindow ();
+				err.Show ();
 			}
-
-
-
 		}
 
 		protected void OnCombobox2Changed (object sender, EventArgs e)
@@ -124,8 +117,8 @@ namespace hospital_register
 			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
 				dbConnection.Open ();
 
-				string search_date = "select distinct reception_day from 'timetables'" +
-					"where employee_id = (select employee_id from 'employee'" +
+				string search_date = "select distinct reception_day from 'timetables' " +
+					"where employee_id = (select employee_id from 'employee' " +
 					"where employee_name = '"+ doctor_name +"');";
 
 				using (SqliteCommand search_date_cmd = new SqliteCommand (search_date, dbConnection)) {
@@ -142,7 +135,26 @@ namespace hospital_register
 
 		protected void OnCombobox4Changed (object sender, EventArgs e)
 		{
-			combobox5.AppendText ("some time");
+			string doctor_name = combobox3.ActiveText;
+			string date = combobox4.ActiveText;
+
+			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+				dbConnection.Open ();
+
+				string search_time = "select distinct reception_begining from 'timetables' " +
+					"where employee_id = (select employee_id from 'employee' " +
+						"where employee_name = '" + doctor_name + "') AND reception_day = '" + date + "';";
+
+				using (SqliteCommand search_time_cmd = new SqliteCommand (search_time, dbConnection)) {
+
+					SqliteDataReader reader = search_time_cmd.ExecuteReader ();
+
+					while (reader.Read ()) {
+						combobox5.AppendText (reader.GetString (0));
+					}
+				}
+				dbConnection.Close ();
+			}
 		}
 	}
 }
