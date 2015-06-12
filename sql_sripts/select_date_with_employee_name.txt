@@ -1,0 +1,4 @@
+select distinct reception_day from 'timetables'
+where employee_id = (
+	select employee_id from 'employee'
+	where employee_name = 'Лещук Мария Григорьевна');
