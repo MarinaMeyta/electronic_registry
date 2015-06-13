@@ -1,0 +1,9 @@
+/*delete from 'policy'
+where patient_id = '0000000007';
+select * from 'policy';
+delete from 'patient'
+where patient_id = '0000000007';
+select * from 'patient';
+delete from 'passport'
+where patient_id = '0000000007';
+select * from 'passport';*/

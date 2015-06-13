@@ -1,0 +1,19 @@
+INSERT INTO 'passport' (
+	passport_series,
+	patient_id,
+	birth_date,
+	sex,
+	address,
+	subdivision_code,
+	date_of_issue
+)
+
+VALUES (
+	'6909345325',
+	'0000000006',
+	'1985-05-13',
+	'М',
+	'ул. Нахановича 48 кв. 17',
+	'700003',
+	'2005-06-14'
+);

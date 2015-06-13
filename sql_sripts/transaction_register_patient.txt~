@@ -1,0 +1,52 @@
+BEGIN TRANSACTION;
+
+/* Добавить пациента */
+INSERT INTO 'patient' (
+	patient_id,
+	name,
+	passport_series,
+	policy_series
+)
+
+VALUES (
+	'0000000007',
+	'Сонин Матвей Ефимович',
+	'6909756356',
+	'00004653876'
+);
+
+/* Добавить паспорт */
+INSERT INTO 'passport' (
+	passport_series,
+	patient_id,
+	birth_date,
+	sex,
+	address,
+	subdivision_code,
+	date_of_issue
+)
+
+VALUES (
+	'6909756356',
+	'0000000007',
+	'1967-08-13',
+	'м',
+	'ул. Сибирская 46, кв. 31',
+	'700002',
+	'2012-09-01'
+);
+
+/* Добавить полис */
+INSERT INTO 'policy' (
+	policy_series,
+	patient_id,
+	isurance_agency
+)
+
+VALUES (
+	'00004653876',
+	'0000000007',
+	'Макс-М'
+);
+
+COMMIT;

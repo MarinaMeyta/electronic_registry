@@ -1,0 +1,13 @@
+INSERT INTO 'patient' (
+	patient_id,
+	name,
+	passport_series,
+	policy_series
+)
+
+VALUES (
+	'0000000006',
+	'Жуков Константин Сергеевич',
+	'6909345325',
+	'00003456854'
+);
