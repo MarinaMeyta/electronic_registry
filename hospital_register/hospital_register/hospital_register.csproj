@@ -93,6 +93,8 @@
     <Compile Include="gtk-gui\hospital_register.RegisterFailWindow.cs" />
     <Compile Include="EnrollFailWindow.cs" />
     <Compile Include="gtk-gui\hospital_register.EnrollFailWindow.cs" />
+    <Compile Include="DatabaseErrorWindow.cs" />
+    <Compile Include="gtk-gui\hospital_register.DatabaseErrorWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
