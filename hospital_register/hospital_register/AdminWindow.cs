@@ -23,10 +23,57 @@ namespace hospital_register
 			this.Build ();
 		}
 
+		// проверить входной формат строки - является ли числовым
+		protected bool CheckNumericStringFormat (string num_str) 
+		{
+			try {
+				long temp = Convert.ToInt64 (num_str);	
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
+		}
+
 		// формирует новый employee_id
 		protected string GetEmployeeId ()
 		{
 			string max_id = "SELECT MAX(employee_id) FROM 'employee';";
+			string new_id = "";
+			long id = 0;
+
+			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+				dbConnection.Open ();
+
+				try {
+					using (SqliteCommand max_id_cmd = new SqliteCommand (max_id, dbConnection)) {
+
+						object reader = max_id_cmd.ExecuteScalar ();
+						new_id = reader.ToString ();
+
+						if (new_id == "") {
+							new_id = "0";
+						}
+
+						id = Convert.ToInt64 (new_id) + 1;
+						new_id = id.ToString ();
+
+						while (new_id.Length < 10) {
+							new_id = "0" + new_id;
+						}
+					}
+				} catch (Exception e) {
+					hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
+					err_win.Show ();
+				}
+				dbConnection.Close ();
+			}
+			return new_id;
+		}
+
+		// формирует новый timetable_id
+		protected string GetTimetableId ()
+		{
+			string max_id = "SELECT MAX(timetable_id) FROM 'timetable';";
 			string new_id = "";
 			long id = 0;
 
@@ -280,18 +327,95 @@ namespace hospital_register
 			string office_number = entry3.Text;
 			string employee_id = GetEmployeeId ();
 
-			string insert_employee = "INSERT INTO 'employee' (" +
-				"employee_id, employee_name, speciality, office_number) " +
+			if (CheckNumericStringFormat (office_number) == true && 
+			    office_number.Length == 3 &&
+			    employee_name != "" &&
+			    speciality != "") {
+
+				string insert_employee = "INSERT INTO 'employee' (" +
+					"employee_id, employee_name, speciality, office_number) " +
 					"VALUES ('" + employee_id + "', '" + employee_name + "', '" + speciality + 
 					"', '" + office_number + "');";
+
+				using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+					dbConnection.Open ();
+
+					try {
+
+						using (SqliteCommand insert_employee_cmd = new SqliteCommand (insert_employee, dbConnection)) {
+							insert_employee_cmd.ExecuteNonQuery ();
+						}
+
+					} catch (Exception e2) {
+						hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
+						err_win.Show ();
+					}
+
+					dbConnection.Close ();
+					hospital_register.SuccessWindow suc_win = new SuccessWindow ();
+					suc_win.Show ();
+				}
+			} else {
+				hospital_register.ErrorWindow err_win = new ErrorWindow ();
+				err_win.Show ();
+			}
+		}
+
+		protected void OnButtonInsertTimetableClicked (object sender, EventArgs e)
+		{
+			string week_day = combobox1.ActiveText;
+			string begining = entry4.Text;
+			string ending = entry5.Text;
+			string employee_id = entry9.Text;
+
+			if (week_day != "" &&
+			    begining != "" &&
+			    ending != "" &&
+			    begining.Length == 5 &&
+			    ending.Length == 5
+			    ) {
+
+				string timetable_id = GetTimetableId ();
+				string insert_timetable = "INSERT INTO timetable " +
+					"(timetable_id, employee_id, week_day, shift_begining, shift_ending)" +
+						"VALUES ('" + timetable_id + "', '" +employee_id + "', '" + week_day + "', '" + begining + "', '" + ending + "') ";
+
+				using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+					dbConnection.Open ();
+
+					try {
+
+						using (SqliteCommand insert_timetable_cmd = new SqliteCommand (insert_timetable, dbConnection)) {
+							insert_timetable_cmd.ExecuteNonQuery ();
+						}
+
+					} catch (Exception e2) {
+						hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
+						err_win.Show ();
+					}
+
+					dbConnection.Close ();
+					hospital_register.SuccessWindow suc_win = new SuccessWindow ();
+					suc_win.Show ();
+				}
+			} else {
+				hospital_register.ErrorWindow err_win = new ErrorWindow ();
+				err_win.Show ();
+			}
+		}
+
+		protected void OnButtonDeleteEmployeeClicked (object sender, EventArgs e)
+		{
+			string employee_id = entry6.Text;
+			string delete_employee = "DELETE FROM employee WHERE employee_id = '" + employee_id + "';";
 
 			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
 				dbConnection.Open ();
 
 				try {
 
-					using (SqliteCommand insert_employee_cmd = new SqliteCommand (insert_employee, dbConnection)) {
-						insert_employee_cmd.ExecuteNonQuery ();
+					using (SqliteCommand delete_employee_cmd = new SqliteCommand (delete_employee, dbConnection)) {
+						delete_employee_cmd.ExecuteNonQuery ();
 					}
 
 				} catch (Exception e2) {
@@ -300,6 +424,58 @@ namespace hospital_register
 				}
 
 				dbConnection.Close ();
+				hospital_register.SuccessWindow suc_win = new SuccessWindow ();
+				suc_win.Show ();
+			}
+		}
+
+		protected void OnButtonDeletePatientClicked (object sender, EventArgs e)
+		{
+			string patient_id = entry7.Text;
+			string delete_patient = "DELETE FROM patient WHERE patient_id = '" + patient_id + "';";
+
+			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+				dbConnection.Open ();
+
+				try {
+
+					using (SqliteCommand delete_patient_cmd = new SqliteCommand (delete_patient, dbConnection)) {
+						delete_patient_cmd.ExecuteNonQuery ();
+					}
+
+				} catch (Exception e2) {
+					hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
+					err_win.Show ();
+				}
+
+				dbConnection.Close ();
+				hospital_register.SuccessWindow suc_win = new SuccessWindow ();
+				suc_win.Show ();
+			}
+		}
+
+		protected void OnButtonDeleteTimetableClicked (object sender, EventArgs e)
+		{
+			string timetable_id = entry8.Text;
+			string delete_timetable = "DELETE FROM timetable WHERE timetable_id = '" + timetable_id + "';";
+
+			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+				dbConnection.Open ();
+
+				try {
+
+					using (SqliteCommand delete_timetable_cmd = new SqliteCommand (delete_timetable, dbConnection)) {
+						delete_timetable_cmd.ExecuteNonQuery ();
+					}
+
+				} catch (Exception e2) {
+					hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
+					err_win.Show ();
+				}
+
+				dbConnection.Close ();
+				hospital_register.SuccessWindow suc_win = new SuccessWindow ();
+				suc_win.Show ();
 			}
 		}
 	}

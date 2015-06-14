@@ -891,7 +891,7 @@
             <property name="MemberName" />
             <property name="HeightRequest">0</property>
             <property name="CanFocus">True</property>
-            <property name="CurrentPage">0</property>
+            <property name="CurrentPage">2</property>
             <child>
               <widget class="Gtk.VBox" id="vbox2">
                 <property name="MemberName" />
@@ -1190,17 +1190,56 @@
                       </packing>
                     </child>
                     <child>
+                      <widget class="Gtk.HBox" id="hbox2">
+                        <property name="MemberName" />
+                        <property name="Spacing">6</property>
+                        <child>
+                          <widget class="Gtk.Label" id="label4">
+                            <property name="MemberName" />
+                            <property name="LabelProp" translatable="yes">ID сотрудника</property>
+                          </widget>
+                          <packing>
+                            <property name="Position">0</property>
+                            <property name="AutoSize">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Entry" id="entry9">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="IsEditable">True</property>
+                            <property name="MaxLength">10</property>
+                            <property name="InvisibleChar">•</property>
+                          </widget>
+                          <packing>
+                            <property name="Position">1</property>
+                            <property name="AutoSize">False</property>
+                            <property name="Expand">False</property>
+                          </packing>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="Position">1</property>
+                        <property name="AutoSize">True</property>
+                        <property name="Expand">False</property>
+                        <property name="Fill">False</property>
+                      </packing>
+                    </child>
+                    <child>
                       <widget class="Gtk.HBox" id="hbox6">
                         <property name="MemberName" />
                         <property name="Spacing">6</property>
                         <child>
                           <widget class="Gtk.Label" id="label7">
                             <property name="MemberName" />
+                            <property name="Xalign">0</property>
                             <property name="LabelProp" translatable="yes">День недели:</property>
                           </widget>
                           <packing>
                             <property name="Position">0</property>
                             <property name="AutoSize">False</property>
+                            <property name="Expand">False</property>
                             <property name="Fill">False</property>
                           </packing>
                         </child>
@@ -1223,7 +1262,7 @@
                         </child>
                       </widget>
                       <packing>
-                        <property name="Position">1</property>
+                        <property name="Position">2</property>
                         <property name="AutoSize">True</property>
                         <property name="Expand">False</property>
                         <property name="Fill">False</property>
@@ -1261,7 +1300,7 @@
                         </child>
                       </widget>
                       <packing>
-                        <property name="Position">2</property>
+                        <property name="Position">3</property>
                         <property name="AutoSize">True</property>
                         <property name="Expand">False</property>
                         <property name="Fill">False</property>
@@ -1298,22 +1337,23 @@
                         </child>
                       </widget>
                       <packing>
-                        <property name="Position">3</property>
+                        <property name="Position">4</property>
                         <property name="AutoSize">True</property>
                         <property name="Expand">False</property>
                         <property name="Fill">False</property>
                       </packing>
                     </child>
                     <child>
-                      <widget class="Gtk.Button" id="button2">
+                      <widget class="Gtk.Button" id="buttonInsertTimetable">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">Добавить расписание</property>
                         <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="OnButtonInsertTimetableClicked" />
                       </widget>
                       <packing>
-                        <property name="Position">4</property>
+                        <property name="Position">5</property>
                         <property name="AutoSize">False</property>
                         <property name="Fill">False</property>
                       </packing>
@@ -1367,12 +1407,13 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Button" id="button13">
+                  <widget class="Gtk.Button" id="buttonDeleteEmployee">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">Удалить</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnButtonDeleteEmployeeClicked" />
                   </widget>
                   <packing>
                     <property name="X">429</property>
@@ -1413,12 +1454,13 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Button" id="button14">
+                  <widget class="Gtk.Button" id="buttonDeletePatient">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">Удалить</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnButtonDeletePatientClicked" />
                   </widget>
                   <packing>
                     <property name="X">429</property>
@@ -1459,12 +1501,13 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Button" id="button15">
+                  <widget class="Gtk.Button" id="buttonDeleteTimetable">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">Удалить</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnButtonDeleteTimetableClicked" />
                   </widget>
                   <packing>
                     <property name="X">430</property>
@@ -2250,6 +2293,68 @@
           <packing>
             <property name="X">113</property>
             <property name="Y">65</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="hospital_register.ErrorWindow" design-size="277 118">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">ErrorWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Image" id="image1">
+            <property name="MemberName" />
+            <property name="Pixbuf">stock:gtk-cancel Menu</property>
+          </widget>
+          <packing>
+            <property name="X">51</property>
+            <property name="Y">52</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">ОШИБКА ВВОДА</property>
+          </widget>
+          <packing>
+            <property name="X">92</property>
+            <property name="Y">51</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="hospital_register.SuccessWindow" design-size="332 146">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">SuccessWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed2">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Image" id="image2">
+            <property name="MemberName" />
+            <property name="Pixbuf">stock:gtk-apply Menu</property>
+          </widget>
+          <packing>
+            <property name="X">71</property>
+            <property name="Y">65</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label2">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">УСПЕШНАЯ ОПЕРАЦИЯ</property>
+          </widget>
+          <packing>
+            <property name="X">98</property>
+            <property name="Y">64</property>
           </packing>
         </child>
       </widget>

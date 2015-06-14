@@ -36,6 +36,9 @@ namespace hospital_register
 		private global::Gtk.Button buttonInsertEmployee;
 		private global::Gtk.VBox vbox4;
 		private global::Gtk.Label label11;
+		private global::Gtk.HBox hbox2;
+		private global::Gtk.Label label4;
+		private global::Gtk.Entry entry9;
 		private global::Gtk.HBox hbox6;
 		private global::Gtk.Label label7;
 		private global::Gtk.ComboBox combobox1;
@@ -45,20 +48,20 @@ namespace hospital_register
 		private global::Gtk.HBox hbox8;
 		private global::Gtk.Label label12;
 		private global::Gtk.Entry entry5;
-		private global::Gtk.Button button2;
+		private global::Gtk.Button buttonInsertTimetable;
 		private global::Gtk.Label label3;
 		private global::Gtk.Fixed fixed4;
 		private global::Gtk.Label label17;
 		private global::Gtk.Entry entry6;
-		private global::Gtk.Button button13;
+		private global::Gtk.Button buttonDeleteEmployee;
 		private global::Gtk.Label label14;
 		private global::Gtk.Label label18;
 		private global::Gtk.Entry entry7;
-		private global::Gtk.Button button14;
+		private global::Gtk.Button buttonDeletePatient;
 		private global::Gtk.Label label15;
 		private global::Gtk.Label label19;
 		private global::Gtk.Entry entry8;
-		private global::Gtk.Button button15;
+		private global::Gtk.Button buttonDeleteTimetable;
 		private global::Gtk.Label label16;
 		private global::Gtk.Label label13;
 		private global::Gtk.Fixed fixed3;
@@ -72,7 +75,6 @@ namespace hospital_register
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Container child hospital_register.AdminWindow.Gtk.Container+ContainerChild
 			this.vbox1 = new global::Gtk.VBox ();
-			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.fixed2 = new global::Gtk.Fixed ();
@@ -115,7 +117,7 @@ namespace hospital_register
 			this.notebook1.HeightRequest = 0;
 			this.notebook1.CanFocus = true;
 			this.notebook1.Name = "notebook1";
-			this.notebook1.CurrentPage = 0;
+			this.notebook1.CurrentPage = 2;
 			// Container child notebook1.Gtk.Notebook+NotebookChild
 			this.vbox2 = new global::Gtk.VBox ();
 			this.vbox2.Name = "vbox2";
@@ -338,17 +340,47 @@ namespace hospital_register
 			w27.Position = 0;
 			w27.Fill = false;
 			// Container child vbox4.Gtk.Box+BoxChild
+			this.hbox2 = new global::Gtk.HBox ();
+			this.hbox2.Name = "hbox2";
+			this.hbox2.Spacing = 6;
+			// Container child hbox2.Gtk.Box+BoxChild
+			this.label4 = new global::Gtk.Label ();
+			this.label4.Name = "label4";
+			this.label4.LabelProp = global::Mono.Unix.Catalog.GetString ("ID сотрудника");
+			this.hbox2.Add (this.label4);
+			global::Gtk.Box.BoxChild w28 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.label4]));
+			w28.Position = 0;
+			w28.Fill = false;
+			// Container child hbox2.Gtk.Box+BoxChild
+			this.entry9 = new global::Gtk.Entry ();
+			this.entry9.CanFocus = true;
+			this.entry9.Name = "entry9";
+			this.entry9.IsEditable = true;
+			this.entry9.MaxLength = 10;
+			this.entry9.InvisibleChar = '•';
+			this.hbox2.Add (this.entry9);
+			global::Gtk.Box.BoxChild w29 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.entry9]));
+			w29.Position = 1;
+			w29.Expand = false;
+			this.vbox4.Add (this.hbox2);
+			global::Gtk.Box.BoxChild w30 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.hbox2]));
+			w30.Position = 1;
+			w30.Expand = false;
+			w30.Fill = false;
+			// Container child vbox4.Gtk.Box+BoxChild
 			this.hbox6 = new global::Gtk.HBox ();
 			this.hbox6.Name = "hbox6";
 			this.hbox6.Spacing = 6;
 			// Container child hbox6.Gtk.Box+BoxChild
 			this.label7 = new global::Gtk.Label ();
 			this.label7.Name = "label7";
+			this.label7.Xalign = 0F;
 			this.label7.LabelProp = global::Mono.Unix.Catalog.GetString ("День недели:");
 			this.hbox6.Add (this.label7);
-			global::Gtk.Box.BoxChild w28 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.label7]));
-			w28.Position = 0;
-			w28.Fill = false;
+			global::Gtk.Box.BoxChild w31 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.label7]));
+			w31.Position = 0;
+			w31.Expand = false;
+			w31.Fill = false;
 			// Container child hbox6.Gtk.Box+BoxChild
 			this.combobox1 = global::Gtk.ComboBox.NewText ();
 			this.combobox1.AppendText (global::Mono.Unix.Catalog.GetString ("Пн"));
@@ -359,14 +391,14 @@ namespace hospital_register
 			this.combobox1.AppendText (global::Mono.Unix.Catalog.GetString ("Сб"));
 			this.combobox1.Name = "combobox1";
 			this.hbox6.Add (this.combobox1);
-			global::Gtk.Box.BoxChild w29 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.combobox1]));
-			w29.Position = 1;
-			w29.Fill = false;
+			global::Gtk.Box.BoxChild w32 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.combobox1]));
+			w32.Position = 1;
+			w32.Fill = false;
 			this.vbox4.Add (this.hbox6);
-			global::Gtk.Box.BoxChild w30 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.hbox6]));
-			w30.Position = 1;
-			w30.Expand = false;
-			w30.Fill = false;
+			global::Gtk.Box.BoxChild w33 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.hbox6]));
+			w33.Position = 2;
+			w33.Expand = false;
+			w33.Fill = false;
 			// Container child vbox4.Gtk.Box+BoxChild
 			this.hbox7 = new global::Gtk.HBox ();
 			this.hbox7.Name = "hbox7";
@@ -376,8 +408,8 @@ namespace hospital_register
 			this.label8.Name = "label8";
 			this.label8.LabelProp = global::Mono.Unix.Catalog.GetString ("Начало смены:");
 			this.hbox7.Add (this.label8);
-			global::Gtk.Box.BoxChild w31 = ((global::Gtk.Box.BoxChild)(this.hbox7 [this.label8]));
-			w31.Position = 0;
+			global::Gtk.Box.BoxChild w34 = ((global::Gtk.Box.BoxChild)(this.hbox7 [this.label8]));
+			w34.Position = 0;
 			// Container child hbox7.Gtk.Box+BoxChild
 			this.entry4 = new global::Gtk.Entry ();
 			this.entry4.TooltipMarkup = "ЧЧ:ММ";
@@ -387,15 +419,15 @@ namespace hospital_register
 			this.entry4.MaxLength = 5;
 			this.entry4.InvisibleChar = '•';
 			this.hbox7.Add (this.entry4);
-			global::Gtk.Box.BoxChild w32 = ((global::Gtk.Box.BoxChild)(this.hbox7 [this.entry4]));
-			w32.Position = 1;
-			w32.Expand = false;
-			w32.Fill = false;
+			global::Gtk.Box.BoxChild w35 = ((global::Gtk.Box.BoxChild)(this.hbox7 [this.entry4]));
+			w35.Position = 1;
+			w35.Expand = false;
+			w35.Fill = false;
 			this.vbox4.Add (this.hbox7);
-			global::Gtk.Box.BoxChild w33 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.hbox7]));
-			w33.Position = 2;
-			w33.Expand = false;
-			w33.Fill = false;
+			global::Gtk.Box.BoxChild w36 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.hbox7]));
+			w36.Position = 3;
+			w36.Expand = false;
+			w36.Fill = false;
 			// Container child vbox4.Gtk.Box+BoxChild
 			this.hbox8 = new global::Gtk.HBox ();
 			this.hbox8.Name = "hbox8";
@@ -405,8 +437,8 @@ namespace hospital_register
 			this.label12.Name = "label12";
 			this.label12.LabelProp = global::Mono.Unix.Catalog.GetString ("Конец смены:");
 			this.hbox8.Add (this.label12);
-			global::Gtk.Box.BoxChild w34 = ((global::Gtk.Box.BoxChild)(this.hbox8 [this.label12]));
-			w34.Position = 0;
+			global::Gtk.Box.BoxChild w37 = ((global::Gtk.Box.BoxChild)(this.hbox8 [this.label12]));
+			w37.Position = 0;
 			// Container child hbox8.Gtk.Box+BoxChild
 			this.entry5 = new global::Gtk.Entry ();
 			this.entry5.TooltipMarkup = "ЧЧ:ММ";
@@ -416,31 +448,31 @@ namespace hospital_register
 			this.entry5.MaxLength = 5;
 			this.entry5.InvisibleChar = '•';
 			this.hbox8.Add (this.entry5);
-			global::Gtk.Box.BoxChild w35 = ((global::Gtk.Box.BoxChild)(this.hbox8 [this.entry5]));
-			w35.Position = 1;
-			w35.Expand = false;
-			this.vbox4.Add (this.hbox8);
-			global::Gtk.Box.BoxChild w36 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.hbox8]));
-			w36.Position = 3;
-			w36.Expand = false;
-			w36.Fill = false;
-			// Container child vbox4.Gtk.Box+BoxChild
-			this.button2 = new global::Gtk.Button ();
-			this.button2.CanFocus = true;
-			this.button2.Name = "button2";
-			this.button2.UseUnderline = true;
-			this.button2.Label = global::Mono.Unix.Catalog.GetString ("Добавить расписание");
-			this.vbox4.Add (this.button2);
-			global::Gtk.Box.BoxChild w37 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.button2]));
-			w37.Position = 4;
-			w37.Fill = false;
-			this.hbox1.Add (this.vbox4);
-			global::Gtk.Box.BoxChild w38 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.vbox4]));
+			global::Gtk.Box.BoxChild w38 = ((global::Gtk.Box.BoxChild)(this.hbox8 [this.entry5]));
 			w38.Position = 1;
-			w38.Fill = false;
+			w38.Expand = false;
+			this.vbox4.Add (this.hbox8);
+			global::Gtk.Box.BoxChild w39 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.hbox8]));
+			w39.Position = 4;
+			w39.Expand = false;
+			w39.Fill = false;
+			// Container child vbox4.Gtk.Box+BoxChild
+			this.buttonInsertTimetable = new global::Gtk.Button ();
+			this.buttonInsertTimetable.CanFocus = true;
+			this.buttonInsertTimetable.Name = "buttonInsertTimetable";
+			this.buttonInsertTimetable.UseUnderline = true;
+			this.buttonInsertTimetable.Label = global::Mono.Unix.Catalog.GetString ("Добавить расписание");
+			this.vbox4.Add (this.buttonInsertTimetable);
+			global::Gtk.Box.BoxChild w40 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.buttonInsertTimetable]));
+			w40.Position = 5;
+			w40.Fill = false;
+			this.hbox1.Add (this.vbox4);
+			global::Gtk.Box.BoxChild w41 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.vbox4]));
+			w41.Position = 1;
+			w41.Fill = false;
 			this.notebook1.Add (this.hbox1);
-			global::Gtk.Notebook.NotebookChild w39 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.hbox1]));
-			w39.Position = 1;
+			global::Gtk.Notebook.NotebookChild w42 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.hbox1]));
+			w42.Position = 1;
 			// Notebook tab
 			this.label3 = new global::Gtk.Label ();
 			this.label3.Name = "label3";
@@ -456,9 +488,9 @@ namespace hospital_register
 			this.label17.Name = "label17";
 			this.label17.LabelProp = global::Mono.Unix.Catalog.GetString ("Удалить сотрудника");
 			this.fixed4.Add (this.label17);
-			global::Gtk.Fixed.FixedChild w40 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.label17]));
-			w40.X = 256;
-			w40.Y = 31;
+			global::Gtk.Fixed.FixedChild w43 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.label17]));
+			w43.X = 256;
+			w43.Y = 31;
 			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.entry6 = new global::Gtk.Entry ();
 			this.entry6.CanFocus = true;
@@ -467,35 +499,35 @@ namespace hospital_register
 			this.entry6.MaxLength = 10;
 			this.entry6.InvisibleChar = '•';
 			this.fixed4.Add (this.entry6);
-			global::Gtk.Fixed.FixedChild w41 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.entry6]));
-			w41.X = 246;
-			w41.Y = 62;
+			global::Gtk.Fixed.FixedChild w44 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.entry6]));
+			w44.X = 246;
+			w44.Y = 62;
 			// Container child fixed4.Gtk.Fixed+FixedChild
-			this.button13 = new global::Gtk.Button ();
-			this.button13.CanFocus = true;
-			this.button13.Name = "button13";
-			this.button13.UseUnderline = true;
-			this.button13.Label = global::Mono.Unix.Catalog.GetString ("Удалить");
-			this.fixed4.Add (this.button13);
-			global::Gtk.Fixed.FixedChild w42 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.button13]));
-			w42.X = 429;
-			w42.Y = 61;
+			this.buttonDeleteEmployee = new global::Gtk.Button ();
+			this.buttonDeleteEmployee.CanFocus = true;
+			this.buttonDeleteEmployee.Name = "buttonDeleteEmployee";
+			this.buttonDeleteEmployee.UseUnderline = true;
+			this.buttonDeleteEmployee.Label = global::Mono.Unix.Catalog.GetString ("Удалить");
+			this.fixed4.Add (this.buttonDeleteEmployee);
+			global::Gtk.Fixed.FixedChild w45 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.buttonDeleteEmployee]));
+			w45.X = 429;
+			w45.Y = 61;
 			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.label14 = new global::Gtk.Label ();
 			this.label14.Name = "label14";
 			this.label14.LabelProp = global::Mono.Unix.Catalog.GetString ("ID сотрудника:");
 			this.fixed4.Add (this.label14);
-			global::Gtk.Fixed.FixedChild w43 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.label14]));
-			w43.X = 124;
-			w43.Y = 63;
+			global::Gtk.Fixed.FixedChild w46 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.label14]));
+			w46.X = 124;
+			w46.Y = 63;
 			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.label18 = new global::Gtk.Label ();
 			this.label18.Name = "label18";
 			this.label18.LabelProp = global::Mono.Unix.Catalog.GetString ("Удалить пациента");
 			this.fixed4.Add (this.label18);
-			global::Gtk.Fixed.FixedChild w44 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.label18]));
-			w44.X = 262;
-			w44.Y = 103;
+			global::Gtk.Fixed.FixedChild w47 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.label18]));
+			w47.X = 262;
+			w47.Y = 103;
 			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.entry7 = new global::Gtk.Entry ();
 			this.entry7.CanFocus = true;
@@ -504,35 +536,35 @@ namespace hospital_register
 			this.entry7.MaxLength = 10;
 			this.entry7.InvisibleChar = '•';
 			this.fixed4.Add (this.entry7);
-			global::Gtk.Fixed.FixedChild w45 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.entry7]));
-			w45.X = 247;
-			w45.Y = 132;
+			global::Gtk.Fixed.FixedChild w48 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.entry7]));
+			w48.X = 247;
+			w48.Y = 132;
 			// Container child fixed4.Gtk.Fixed+FixedChild
-			this.button14 = new global::Gtk.Button ();
-			this.button14.CanFocus = true;
-			this.button14.Name = "button14";
-			this.button14.UseUnderline = true;
-			this.button14.Label = global::Mono.Unix.Catalog.GetString ("Удалить");
-			this.fixed4.Add (this.button14);
-			global::Gtk.Fixed.FixedChild w46 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.button14]));
-			w46.X = 429;
-			w46.Y = 129;
+			this.buttonDeletePatient = new global::Gtk.Button ();
+			this.buttonDeletePatient.CanFocus = true;
+			this.buttonDeletePatient.Name = "buttonDeletePatient";
+			this.buttonDeletePatient.UseUnderline = true;
+			this.buttonDeletePatient.Label = global::Mono.Unix.Catalog.GetString ("Удалить");
+			this.fixed4.Add (this.buttonDeletePatient);
+			global::Gtk.Fixed.FixedChild w49 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.buttonDeletePatient]));
+			w49.X = 429;
+			w49.Y = 129;
 			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.label15 = new global::Gtk.Label ();
 			this.label15.Name = "label15";
 			this.label15.LabelProp = global::Mono.Unix.Catalog.GetString ("ID пациента:");
 			this.fixed4.Add (this.label15);
-			global::Gtk.Fixed.FixedChild w47 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.label15]));
-			w47.X = 138;
-			w47.Y = 134;
+			global::Gtk.Fixed.FixedChild w50 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.label15]));
+			w50.X = 138;
+			w50.Y = 134;
 			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.label19 = new global::Gtk.Label ();
 			this.label19.Name = "label19";
 			this.label19.LabelProp = global::Mono.Unix.Catalog.GetString ("Удалить расписание сотрудника");
 			this.fixed4.Add (this.label19);
-			global::Gtk.Fixed.FixedChild w48 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.label19]));
-			w48.X = 210;
-			w48.Y = 174;
+			global::Gtk.Fixed.FixedChild w51 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.label19]));
+			w51.X = 210;
+			w51.Y = 174;
 			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.entry8 = new global::Gtk.Entry ();
 			this.entry8.CanFocus = true;
@@ -541,30 +573,30 @@ namespace hospital_register
 			this.entry8.MaxLength = 10;
 			this.entry8.InvisibleChar = '•';
 			this.fixed4.Add (this.entry8);
-			global::Gtk.Fixed.FixedChild w49 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.entry8]));
-			w49.X = 249;
-			w49.Y = 212;
+			global::Gtk.Fixed.FixedChild w52 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.entry8]));
+			w52.X = 249;
+			w52.Y = 212;
 			// Container child fixed4.Gtk.Fixed+FixedChild
-			this.button15 = new global::Gtk.Button ();
-			this.button15.CanFocus = true;
-			this.button15.Name = "button15";
-			this.button15.UseUnderline = true;
-			this.button15.Label = global::Mono.Unix.Catalog.GetString ("Удалить");
-			this.fixed4.Add (this.button15);
-			global::Gtk.Fixed.FixedChild w50 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.button15]));
-			w50.X = 430;
-			w50.Y = 208;
+			this.buttonDeleteTimetable = new global::Gtk.Button ();
+			this.buttonDeleteTimetable.CanFocus = true;
+			this.buttonDeleteTimetable.Name = "buttonDeleteTimetable";
+			this.buttonDeleteTimetable.UseUnderline = true;
+			this.buttonDeleteTimetable.Label = global::Mono.Unix.Catalog.GetString ("Удалить");
+			this.fixed4.Add (this.buttonDeleteTimetable);
+			global::Gtk.Fixed.FixedChild w53 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.buttonDeleteTimetable]));
+			w53.X = 430;
+			w53.Y = 208;
 			// Container child fixed4.Gtk.Fixed+FixedChild
 			this.label16 = new global::Gtk.Label ();
 			this.label16.Name = "label16";
 			this.label16.LabelProp = global::Mono.Unix.Catalog.GetString ("ID расписания:");
 			this.fixed4.Add (this.label16);
-			global::Gtk.Fixed.FixedChild w51 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.label16]));
-			w51.X = 125;
-			w51.Y = 215;
+			global::Gtk.Fixed.FixedChild w54 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.label16]));
+			w54.X = 125;
+			w54.Y = 215;
 			this.notebook1.Add (this.fixed4);
-			global::Gtk.Notebook.NotebookChild w52 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.fixed4]));
-			w52.Position = 2;
+			global::Gtk.Notebook.NotebookChild w55 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.fixed4]));
+			w55.Position = 2;
 			// Notebook tab
 			this.label13 = new global::Gtk.Label ();
 			this.label13.Name = "label13";
@@ -572,18 +604,18 @@ namespace hospital_register
 			this.notebook1.SetTabLabel (this.fixed4, this.label13);
 			this.label13.ShowAll ();
 			this.vbox1.Add (this.notebook1);
-			global::Gtk.Box.BoxChild w53 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.notebook1]));
-			w53.Position = 1;
+			global::Gtk.Box.BoxChild w56 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.notebook1]));
+			w56.Position = 1;
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.fixed3 = new global::Gtk.Fixed ();
 			this.fixed3.HeightRequest = 91;
 			this.fixed3.Name = "fixed3";
 			this.fixed3.HasWindow = false;
 			this.vbox1.Add (this.fixed3);
-			global::Gtk.Box.BoxChild w54 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.fixed3]));
-			w54.Position = 2;
-			w54.Expand = false;
-			w54.Fill = false;
+			global::Gtk.Box.BoxChild w57 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.fixed3]));
+			w57.Position = 2;
+			w57.Expand = false;
+			w57.Fill = false;
 			this.Add (this.vbox1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
@@ -594,6 +626,10 @@ namespace hospital_register
 			this.buttonClear.Clicked += new global::System.EventHandler (this.OnButtonClearClicked);
 			this.buttonSelect.Clicked += new global::System.EventHandler (this.OnButtonSelectClicked);
 			this.buttonInsertEmployee.Clicked += new global::System.EventHandler (this.OnButtonInsertEmployeeClicked);
+			this.buttonInsertTimetable.Clicked += new global::System.EventHandler (this.OnButtonInsertTimetableClicked);
+			this.buttonDeleteEmployee.Clicked += new global::System.EventHandler (this.OnButtonDeleteEmployeeClicked);
+			this.buttonDeletePatient.Clicked += new global::System.EventHandler (this.OnButtonDeletePatientClicked);
+			this.buttonDeleteTimetable.Clicked += new global::System.EventHandler (this.OnButtonDeleteTimetableClicked);
 		}
 	}
 }
