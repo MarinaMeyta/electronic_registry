@@ -1,8 +1,0 @@
-CREATE TABLE IF NOT EXISTS 'main'.'register' (
-	'register_id' CHAR(10) PRIMARY KEY NOT NULL,
-	'employee_id' CHAR(10) NOT NULL,
-	'date' DATE NOT NULL,
-	'reception_begining' TIME NOT NULL,
-	'state' CHAR(8) NOT NULL,
-	FOREIGN KEY (employee_id) REFERENCES employee(employee_id)
-);
