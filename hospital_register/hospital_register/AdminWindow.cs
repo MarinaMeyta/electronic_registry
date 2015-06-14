@@ -23,138 +23,6 @@ namespace hospital_register
 			this.Build ();
 		}
 
-/*		public class EmployeeNode : Gtk.TreeNode
-		{
-			public EmployeeNode (string employee_id, string employee_name, string speciality, string office_number)
-			{
-				Employee = employee_id;
-				Name = employee_name;
-				Speciality = speciality;
-				Office = office_number;
-			}
-
-			[Gtk.TreeNodeValue (Column = 0)]
-			public string Employee;
-
-			[Gtk.TreeNodeValue (Column = 1)]
-			public string Name;
-
-			[Gtk.TreeNodeValue (Column = 2)]
-			public string Speciality;
-
-			[Gtk.TreeNodeValue (Column = 3)]
-			public string Office;
-
-		}
-
-		Gtk.NodeStore store;
-		Gtk.NodeStore Store { 
-			get {
-				if (store == null) {
-					store = new Gtk.NodeStore (typeof (EmployeeNode));
-					store.AddNode (new EmployeeNode ("01", "test name", "test speciality", "123"));
-				}
-				return store;
-			}
-		}
-*/
-
-		ListStore SetupModel( TreeView tv ){
-			var m = new ListStore(typeof(string),typeof(string));
-
-			var nameCol = new TreeViewColumn( "Name", 
-			                                 new CellRendererText(), "text", 0 );
-			tv.AppendColumn( nameCol );
-
-			var colourCol = new TreeViewColumn( "Colour", 
-			                                   new CellRendererText(), "text", 1 );
-			tv.AppendColumn( colourCol );
-
-			tv.Model = m;
-			return m;
-		}
-
-		void PopulateData( ListStore model ) {
-			model.AppendValues( "Fred", "Blue" );
-			model.AppendValues( "Bob", "Green" );
-			model.AppendValues( "Mary", "Yellow" );
-			model.AppendValues( "Alice", "Red" );
-		}
-
-
-		protected void OnButton1Clicked (object sender, EventArgs e)
-		{
-			string select_doctors = "SELECT * FROM 'employee'";
-
-
-
-			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
-				dbConnection.Open ();
-
-				using (SqliteCommand select_doctors_cmd = new SqliteCommand (select_doctors, dbConnection)) {
-
-
-
-//					object reader = select_doctors_cmd.ExecuteScalar ();
-
-/*					if (reader != null) {
-						return true;
-					} else {
-						return false;
-					}
-*/	
-					Gtk.TreeViewColumn employee_id_column = new Gtk.TreeViewColumn ();
-					employee_id_column.Title = "employee id";
-
-					Gtk.TreeViewColumn employee_name_column = new Gtk.TreeViewColumn ();
-					employee_name_column.Title = "employee name";
-
-					Gtk.TreeViewColumn speciality_column = new Gtk.TreeViewColumn ();
-					speciality_column.Title = "speciality";
-
-					Gtk.TreeViewColumn office_number_column = new Gtk.TreeViewColumn ();
-					office_number_column.Title = "office number";
-
-					treeview1.AppendColumn (employee_id_column);
-					treeview1.AppendColumn (employee_name_column);
-					treeview1.AppendColumn (speciality_column);
-					treeview1.AppendColumn (office_number_column);
-
-					Gtk.ListStore employee_store = new Gtk.ListStore (typeof(string), typeof(string), typeof(string), typeof(string));
-					treeview1.Model = employee_store;
-
-					SqliteDataReader reader = select_doctors_cmd.ExecuteReader ();
-
-					while (reader.Read ()) {
-						employee_store.AppendValues (reader.GetString (0), reader.GetString (1), reader.GetString (2), reader.GetString (3));
-					}
-
-
-
-					Gtk.CellRendererText cell_1 = new Gtk.CellRendererText ();
-					employee_id_column.PackStart (cell_1, true);
-
-					Gtk.CellRendererText cell_2 = new Gtk.CellRendererText ();
-					employee_name_column.PackStart (cell_2, true);
-
-					Gtk.CellRendererText cell_3 = new Gtk.CellRendererText ();
-					speciality_column.PackStart (cell_3, true);
-
-					Gtk.CellRendererText cell_4 = new Gtk.CellRendererText ();
-					office_number_column.PackStart (cell_4, true);
-
-					employee_id_column.AddAttribute (cell_1, "text", 0);
-					employee_name_column.AddAttribute (cell_2, "text", 1);
-					speciality_column.AddAttribute (cell_3, "text", 2);
-					office_number_column.AddAttribute (cell_4, "text", 3);
-
-
-				}
-				dbConnection.Close ();
-			}
-		}
-
-
 		// формирует новый employee_id
 		protected string GetEmployeeId ()
 		{
@@ -188,12 +56,224 @@ namespace hospital_register
 				}
 				dbConnection.Close ();
 			}
-
 			return new_id;
 		}
 
 
-		protected void OnButton3Clicked (object sender, EventArgs e)
+		// найти сотрудников
+		protected void SelectEmployees ()
+		{
+			string select_doctors = "SELECT * FROM 'employee'";
+
+			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+				dbConnection.Open ();
+
+				using (SqliteCommand select_doctors_cmd = new SqliteCommand (select_doctors, dbConnection)) {
+
+					Gtk.TreeViewColumn employee_id_column = new Gtk.TreeViewColumn ();
+					employee_id_column.Title = "employee id";
+
+					Gtk.TreeViewColumn employee_name_column = new Gtk.TreeViewColumn ();
+					employee_name_column.Title = "employee name";
+
+					Gtk.TreeViewColumn speciality_column = new Gtk.TreeViewColumn ();
+					speciality_column.Title = "speciality";
+
+					Gtk.TreeViewColumn office_number_column = new Gtk.TreeViewColumn ();
+					office_number_column.Title = "office number";
+
+					treeview1.AppendColumn (employee_id_column);
+					treeview1.AppendColumn (employee_name_column);
+					treeview1.AppendColumn (speciality_column);
+					treeview1.AppendColumn (office_number_column);
+
+					Gtk.ListStore employee_store = new Gtk.ListStore (typeof(string), typeof(string), typeof(string), typeof(string));
+					treeview1.Model = employee_store;
+
+					SqliteDataReader reader = select_doctors_cmd.ExecuteReader ();
+
+					while (reader.Read ()) {
+						employee_store.AppendValues (reader.GetString (0), reader.GetString (1), reader.GetString (2), reader.GetString (3));
+					}
+
+					Gtk.CellRendererText cell_1 = new Gtk.CellRendererText ();
+					employee_id_column.PackStart (cell_1, true);
+
+					Gtk.CellRendererText cell_2 = new Gtk.CellRendererText ();
+					employee_name_column.PackStart (cell_2, true);
+
+					Gtk.CellRendererText cell_3 = new Gtk.CellRendererText ();
+					speciality_column.PackStart (cell_3, true);
+
+					Gtk.CellRendererText cell_4 = new Gtk.CellRendererText ();
+					office_number_column.PackStart (cell_4, true);
+
+					employee_id_column.AddAttribute (cell_1, "text", 0);
+					employee_name_column.AddAttribute (cell_2, "text", 1);
+					speciality_column.AddAttribute (cell_3, "text", 2);
+					office_number_column.AddAttribute (cell_4, "text", 3);
+				}
+				dbConnection.Close ();
+			}
+		}
+
+		// найти расписание врачей
+		protected void SelectTimetables ()
+		{
+			string select_timetables = "select timetable_id, week_day, shift_begining, shift_ending, employee_name " +
+				"from timetable, employee " +
+					"where timetable.employee_id = employee.employee_id;";
+
+			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+				dbConnection.Open ();
+
+				using (SqliteCommand select_doctors_cmd = new SqliteCommand (select_timetables, dbConnection)) {
+
+					Gtk.TreeViewColumn timetable_id_column = new Gtk.TreeViewColumn ();
+					timetable_id_column.Title = "timetable id";
+
+					Gtk.TreeViewColumn week_day_column = new Gtk.TreeViewColumn ();
+					week_day_column.Title = "week day";
+
+					Gtk.TreeViewColumn shift_begining_column = new Gtk.TreeViewColumn ();
+					shift_begining_column.Title = "shift begining";
+
+					Gtk.TreeViewColumn shift_ending_column = new Gtk.TreeViewColumn ();
+					shift_ending_column.Title = "shift ending";
+
+					Gtk.TreeViewColumn employee_name_column = new Gtk.TreeViewColumn ();
+					employee_name_column.Title = "employee name";
+
+					treeview1.AppendColumn (timetable_id_column);
+					treeview1.AppendColumn (week_day_column);
+					treeview1.AppendColumn (shift_begining_column);
+					treeview1.AppendColumn (shift_ending_column);
+					treeview1.AppendColumn (employee_name_column);
+
+					Gtk.ListStore timetable_store = new Gtk.ListStore (typeof(string), typeof(string), typeof(string), typeof(string), typeof(string));
+					treeview1.Model = timetable_store;
+
+					SqliteDataReader reader = select_doctors_cmd.ExecuteReader ();
+
+					while (reader.Read ()) {
+						timetable_store.AppendValues (reader.GetString (0), reader.GetString (1), reader.GetString (2), reader.GetString (3), reader.GetString (4));
+					}
+
+					Gtk.CellRendererText cell_1 = new Gtk.CellRendererText ();
+					timetable_id_column.PackStart (cell_1, true);
+
+					Gtk.CellRendererText cell_2 = new Gtk.CellRendererText ();
+					week_day_column.PackStart (cell_2, true);
+
+					Gtk.CellRendererText cell_3 = new Gtk.CellRendererText ();
+					shift_begining_column.PackStart (cell_3, true);
+
+					Gtk.CellRendererText cell_4 = new Gtk.CellRendererText ();
+					shift_ending_column.PackStart (cell_4, true);
+
+					Gtk.CellRendererText cell_5 = new Gtk.CellRendererText ();
+					employee_name_column.PackStart (cell_5, true);
+
+					timetable_id_column.AddAttribute (cell_1, "text", 0);
+					week_day_column.AddAttribute (cell_2, "text", 1);
+					shift_begining_column.AddAttribute (cell_3, "text", 2);
+					shift_ending_column.AddAttribute (cell_4, "text", 3);
+					employee_name_column.AddAttribute (cell_5, "text", 4);
+				}
+				dbConnection.Close ();
+			}
+		}
+
+		// найти пациентов
+		protected void SelectPatients ()
+		{
+			string select_patients = "SELECT patient_id, name, passport_series, policy_series " +
+				"FROM patient;";
+
+			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+				dbConnection.Open ();
+
+				using (SqliteCommand select_patients_cmd = new SqliteCommand (select_patients, dbConnection)) {
+
+					Gtk.TreeViewColumn patient_id_column = new Gtk.TreeViewColumn ();
+					patient_id_column.Title = "patient id";
+
+					Gtk.TreeViewColumn name_column = new Gtk.TreeViewColumn ();
+					name_column.Title = "name";
+
+					Gtk.TreeViewColumn passport_series_column = new Gtk.TreeViewColumn ();
+					passport_series_column.Title = "passport series";
+
+					Gtk.TreeViewColumn policy_series_column = new Gtk.TreeViewColumn ();
+					policy_series_column.Title = "policy series";
+
+					treeview1.AppendColumn (patient_id_column);
+					treeview1.AppendColumn (name_column);
+					treeview1.AppendColumn (passport_series_column);
+					treeview1.AppendColumn (policy_series_column);
+
+					Gtk.ListStore patient_store = new Gtk.ListStore (typeof(string), typeof(string), typeof(string), typeof(string));
+					treeview1.Model = patient_store;
+
+					SqliteDataReader reader = select_patients_cmd.ExecuteReader ();
+
+					while (reader.Read ()) {
+						patient_store.AppendValues (reader.GetString (0), reader.GetString (1), reader.GetString (2), reader.GetString (3));
+					}
+
+					Gtk.CellRendererText cell_1 = new Gtk.CellRendererText ();
+					patient_id_column.PackStart (cell_1, true);
+
+					Gtk.CellRendererText cell_2 = new Gtk.CellRendererText ();
+					name_column.PackStart (cell_2, true);
+
+					Gtk.CellRendererText cell_3 = new Gtk.CellRendererText ();
+					passport_series_column.PackStart (cell_3, true);
+
+					Gtk.CellRendererText cell_4 = new Gtk.CellRendererText ();
+					policy_series_column.PackStart (cell_4, true);
+
+					patient_id_column.AddAttribute (cell_1, "text", 0);
+					name_column.AddAttribute (cell_2, "text", 1);
+					passport_series_column.AddAttribute (cell_3, "text", 2);
+					policy_series_column.AddAttribute (cell_4, "text", 3);
+				}
+				dbConnection.Close ();
+			}
+		}
+
+
+		protected void OnButtonSelectClicked (object sender, EventArgs e)
+		{
+			try 
+			{
+				if (radiobutton1.Active == true) {
+					SelectEmployees ();
+				}
+
+				if (radiobutton2.Active == true) {
+					SelectPatients ();
+				}
+
+				if (radiobutton3.Active == true) {
+					SelectTimetables ();
+				}
+			}catch (Exception e3) {
+				hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
+				err_win.Show ();
+			}
+		}
+
+
+		protected void OnButtonClearClicked (object sender, EventArgs e)
+		{
+			TreeViewColumn[] collumns = treeview1.Columns;
+			for (int i = 0; i < collumns.Length; i++) {
+				treeview1.RemoveColumn (collumns [i]);
+			}
+		}
+
+		protected void OnButtonInsertEmployeeClicked (object sender, EventArgs e)
 		{
 			string employee_name = entry1.Text;
 			string speciality = entry2.Text;
@@ -202,7 +282,7 @@ namespace hospital_register
 
 			string insert_employee = "INSERT INTO 'employee' (" +
 				"employee_id, employee_name, speciality, office_number) " +
-				"VALUES ('" + employee_id + "', '" + employee_name + "', '" + speciality + 
+					"VALUES ('" + employee_id + "', '" + employee_name + "', '" + speciality + 
 					"', '" + office_number + "');";
 
 			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
@@ -218,14 +298,9 @@ namespace hospital_register
 					hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
 					err_win.Show ();
 				}
-			
+
 				dbConnection.Close ();
 			}
-		}
-
-		protected void OnButton2Clicked (object sender, EventArgs e)
-		{
-			throw new NotImplementedException ();
 		}
 	}
 }
