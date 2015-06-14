@@ -94,6 +94,11 @@ namespace hospital_register
 
 						object reader = max_id_cmd.ExecuteScalar ();
 						new_id = reader.ToString ();
+
+						if (new_id == "") {
+							new_id = "0";
+						}
+
 						id = Convert.ToInt64 (new_id) + 1;
 						new_id = id.ToString ();
 

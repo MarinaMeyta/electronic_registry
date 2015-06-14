@@ -833,22 +833,267 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="hospital_register.AdminWindow" design-size="391 203">
+  <widget class="Gtk.Window" id="hospital_register.AdminWindow" design-size="725 763">
     <property name="MemberName" />
     <property name="Title" translatable="yes">AdminWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
     <child>
-      <widget class="Gtk.Fixed" id="fixed2">
+      <widget class="Gtk.VBox" id="vbox1">
         <property name="MemberName" />
-        <property name="HasWindow">False</property>
+        <property name="Spacing">6</property>
         <child>
-          <widget class="Gtk.Label" id="label2">
+          <widget class="Gtk.Fixed" id="fixed2">
             <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">Привет, админ!</property>
+            <property name="HeightRequest">142</property>
+            <property name="HasWindow">False</property>
+            <child>
+              <widget class="Gtk.Button" id="button1">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">select doctors</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnButton1Clicked" />
+              </widget>
+              <packing>
+                <property name="X">4</property>
+                <property name="Y">92</property>
+              </packing>
+            </child>
           </widget>
           <packing>
-            <property name="X">131</property>
-            <property name="Y">90</property>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Notebook" id="notebook1">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="CurrentPage">0</property>
+            <child>
+              <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+                <property name="MemberName" />
+                <property name="ShadowType">In</property>
+                <child>
+                  <widget class="Gtk.TreeView" id="treeview1">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="ShowScrollbars">True</property>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="label2">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">doctors</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Fixed" id="fixed1">
+                <property name="MemberName" />
+                <property name="HasWindow">False</property>
+                <child>
+                  <widget class="Gtk.Label" id="label1">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">ФИО</property>
+                  </widget>
+                  <packing>
+                    <property name="X">63</property>
+                    <property name="Y">55</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="label5">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">специальность</property>
+                  </widget>
+                  <packing>
+                    <property name="X">26</property>
+                    <property name="Y">93</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="label6">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">кабинет</property>
+                  </widget>
+                  <packing>
+                    <property name="X">51</property>
+                    <property name="Y">133</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="button3">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">Добавить врача</property>
+                    <property name="UseUnderline">True</property>
+                  </widget>
+                  <packing>
+                    <property name="X">102</property>
+                    <property name="Y">182</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Entry" id="entry1">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">True</property>
+                    <property name="InvisibleChar">•</property>
+                  </widget>
+                  <packing>
+                    <property name="X">181</property>
+                    <property name="Y">44</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Entry" id="entry3">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">True</property>
+                    <property name="InvisibleChar">•</property>
+                  </widget>
+                  <packing>
+                    <property name="X">181</property>
+                    <property name="Y">126</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Entry" id="entry2">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">True</property>
+                    <property name="InvisibleChar">•</property>
+                  </widget>
+                  <packing>
+                    <property name="X">182</property>
+                    <property name="Y">84</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="button2">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">Добавить расписание</property>
+                    <property name="UseUnderline">True</property>
+                  </widget>
+                  <packing>
+                    <property name="X">454</property>
+                    <property name="Y">292</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Entry" id="entry4">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">True</property>
+                    <property name="InvisibleChar">•</property>
+                  </widget>
+                  <packing>
+                    <property name="X">547</property>
+                    <property name="Y">179</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.ComboBox" id="combobox1">
+                    <property name="MemberName" />
+                    <property name="IsTextCombo">True</property>
+                    <property name="Items" translatable="yes">Пн
+Вт
+Ср
+Чт
+Пт
+Сб</property>
+                  </widget>
+                  <packing>
+                    <property name="X">584</property>
+                    <property name="Y">125</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="label7">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">Начало смены</property>
+                  </widget>
+                  <packing>
+                    <property name="X">422</property>
+                    <property name="Y">189</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="label8">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">конец смены</property>
+                  </widget>
+                  <packing>
+                    <property name="X">422</property>
+                    <property name="Y">232</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Entry" id="entry5">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">True</property>
+                    <property name="InvisibleChar">•</property>
+                  </widget>
+                  <packing>
+                    <property name="X">546</property>
+                    <property name="Y">223</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="label3">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">page2</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="label4">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">page3</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Fixed" id="fixed3">
+            <property name="MemberName" />
+            <property name="HeightRequest">218</property>
+            <property name="HasWindow">False</property>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
           </packing>
         </child>
       </widget>

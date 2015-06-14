@@ -1,19 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="hospital_register/TalonWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="hospital_register/AdminWindow.cs">
     <Files>
-      <File FileName="hospital_register/AdminWindow.cs" Line="1" Column="1" />
-      <File FileName="hospital_register/MainWindow.cs" Line="25" Column="31" />
-      <File FileName="hospital_register/EnrollWindow.cs" Line="77" Column="6" />
-      <File FileName="hospital_register/TalonWindow.cs" Line="1" Column="1" />
+      <File FileName="hospital_register/EnrollWindow.cs" Line="176" Column="4" />
       <File FileName="hospital_register/TimetableWindow.cs" Line="1" Column="1" />
-      <File FileName="hospital_register/PatientRegisterWindow.cs" Line="203" Column="31" />
+      <File FileName="hospital_register/PatientRegisterWindow.cs" Line="82" Column="1" />
+      <File FileName="hospital_register/AdminWindow.cs" Line="173" Column="7" />
+      <File FileName="hospital_register/TalonWindow.cs" Line="11" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="hospital_register" expanded="True">
-            <Node name="TalonWindow.cs" selected="True" />
+            <Node name="AdminWindow.cs" selected="True" />
           </Node>
         </State>
       </Pad>

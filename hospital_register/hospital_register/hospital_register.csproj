@@ -63,6 +63,9 @@
       <Package>monodevelop-database</Package>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="PdfSharp">
+      <HintPath>..\..\dll\PdfSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
