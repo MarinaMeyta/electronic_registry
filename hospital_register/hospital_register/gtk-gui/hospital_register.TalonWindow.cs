@@ -17,7 +17,6 @@ namespace hospital_register
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Container child hospital_register.TalonWindow.Gtk.Container+ContainerChild
 			this.fixed3 = new global::Gtk.Fixed ();
-			this.fixed3.Name = "fixed3";
 			this.fixed3.HasWindow = false;
 			// Container child fixed3.Gtk.Fixed+FixedChild
 			this.image1 = new global::Gtk.Image ();

@@ -33,7 +33,7 @@ public partial class MainWindow: Gtk.Window
 			hospital_register.PasswordErrorWindow err_win = new PasswordErrorWindow ();
 			err_win.Show ();
 		} else {
-			hospital_register.EnrollWindow enroll_win = new EnrollWindow ();
+			hospital_register.EnrollWindow2 enroll_win = new EnrollWindow2 ();
 			enroll_win.Show ();
 		}
 	}

@@ -102,6 +102,8 @@
     <Compile Include="gtk-gui\hospital_register.ErrorWindow.cs" />
     <Compile Include="SuccessWindow.cs" />
     <Compile Include="gtk-gui\hospital_register.SuccessWindow.cs" />
+    <Compile Include="EnrollWindow2.cs" />
+    <Compile Include="gtk-gui\hospital_register.EnrollWindow2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

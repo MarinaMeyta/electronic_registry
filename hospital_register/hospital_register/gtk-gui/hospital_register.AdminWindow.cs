@@ -75,6 +75,7 @@ namespace hospital_register
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Container child hospital_register.AdminWindow.Gtk.Container+ContainerChild
 			this.vbox1 = new global::Gtk.VBox ();
+			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.fixed2 = new global::Gtk.Fixed ();
@@ -117,7 +118,7 @@ namespace hospital_register
 			this.notebook1.HeightRequest = 0;
 			this.notebook1.CanFocus = true;
 			this.notebook1.Name = "notebook1";
-			this.notebook1.CurrentPage = 2;
+			this.notebook1.CurrentPage = 1;
 			// Container child notebook1.Gtk.Notebook+NotebookChild
 			this.vbox2 = new global::Gtk.VBox ();
 			this.vbox2.Name = "vbox2";
@@ -609,7 +610,6 @@ namespace hospital_register
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.fixed3 = new global::Gtk.Fixed ();
 			this.fixed3.HeightRequest = 91;
-			this.fixed3.Name = "fixed3";
 			this.fixed3.HasWindow = false;
 			this.vbox1.Add (this.fixed3);
 			global::Gtk.Box.BoxChild w57 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.fixed3]));

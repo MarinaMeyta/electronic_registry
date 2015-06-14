@@ -478,6 +478,8 @@ namespace hospital_register
 				suc_win.Show ();
 			}
 		}
+
+
 	}
 }
 
