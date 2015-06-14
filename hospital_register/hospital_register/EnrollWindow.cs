@@ -87,15 +87,9 @@ namespace hospital_register
 		{
 			string speciality = combobox2.ActiveText;
 
-
-			 // очистить атрибуты (текст) комбобокса
-
-//			while (IEnumerator.MoveNext ()) {
-//				//combobox3.AllChildren.GetEnumerator ();
-//				combobox3.RemoveText (0);
-				
-
-
+			 // очистить атрибуты (текст) комбобокса		
+			ListStore ClearList = new ListStore (typeof (string));
+			combobox3.Model = ClearList;
 
 				using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
 					dbConnection.Open ();
@@ -104,15 +98,11 @@ namespace hospital_register
 
 					using (SqliteCommand search_specialist_cmd = new SqliteCommand (search_specialist, dbConnection)) {
 
-
-
 						SqliteDataReader reader = search_specialist_cmd.ExecuteReader ();
 
 						while (reader.Read ()) {
 							combobox3.AppendText (reader.GetString (0));
 						}
-
-
 					}
 					dbConnection.Close ();
 				}
