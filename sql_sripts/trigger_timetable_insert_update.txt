@@ -1,0 +1,8 @@
+CREATE TRIGGER IF NOT EXISTS "main"."timetable_insert_trigger"
+   AFTER 
+   INSERT OR UPDATE
+   ON timetable
+   FOR EACH ROW
+BEGIN
+    
+END;

@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS 'main'.'timetable' (
+	'timetable_id' CHAR(10) PRIMARY KEY NOT NULL,
+	'employee_id' CHAR(10) NOT NULL,
+	'week_day' CHAR(2) NOT NULL,
+	'shift_begining' TIME NOT NULL,
+	'shift_ending' TIME NOT NULL,
+	FOREIGN KEY (employee_id) REFERENCES employee(employee_id)
+);

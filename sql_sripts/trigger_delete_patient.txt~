@@ -1,0 +1,7 @@
+CREATE TRIGGER IF NOT EXISTS "main"."patient_delete_trigger"
+   AFTER	DELETE
+   ON patient
+   FOR EACH ROW
+BEGIN
+    DELETE FROM policy, passport WHERE patient_id = OLD.patient_id;
+END
