@@ -1,0 +1,3 @@
+select week_day, shift_begining, shift_ending, employee_name 
+from timetable, employee
+where timetable.employee_id = employee.employee_id;

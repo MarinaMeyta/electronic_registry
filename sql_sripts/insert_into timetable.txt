@@ -1,0 +1,15 @@
+INSERT INTO timetable (
+	timetable_id,
+	employee_id,
+	week_day,
+	shift_begining,
+	shift_ending
+)
+
+VALUES (
+	'4000000001',
+	'2000000001',
+	'Пн',
+	'08:00',
+	'12:00'
+);

@@ -1,0 +1,8 @@
+CREATE TRIGGER IF NOT EXISTS "main"."employee_delete_trigger"
+   AFTER	DELETE
+   ON employee
+   FOR EACH ROW
+BEGIN
+    DELETE FROM register WHERE employee_id = OLD. employee_id;
+    DELETE FROM timetable WHERE employee_id = OLD. employee_id;
+END;
