@@ -172,13 +172,13 @@ namespace hospital_register
 
 						tr.Commit ();
 					}
-					dbConnection.Close ();
 					return result;
 				} catch (Exception e2) {
 					hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
 					err_win.Show ();
 					return result;
 				}
+				dbConnection.Close ();
 			}
 		}
 
@@ -201,20 +201,26 @@ namespace hospital_register
 				using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
 					dbConnection.Open ();
 
-					string search_patient = "SELECT patient_id FROM patient WHERE passport_series = '" + passport + "';";
+					try 
+					{
+						string search_patient = "SELECT patient_id FROM patient WHERE passport_series = '" + passport + "';";
 
-					using (SqliteCommand search_patient_cmd = new SqliteCommand (search_patient, dbConnection)) {
+						using (SqliteCommand search_patient_cmd = new SqliteCommand (search_patient, dbConnection)) {
 
-						object reader = search_patient_cmd.ExecuteScalar ();
+							object reader = search_patient_cmd.ExecuteScalar ();
 
-						if (reader != null) {
-							List<string> result = GetTalon (doctor_name, week_day, passport);
-							PrintTalon (doctor_name, speciality, result [2], week_day, result [3], result [4], result [0], result [1]);
-						} else {
-							hospital_register.PatientRegisterWindow reg_win = new PatientRegisterWindow ();
-							reg_win.Show ();
+							if (reader != null) {
+								List<string> result = GetTalon (doctor_name, week_day, passport);
+								PrintTalon (doctor_name, speciality, result [2], week_day, result [3], result [4], result [0], result [1]);
+							} else {
+								hospital_register.PatientRegisterWindow reg_win = new PatientRegisterWindow ();
+								reg_win.Show ();
+							}
+
 						}
-
+					} catch (Exception e2) {
+						hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
+						err_win.Show ();
 					}
 					dbConnection.Close ();
 				}
@@ -292,6 +298,7 @@ namespace hospital_register
 		                           string week_day, string shift_begining, string shift_ending,
 		                           string patient_name, string policy)
 		{
+
 			Document document = new Document();     
 			try      
 			{              
@@ -311,7 +318,7 @@ namespace hospital_register
 					document.Add(new Paragraph(phrase, font));
 					phrase = "Кабинет:    " + office_number;
 					document.Add(new Paragraph(phrase, font));
-					phrase = "Рабочие часы:    " + week_day + "\t" + shift_begining + " - " + shift_ending;
+					phrase = "Рабочие часы:    " + week_day + "    " + shift_begining + " - " + shift_ending;
 					document.Add(new Paragraph(phrase, font));
 					phrase = "Ф.И.О. пациента:    " + patient_name;
 					document.Add(new Paragraph(phrase, font));
