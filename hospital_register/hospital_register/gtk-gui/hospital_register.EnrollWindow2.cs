@@ -43,7 +43,6 @@ namespace hospital_register
 		private global::Gtk.Label label17;
 		private global::Gtk.ComboBox combobox3;
 		private global::Gtk.Label label22;
-		private global::Gtk.Button button2;
 
 		protected virtual void Build ()
 		{
@@ -399,26 +398,16 @@ namespace hospital_register
 			global::Gtk.Fixed.FixedChild w34 = ((global::Gtk.Fixed.FixedChild)(this.fixed12 [this.label22]));
 			w34.X = 32;
 			w34.Y = 15;
-			// Container child fixed12.Gtk.Fixed+FixedChild
-			this.button2 = new global::Gtk.Button ();
-			this.button2.CanFocus = true;
-			this.button2.Name = "button2";
-			this.button2.UseUnderline = true;
-			this.button2.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
-			this.fixed12.Add (this.button2);
-			global::Gtk.Fixed.FixedChild w35 = ((global::Gtk.Fixed.FixedChild)(this.fixed12 [this.button2]));
-			w35.X = 397;
-			w35.Y = 125;
 			this.vbox4.Add (this.fixed12);
-			global::Gtk.Box.BoxChild w36 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.fixed12]));
-			w36.Position = 0;
+			global::Gtk.Box.BoxChild w35 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.fixed12]));
+			w35.Position = 0;
+			w35.Expand = false;
+			w35.Fill = false;
+			this.vbox1.Add (this.vbox4);
+			global::Gtk.Box.BoxChild w36 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.vbox4]));
+			w36.Position = 2;
 			w36.Expand = false;
 			w36.Fill = false;
-			this.vbox1.Add (this.vbox4);
-			global::Gtk.Box.BoxChild w37 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.vbox4]));
-			w37.Position = 2;
-			w37.Expand = false;
-			w37.Fill = false;
 			this.Add (this.vbox1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
@@ -430,7 +419,6 @@ namespace hospital_register
 			this.buttonClear.Clicked += new global::System.EventHandler (this.OnButtonClearClicked);
 			this.buttonSearch.Clicked += new global::System.EventHandler (this.OnButtonSearchClicked);
 			this.buttonEnroll.Clicked += new global::System.EventHandler (this.OnButtonEnrollClicked);
-			this.button2.Clicked += new global::System.EventHandler (this.OnButton2Clicked);
 		}
 	}
 }

@@ -290,6 +290,64 @@ namespace hospital_register
 		}
 
 
+		protected void SelectTalons ()
+		{
+			string select_talons = "SELECT talon_id, patient_id, timetable_id, date " +
+				"FROM talon;";
+
+			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+				dbConnection.Open ();
+
+				using (SqliteCommand select_talons_cmd = new SqliteCommand (select_talons, dbConnection)) {
+
+					Gtk.TreeViewColumn talon_id_column = new Gtk.TreeViewColumn ();
+					talon_id_column.Title = "talon id";
+
+					Gtk.TreeViewColumn patient_id_column = new Gtk.TreeViewColumn ();
+					patient_id_column.Title = "patient id";
+
+					Gtk.TreeViewColumn timetable_id_column = new Gtk.TreeViewColumn ();
+					timetable_id_column.Title = "timetable id";
+
+					Gtk.TreeViewColumn date_column = new Gtk.TreeViewColumn ();
+					date_column.Title = "date";
+
+					treeview1.AppendColumn (talon_id_column);
+					treeview1.AppendColumn (patient_id_column);
+					treeview1.AppendColumn (timetable_id_column);
+					treeview1.AppendColumn (date_column);
+
+					Gtk.ListStore talons_store = new Gtk.ListStore (typeof(string), typeof(string), typeof(string), typeof(string));
+					treeview1.Model = talons_store;
+
+					SqliteDataReader reader = select_talons_cmd.ExecuteReader ();
+
+					while (reader.Read ()) {
+						talons_store.AppendValues (reader.GetString (0), reader.GetString (1), reader.GetString (2), reader.GetString (3));
+					}
+
+					Gtk.CellRendererText cell_1 = new Gtk.CellRendererText ();
+					talon_id_column.PackStart (cell_1, true);
+
+					Gtk.CellRendererText cell_2 = new Gtk.CellRendererText ();
+					patient_id_column.PackStart (cell_2, true);
+
+					Gtk.CellRendererText cell_3 = new Gtk.CellRendererText ();
+					timetable_id_column.PackStart (cell_3, true);
+
+					Gtk.CellRendererText cell_4 = new Gtk.CellRendererText ();
+					date_column.PackStart (cell_4, true);
+
+					talon_id_column.AddAttribute (cell_1, "text", 0);
+					patient_id_column.AddAttribute (cell_2, "text", 1);
+					timetable_id_column.AddAttribute (cell_3, "text", 2);
+					date_column.AddAttribute (cell_4, "text", 3);
+				}
+				dbConnection.Close ();
+			}
+		}
+
+
 		protected void OnButtonSelectClicked (object sender, EventArgs e)
 		{
 			try 
@@ -304,6 +362,10 @@ namespace hospital_register
 
 				if (radiobutton3.Active == true) {
 					SelectTimetables ();
+				}
+
+				if (radiobutton4.Active == true) {
+					SelectTalons ();
 				}
 			}catch (Exception e3) {
 				hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
@@ -409,23 +471,29 @@ namespace hospital_register
 			string employee_id = entry6.Text;
 			string delete_employee = "DELETE FROM employee WHERE employee_id = '" + employee_id + "';";
 
-			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
-				dbConnection.Open ();
+			if (employee_id != "" &&
+			    employee_id.Length == 10) {
+				using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+					dbConnection.Open ();
 
-				try {
+					try {
 
-					using (SqliteCommand delete_employee_cmd = new SqliteCommand (delete_employee, dbConnection)) {
-						delete_employee_cmd.ExecuteNonQuery ();
+						using (SqliteCommand delete_employee_cmd = new SqliteCommand (delete_employee, dbConnection)) {
+							delete_employee_cmd.ExecuteNonQuery ();
+						}
+
+					} catch (Exception e2) {
+						hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
+						err_win.Show ();
 					}
 
-				} catch (Exception e2) {
-					hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
-					err_win.Show ();
+					dbConnection.Close ();
+					hospital_register.SuccessWindow suc_win = new SuccessWindow ();
+					suc_win.Show ();
 				}
-
-				dbConnection.Close ();
-				hospital_register.SuccessWindow suc_win = new SuccessWindow ();
-				suc_win.Show ();
+			} else {
+				hospital_register.ErrorWindow err = new ErrorWindow ();
+				err.Show ();
 			}
 		}
 
@@ -434,23 +502,29 @@ namespace hospital_register
 			string patient_id = entry7.Text;
 			string delete_patient = "DELETE FROM patient WHERE patient_id = '" + patient_id + "';";
 
-			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
-				dbConnection.Open ();
+			if (patient_id != "" &&
+			    patient_id.Length == 10) {
+				using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+					dbConnection.Open ();
 
-				try {
+					try {
 
-					using (SqliteCommand delete_patient_cmd = new SqliteCommand (delete_patient, dbConnection)) {
-						delete_patient_cmd.ExecuteNonQuery ();
+						using (SqliteCommand delete_patient_cmd = new SqliteCommand (delete_patient, dbConnection)) {
+							delete_patient_cmd.ExecuteNonQuery ();
+						}
+
+					} catch (Exception e2) {
+						hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
+						err_win.Show ();
 					}
 
-				} catch (Exception e2) {
-					hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
-					err_win.Show ();
+					dbConnection.Close ();
+					hospital_register.SuccessWindow suc_win = new SuccessWindow ();
+					suc_win.Show ();
 				}
-
-				dbConnection.Close ();
-				hospital_register.SuccessWindow suc_win = new SuccessWindow ();
-				suc_win.Show ();
+			} else {
+				hospital_register.ErrorWindow err = new ErrorWindow ();
+				err.Show ();
 			}
 		}
 
@@ -459,27 +533,64 @@ namespace hospital_register
 			string timetable_id = entry8.Text;
 			string delete_timetable = "DELETE FROM timetable WHERE timetable_id = '" + timetable_id + "';";
 
-			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
-				dbConnection.Open ();
+			if (timetable_id != "" &&
+			    timetable_id.Length == 10) {
+				using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+					dbConnection.Open ();
 
-				try {
+					try {
 
-					using (SqliteCommand delete_timetable_cmd = new SqliteCommand (delete_timetable, dbConnection)) {
-						delete_timetable_cmd.ExecuteNonQuery ();
+						using (SqliteCommand delete_timetable_cmd = new SqliteCommand (delete_timetable, dbConnection)) {
+							delete_timetable_cmd.ExecuteNonQuery ();
+						}
+
+					} catch (Exception e2) {
+						hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
+						err_win.Show ();
 					}
 
-				} catch (Exception e2) {
-					hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
-					err_win.Show ();
+					dbConnection.Close ();
+					hospital_register.SuccessWindow suc_win = new SuccessWindow ();
+					suc_win.Show ();
 				}
-
-				dbConnection.Close ();
-				hospital_register.SuccessWindow suc_win = new SuccessWindow ();
-				suc_win.Show ();
+			} else {
+				hospital_register.ErrorWindow err = new ErrorWindow ();
+				err.Show ();
 			}
 		}
 
 
+
+		protected void OnButtonDeleteTalonClicked (object sender, EventArgs e)
+		{
+			string talon_id = entry10.Text;
+			string delete_talon = "DELETE FROM talon WHERE talon_id = '" + talon_id + "';";
+
+			if (talon_id != "" &&
+				talon_id.Length == 10) {
+				using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+					dbConnection.Open ();
+
+					try {
+
+						using (SqliteCommand delete_talon_cmd = new SqliteCommand (delete_talon, dbConnection)) {
+							delete_talon_cmd.ExecuteNonQuery ();
+						}
+
+					} catch (Exception e2) {
+						hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
+						err_win.Show ();
+					}
+
+					dbConnection.Close ();
+					hospital_register.SuccessWindow suc_win = new SuccessWindow ();
+					suc_win.Show ();
+				}
+			} else {
+				hospital_register.ErrorWindow err = new ErrorWindow ();
+				err.Show ();
+			}
+		}
 	}
 }
 

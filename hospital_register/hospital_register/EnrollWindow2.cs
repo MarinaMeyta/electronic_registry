@@ -13,8 +13,6 @@ using hospital_register;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
-//using itextsharp.pdfa;
-
 
 namespace hospital_register
 {
@@ -100,8 +98,9 @@ namespace hospital_register
 			return new_id;
 		}
 
+
 		// THIS IS ТАЛООООООООН!!!!!!!!!
-		protected void GetTalon (string doctor_name, string speciality, string week_day, string passport)
+		protected List<string> GetTalon (string doctor_name, string week_day, string passport)
 		{
 			List<string> result = new List<string> ();
 
@@ -117,37 +116,68 @@ namespace hospital_register
 							cmd.Transaction = tr;
 							string talon_id = GetTalonId ();
 
-							// найти имя пациента в БД
-							cmd.CommandText = "SELECT name FROM patient WHERE passport_series = '" + passport + "';";
-							cmd.ExecuteScalar ();
+							// проверить, есть ли уже такая запись в базе (талон)
+							cmd.CommandText = "SELECT patient_id FROM patient WHERE passport_series = '" + passport + "';";
+							string patient_id = cmd.ExecuteScalar ().ToString ();
+							cmd.CommandText = "SELECT timetable_id FROM timetable WHERE week_day = '" + week_day + "' AND employee_id = " + 
+								"(SELECT employee_id FROM employee WHERE employee_name = '" + doctor_name + "');";
+							string timetable_id = cmd.ExecuteScalar ().ToString ();
+							cmd.CommandText = "SELECT date('now', '+7 days');";
+							string date = cmd.ExecuteScalar ().ToString ();
+							cmd.CommandText = "SELECT talon_id from talon " +
+								"WHERE patient_id = '" + patient_id + "' " +
+								"AND timetable_id = '" + timetable_id + "' " +
+								"AND date = '" + date + "';";
 
-							// найти часы приема специалиста
-							cmd.CommandText = "SELECT shift_begining, shift_ending FROM timetable " +
-								"WHERE week_day = '" + week_day + "' AND employee_id = '" +
-									"(SELECT employee_id FROM employee WHERE employee_name = '" + doctor_name + "');";
-							SqliteDataReader reader = cmd.ExecuteReader ();
+							if (cmd.ExecuteScalar () != null) {
+								// найти имя пациента в БД
+								cmd.CommandText = "SELECT name FROM patient WHERE passport_series = '" + passport + "';";
+								result.Add (cmd.ExecuteScalar ().ToString ());
 
-							while (reader.Read ()) {
-								result.Add (reader.GetString (0));
-								result.Add (reader.GetString (1));
+								// найти полис пациента
+								cmd.CommandText = "SELECT policy_series FROM patient " +
+									"WHERE passport_series = '" + passport + "';";
+								result.Add (cmd.ExecuteScalar ().ToString ());
+
+								// найти номер кабинета врача
+								cmd.CommandText = "SELECT office_number FROM employee " +
+									"WHERE employee_name = '" + doctor_name + "';";
+								result.Add (cmd.ExecuteScalar ().ToString ());
+
+								// найти начало смены специалиста
+								cmd.CommandText = "SELECT shift_begining FROM timetable " +
+									"WHERE week_day = '" + week_day + "' AND employee_id = " +
+										"(SELECT employee_id FROM employee WHERE employee_name = '" + doctor_name + "');";
+								result.Add (cmd.ExecuteScalar ().ToString ());
+
+								// найти конец смены специалиста
+								cmd.CommandText = "SELECT shift_ending FROM timetable " +
+									"WHERE week_day = '" + week_day + "' AND employee_id = " +
+										"(SELECT employee_id FROM employee WHERE employee_name = '" + doctor_name + "');";
+								result.Add (cmd.ExecuteScalar ().ToString ());
+
+								// добавить новый талон в таблицу
+								cmd.CommandText = "INSERT INTO talon (talon_id, " +
+									"patient_id, timetable_id, 'date') " +
+									"VALUES ( '" + talon_id + "', '" + patient_id + "', '" + timetable_id + "', '" + date + "');";
+								cmd.ExecuteNonQuery ();
+
+								hospital_register.TalonSuccessWindow suc_talon_win = new TalonSuccessWindow ();
+								suc_talon_win.Show ();
+							} else {
+								hospital_register.TalonErrorWindow talon_err_win = new TalonErrorWindow ();
+								talon_err_win.Show ();
 							}
-
-							// добавить новый талон в таблицу
-							cmd.CommandText = "INSERT INTO talon ('talon_id', " +
-								"'patient_id', 'timetable_id', 'date' ) " +
-									"VALUES ( '" + talon_id + "', '(SELECT patient_id FROM patient WHERE passport_series = '" + passport + "')', '" + 
-									"(SELECT timetable_id FROM timetable WHERE week_day = '" + week_day + "' AND employee_id = " +
-									"'(SELECT employee_id FROM employee WHERE employee_name = '" + doctor_name + "')')" + "', " +
-									"(select date('now', '+7 days')));";
-							cmd.ExecuteNonQuery ();
 						}
 
 						tr.Commit ();
 					}
-				dbConnection.Close ();
+					dbConnection.Close ();
+					return result;
 				} catch (Exception e2) {
 					hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
 					err_win.Show ();
+					return result;
 				}
 			}
 		}
@@ -178,7 +208,8 @@ namespace hospital_register
 						object reader = search_patient_cmd.ExecuteScalar ();
 
 						if (reader != null) {
-							GetTalon (doctor_name, speciality, week_day, passport);
+							List<string> result = GetTalon (doctor_name, week_day, passport);
+							PrintTalon (doctor_name, speciality, result [2], week_day, result [3], result [4], result [0], result [1]);
 						} else {
 							hospital_register.PatientRegisterWindow reg_win = new PatientRegisterWindow ();
 							reg_win.Show ();
@@ -186,10 +217,6 @@ namespace hospital_register
 
 					}
 					dbConnection.Close ();
-
-
-					PrintTalon ("test", "test", "test", "test", "test", "test", "test", "test");
-
 				}
 			} else {
 				hospital_register.EnrollFailWindow err = new EnrollFailWindow ();
@@ -260,6 +287,7 @@ namespace hospital_register
 			}
 		}
 
+		// печать талона в pdf
 		protected void PrintTalon (string doctor_name, string speciality, string office_number,
 		                           string week_day, string shift_begining, string shift_ending,
 		                           string patient_name, string policy)

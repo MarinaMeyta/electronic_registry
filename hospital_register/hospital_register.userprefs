@@ -2,27 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="hospital_register/EnrollWindow2.cs">
     <Files>
-      <File FileName="hospital_register/EnrollWindow.cs" Line="1" Column="1" />
-      <File FileName="hospital_register/TimetableWindow.cs" Line="1" Column="1" />
-      <File FileName="hospital_register/TalonWindow.cs" Line="1" Column="1" />
-      <File FileName="hospital_register/AdminWindow.cs" Line="1" Column="1" />
-      <File FileName="hospital_register/EnrollWindow2.cs" Line="99" Column="8" />
-      <File FileName="hospital_register/PatientRegisterWindow.cs" Line="1" Column="1" />
+      <File FileName="hospital_register/EnrollWindow2.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="hospital_register" expanded="True">
-            <Node name="EnrollWindow2.cs" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="ConnectionManagerPad">
-        <State expanded="True">
-          <Node name="hospital_register_connection" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

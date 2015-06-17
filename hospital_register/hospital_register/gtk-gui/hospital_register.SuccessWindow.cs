@@ -7,6 +7,7 @@ namespace hospital_register
 		private global::Gtk.Fixed fixed2;
 		private global::Gtk.Image image2;
 		private global::Gtk.Label label2;
+		private global::Gtk.Image image1;
 
 		protected virtual void Build ()
 		{
@@ -35,12 +36,20 @@ namespace hospital_register
 			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed2 [this.label2]));
 			w2.X = 98;
 			w2.Y = 64;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.image1 = new global::Gtk.Image ();
+			this.image1.Name = "image1";
+			this.image1.Pixbuf = new global::Gdk.Pixbuf (global::System.IO.Path.Combine (global::System.AppDomain.CurrentDomain.BaseDirectory, "./getClientLogoMini.png"));
+			this.fixed2.Add (this.image1);
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed2 [this.image1]));
+			w3.X = 262;
+			w3.Y = 42;
 			this.Add (this.fixed2);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 332;
-			this.DefaultHeight = 146;
+			this.DefaultWidth = 378;
+			this.DefaultHeight = 143;
 			this.Show ();
 		}
 	}

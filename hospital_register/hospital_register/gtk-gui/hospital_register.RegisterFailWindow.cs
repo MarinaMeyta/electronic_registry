@@ -19,6 +19,7 @@ namespace hospital_register
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Container child hospital_register.RegisterFailWindow.Gtk.Container+ContainerChild
 			this.fixed3 = new global::Gtk.Fixed ();
+			this.fixed3.Name = "fixed3";
 			this.fixed3.HasWindow = false;
 			// Container child fixed3.Gtk.Fixed+FixedChild
 			this.label2 = new global::Gtk.Label ();
@@ -49,7 +50,7 @@ namespace hospital_register
 			// Container child fixed3.Gtk.Fixed+FixedChild
 			this.label3 = new global::Gtk.Label ();
 			this.label3.Name = "label3";
-			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("Возможные причины:\n1) Такой пациент уже есть в базе;\n2) Неправильно запеолненный бланк регистрации. \n\nПроверьте правильность заполнения бланка.\nВсе поля должны быть заполнены.");
+			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("Возможные причины:\n1) Такой пациент уже есть в базе;\n2) Неправильно заполненный бланк регистрации. \n\nПроверьте правильность заполнения бланка.\nВсе поля должны быть заполнены.");
 			this.fixed3.Add (this.label3);
 			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed3 [this.label3]));
 			w4.X = 50;

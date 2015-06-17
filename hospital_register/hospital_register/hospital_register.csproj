@@ -66,9 +66,6 @@
     <Reference Include="itextsharp">
       <HintPath>..\..\dll\itextsharp-all-5.5.6\itextsharp-dll-core\itextsharp.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp">
-      <HintPath>..\..\dll\itextsharp-all-5.5.6\itextsharp-dll-core\itextsharp.dll</HintPath>
-    </Reference>
     <Reference Include="itextsharp.pdfa">
       <HintPath>..\..\dll\itextsharp-all-5.5.6\itextsharp.pdfa.dll</HintPath>
     </Reference>
@@ -89,16 +86,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PatientRegisterWindow.cs" />
     <Compile Include="gtk-gui\hospital_register.PatientRegisterWindow.cs" />
-    <Compile Include="EnrollWindow.cs" />
-    <Compile Include="gtk-gui\hospital_register.EnrollWindow.cs" />
     <Compile Include="PasswordErrorWindow.cs" />
     <Compile Include="gtk-gui\hospital_register.PasswordErrorWindow.cs" />
     <Compile Include="AdminWindow.cs" />
     <Compile Include="gtk-gui\hospital_register.AdminWindow.cs" />
     <Compile Include="TalonWindow.cs" />
     <Compile Include="gtk-gui\hospital_register.TalonWindow.cs" />
-    <Compile Include="TimetableWindow.cs" />
-    <Compile Include="gtk-gui\hospital_register.TimetableWindow.cs" />
     <Compile Include="RegisterSuccessWindow.cs" />
     <Compile Include="gtk-gui\hospital_register.RegisterSuccessWindow.cs" />
     <Compile Include="RegisterFailWindow.cs" />
@@ -113,6 +106,10 @@
     <Compile Include="gtk-gui\hospital_register.SuccessWindow.cs" />
     <Compile Include="EnrollWindow2.cs" />
     <Compile Include="gtk-gui\hospital_register.EnrollWindow2.cs" />
+    <Compile Include="TalonSuccessWindow.cs" />
+    <Compile Include="gtk-gui\hospital_register.TalonSuccessWindow.cs" />
+    <Compile Include="TalonErrorWindow.cs" />
+    <Compile Include="gtk-gui\hospital_register.TalonErrorWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
