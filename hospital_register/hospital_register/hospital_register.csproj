@@ -63,8 +63,17 @@
       <Package>monodevelop-database</Package>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="PdfSharp">
-      <HintPath>..\..\dll\PdfSharp.dll</HintPath>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\dll\itextsharp-all-5.5.6\itextsharp-dll-core\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\dll\itextsharp-all-5.5.6\itextsharp-dll-core\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\dll\itextsharp-all-5.5.6\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\dll\itextsharp-all-5.5.6\itextsharp.xtra.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

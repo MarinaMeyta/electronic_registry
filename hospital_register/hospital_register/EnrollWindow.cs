@@ -1,8 +1,6 @@
 using System;
 using Gtk;
 
-using PdfSharp;
-
 using Mono.Data.Sqlite;
 using MonoDevelop.Database.ConnectionManager;
 using System.Data.Common;

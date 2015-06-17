@@ -1,8 +1,6 @@
 using System;
 using Gtk;
 
-using PdfSharp;
-
 using Mono.Data.Sqlite;
 using MonoDevelop.Database.ConnectionManager;
 using System.Data.Common;
@@ -11,6 +9,12 @@ using System.Collections.Generic;
 using System.Collections;
 
 using hospital_register;
+
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+//using itextsharp.pdfa;
+
 
 namespace hospital_register
 {
@@ -96,7 +100,7 @@ namespace hospital_register
 			return new_id;
 		}
 
-		// ТАЛООООООООН!!!!!!!!!
+		// THIS IS ТАЛООООООООН!!!!!!!!!
 		protected void GetTalon (string doctor_name, string speciality, string week_day, string passport)
 		{
 			List<string> result = new List<string> ();
@@ -182,6 +186,10 @@ namespace hospital_register
 
 					}
 					dbConnection.Close ();
+
+
+					PrintTalon ("test", "test", "test", "test", "test", "test", "test", "test");
+
 				}
 			} else {
 				hospital_register.EnrollFailWindow err = new EnrollFailWindow ();
@@ -251,6 +259,53 @@ namespace hospital_register
 				treeview1.RemoveColumn (collumns [i]);
 			}
 		}
+
+		protected void PrintTalon (string doctor_name, string speciality, string office_number,
+		                           string week_day, string shift_begining, string shift_ending,
+		                           string patient_name, string policy)
+		{
+			Document document = new Document();     
+			try      
+			{              
+				BaseFont baseFont = BaseFont.CreateFont("TIMES.TTF", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+				iTextSharp.text.Font font = new iTextSharp.text.Font(baseFont, iTextSharp.text.Font.DEFAULTSIZE, iTextSharp.text.Font.NORMAL);
+				using (FileStream stream = new FileStream("talon.pdf", FileMode.Create))
+				{
+					PdfWriter.GetInstance(document, stream);
+					document.Open();     
+					String phrase = "ТАЛОН"; 
+					document.Add(new Paragraph(phrase, font));
+					phrase = "частная клиника \"Медстар\"";
+					document.Add(new Paragraph(phrase, font));
+					phrase = "Ф.И.О. врача:    " + doctor_name;
+					document.Add(new Paragraph(phrase, font));
+					phrase = "Специальность:    " + speciality;
+					document.Add(new Paragraph(phrase, font));
+					phrase = "Кабинет:    " + office_number;
+					document.Add(new Paragraph(phrase, font));
+					phrase = "Рабочие часы:    " + week_day + "\t" + shift_begining + " - " + shift_ending;
+					document.Add(new Paragraph(phrase, font));
+					phrase = "Ф.И.О. пациента:    " + patient_name;
+					document.Add(new Paragraph(phrase, font));
+					phrase = "Страховой медицинский полис:    " + policy;
+					document.Add(new Paragraph(phrase, font));
+					document.Close();
+				}
+			}     
+			catch (DocumentException ex)    
+			{
+				hospital_register.ErrorWindow err = new ErrorWindow ();
+				err.Show ();
+			}       
+			catch (IOException ex)  
+			{
+				hospital_register.ErrorWindow err = new ErrorWindow ();
+				err.Show ();
+			} 
+		}
+
+
+
 	}
 }
 
