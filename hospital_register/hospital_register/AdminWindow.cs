@@ -398,24 +398,32 @@ namespace hospital_register
 					"employee_id, employee_name, speciality, office_number) " +
 					"VALUES ('" + employee_id + "', '" + employee_name + "', '" + speciality + 
 					"', '" + office_number + "');";
+				string find_employee = "SELECT employee_id FROM employee " +
+					"WHERE employee_name = '" + employee_name + "';";
 
 				using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
 					dbConnection.Open ();
 
 					try {
-
-						using (SqliteCommand insert_employee_cmd = new SqliteCommand (insert_employee, dbConnection)) {
-							insert_employee_cmd.ExecuteNonQuery ();
+						using (SqliteCommand find_employee_cmd = new SqliteCommand (find_employee, dbConnection)) {
+							SqliteDataReader reader = find_employee_cmd.ExecuteReader ();
+							if (reader.Read () == false) {
+								using (SqliteCommand insert_employee_cmd = new SqliteCommand (insert_employee, dbConnection)) {
+									insert_employee_cmd.ExecuteNonQuery ();
+									hospital_register.SuccessWindow suc_win = new SuccessWindow ();
+									suc_win.Show ();
+								}
+							} else {
+								hospital_register.ExistsWindow exists_win = new ExistsWindow ();
+								exists_win.Show ();
+							}
 						}
-
 					} catch (Exception e2) {
 						hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
 						err_win.Show ();
 					}
 
 					dbConnection.Close ();
-					hospital_register.SuccessWindow suc_win = new SuccessWindow ();
-					suc_win.Show ();
 				}
 			} else {
 				hospital_register.ErrorWindow err_win = new ErrorWindow ();

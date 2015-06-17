@@ -110,6 +110,8 @@
     <Compile Include="gtk-gui\hospital_register.TalonSuccessWindow.cs" />
     <Compile Include="TalonErrorWindow.cs" />
     <Compile Include="gtk-gui\hospital_register.TalonErrorWindow.cs" />
+    <Compile Include="ExistsWindow.cs" />
+    <Compile Include="gtk-gui\hospital_register.ExistsWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

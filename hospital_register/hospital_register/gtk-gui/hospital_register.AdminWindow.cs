@@ -123,7 +123,7 @@ namespace hospital_register
 			this.notebook1.HeightRequest = 0;
 			this.notebook1.CanFocus = true;
 			this.notebook1.Name = "notebook1";
-			this.notebook1.CurrentPage = 2;
+			this.notebook1.CurrentPage = 1;
 			// Container child notebook1.Gtk.Notebook+NotebookChild
 			this.vbox2 = new global::Gtk.VBox ();
 			this.vbox2.Name = "vbox2";
@@ -680,7 +680,6 @@ namespace hospital_register
 			this.buttonClear.Clicked += new global::System.EventHandler (this.OnButtonClearClicked);
 			this.buttonSelect.Clicked += new global::System.EventHandler (this.OnButtonSelectClicked);
 			this.buttonInsertEmployee.Clicked += new global::System.EventHandler (this.OnButtonInsertEmployeeClicked);
-			this.buttonInsertTimetable.Clicked += new global::System.EventHandler (this.OnButtonInsertTimetableClicked);
 			this.buttonDeleteEmployee.Clicked += new global::System.EventHandler (this.OnButtonDeleteEmployeeClicked);
 			this.buttonDeletePatient.Clicked += new global::System.EventHandler (this.OnButtonDeletePatientClicked);
 			this.buttonDeleteTimetable.Clicked += new global::System.EventHandler (this.OnButtonDeleteTimetableClicked);
