@@ -110,7 +110,7 @@ namespace hospital_register
 		// найти сотрудников
 		protected void SelectEmployees ()
 		{
-			string select_doctors = "SELECT * FROM 'employee'";
+			string select_doctors = "SELECT * FROM 'employee';";
 
 			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
 				dbConnection.Open ();
@@ -167,9 +167,9 @@ namespace hospital_register
 		// найти расписание врачей
 		protected void SelectTimetables ()
 		{
-			string select_timetables = "select timetable_id, week_day, shift_begining, shift_ending, employee_name " +
-				"from timetable, employee " +
-					"where timetable.employee_id = employee.employee_id;";
+			string select_timetables = "SELECT timetable_id, week_day, shift_begining, shift_ending, employee_name " +
+				"FROM timetable, employee " +
+					"WHERE timetable.employee_id = employee.employee_id;";
 
 			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
 				dbConnection.Open ();
@@ -431,42 +431,83 @@ namespace hospital_register
 			}
 		}
 
+
+		protected bool FindEmployeeID (string employee_id)
+		{
+			string find_employee = "SELECT employee_name FROM employee " +
+				"WHERE employee_id = '" + employee_id + "';";
+
+			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+				dbConnection.Open ();
+
+				try {
+					using (SqliteCommand find_employee_cmd = new SqliteCommand (find_employee, dbConnection)) {
+						SqliteDataReader reader = find_employee_cmd.ExecuteReader ();
+						if (reader.Read () == false) {
+							return false;
+						} else {
+							return true;
+						}
+					}		
+				} catch (Exception e2) {
+					hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
+					err_win.Show ();
+					return false;
+				}
+				dbConnection.Close ();
+			}
+		}
+
+
 		protected void OnButtonInsertTimetableClicked (object sender, EventArgs e)
 		{
 			string week_day = combobox1.ActiveText;
 			string begining = entry4.Text;
 			string ending = entry5.Text;
 			string employee_id = entry9.Text;
+			string[] split_begining = begining.Split (':');
+			string[] split_ending = ending.Split (':');
 
 			if (week_day != "" &&
 			    begining != "" &&
 			    ending != "" &&
 			    begining.Length == 5 &&
-			    ending.Length == 5
+			    ending.Length == 5 &&
+			    FindEmployeeID (employee_id) == true &&
+			    split_begining.Length == 2 &&
+			    split_ending.Length == 2
 			    ) {
 
 				string timetable_id = GetTimetableId ();
 				string insert_timetable = "INSERT INTO timetable " +
 					"(timetable_id, employee_id, week_day, shift_begining, shift_ending)" +
-						"VALUES ('" + timetable_id + "', '" +employee_id + "', '" + week_day + "', '" + begining + "', '" + ending + "') ";
+						"VALUES ('" + timetable_id + "', '" + employee_id + "', '" + week_day + "', '" + begining + "', '" + ending + "');";
+				string find_timetable = "SELECT timetable_id FROM timetable " +
+					"WHERE week_day = '" + week_day + "' AND employee_id = '" + employee_id + "';";
 
 				using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
 					dbConnection.Open ();
 
 					try {
-
-						using (SqliteCommand insert_timetable_cmd = new SqliteCommand (insert_timetable, dbConnection)) {
-							insert_timetable_cmd.ExecuteNonQuery ();
+						using (SqliteCommand find_timetable_cmd = new SqliteCommand (find_timetable, dbConnection)) {
+							SqliteDataReader reader = find_timetable_cmd.ExecuteReader ();
+							if (reader.Read () == false) {
+								using (SqliteCommand insert_timetable_cmd = new SqliteCommand (insert_timetable, dbConnection)) {
+									insert_timetable_cmd.ExecuteNonQuery ();
+									hospital_register.SuccessWindow suc_win = new SuccessWindow ();
+									suc_win.Show ();
+								}
+							} else {
+								hospital_register.ExistsWindow exists_win = new ExistsWindow ();
+								exists_win.Show ();
+							}
 						}
-
 					} catch (Exception e2) {
 						hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
 						err_win.Show ();
 					}
 
 					dbConnection.Close ();
-					hospital_register.SuccessWindow suc_win = new SuccessWindow ();
-					suc_win.Show ();
 				}
 			} else {
 				hospital_register.ErrorWindow err_win = new ErrorWindow ();

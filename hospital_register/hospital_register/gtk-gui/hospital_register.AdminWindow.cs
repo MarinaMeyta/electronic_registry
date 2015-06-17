@@ -680,6 +680,7 @@ namespace hospital_register
 			this.buttonClear.Clicked += new global::System.EventHandler (this.OnButtonClearClicked);
 			this.buttonSelect.Clicked += new global::System.EventHandler (this.OnButtonSelectClicked);
 			this.buttonInsertEmployee.Clicked += new global::System.EventHandler (this.OnButtonInsertEmployeeClicked);
+			this.buttonInsertTimetable.Clicked += new global::System.EventHandler (this.OnButtonInsertTimetableClicked);
 			this.buttonDeleteEmployee.Clicked += new global::System.EventHandler (this.OnButtonDeleteEmployeeClicked);
 			this.buttonDeletePatient.Clicked += new global::System.EventHandler (this.OnButtonDeletePatientClicked);
 			this.buttonDeleteTimetable.Clicked += new global::System.EventHandler (this.OnButtonDeleteTimetableClicked);

@@ -39,8 +39,8 @@ namespace hospital_register
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 277;
-			this.DefaultHeight = 118;
+			this.DefaultWidth = 292;
+			this.DefaultHeight = 125;
 			this.Show ();
 		}
 	}

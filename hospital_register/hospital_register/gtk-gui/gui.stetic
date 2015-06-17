@@ -1128,6 +1128,7 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">Добавить расписание</property>
                         <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="OnButtonInsertTimetableClicked" />
                       </widget>
                       <packing>
                         <property name="Position">5</property>
@@ -1602,7 +1603,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="hospital_register.ErrorWindow" design-size="277 118">
+  <widget class="Gtk.Window" id="hospital_register.ErrorWindow" design-size="292 125">
     <property name="MemberName" />
     <property name="Title" translatable="yes">ErrorWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
