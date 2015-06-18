@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.11.22)  18 JUN 2015 18:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.11.22)  18 JUN 2015 18:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1024,39 +1024,47 @@ Package caption Info: End \AtBeginDocument code.
  (./title.tex)
 (./referat.tex [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-! You can't use `macro parameter character #' in horizontal mode.
-l.6 БАЗЫ ДАННЫХ, SQLITE, MONODEVELOP, C#
-                                                  , GTKSharp.
-? 
-(./result.tex)) [2] (./report.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) [2]
+(./report.toc)
 \tf@toc=\write3
 \openout3 = `report.toc'.
 
- [3] (./intro.tex) (./inf_model.tex)
-(./tables/patient.tex) (./tables/passport.tex) (./tables/policy.tex)
-(./tables/talon.tex) (./tables/timetable.tex) (./tables/employee.tex)
-(./problem_form.tex) (./data_description.tex) (./technical_solutions.tex)
-[4] [5]
+ [3] (./intro.tex
 LaTeX Font Info:    Font shape `T2A/ftm/bx/n' in size <12> not available
-(Font)              Font shape `T2A/ftm/b/n' tried instead on input line 71.
- [6] (./report.bbl) [7] 
+(Font)              Font shape `T2A/ftm/b/n' tried instead on input line 1.
+
+
+LaTeX Warning: Citation `fedotovforenzika' on page 4 undefined on input line 1.
+
+
+) (./inf_model.tex) (./tables/patient.tex) (./tables/passport.tex)
+(./tables/policy.tex) (./tables/talon.tex) (./tables/timetable.tex)
+(./tables/employee.tex) (./problem_form.tex) (./data_description.tex)
+(./technical_solutions.tex) [4] [5] [6] (./report.bbl
+
+LaTeX Warning: Empty `thebibliography' environment on input line 10.
+
+) [7] 
 AED: lastpage setting LastPage
 [8
 
-] (./report.aux) ) 
+] (./report.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 8375 strings out of 493104
- 123575 string characters out of 6136931
- 208369 words of memory out of 5000000
- 11578 multiletter control sequences out of 15000+600000
+ 8365 strings out of 493104
+ 123439 string characters out of 6136931
+ 208365 words of memory out of 5000000
+ 11571 multiletter control sequences out of 15000+600000
  20534 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  52i,7n,42p,1754b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/scalable-cyrfonts-tex/6r.en
-c}</usr/share/texmf/fonts/type1/public/scalable-cyrfonts-tex/ftmb6w.pfb></usr/s
-hare/texmf/fonts/type1/public/scalable-cyrfonts-tex/ftmr6w.pfb>
-Output written on report.pdf (8 pages, 79792 bytes).
+{/usr/share/texmf/fonts/enc/dvips/scalable-cyrfonts-tex/6r.enc}</usr/share/te
+xmf/fonts/type1/public/scalable-cyrfonts-tex/ftmb6w.pfb></usr/share/texmf/fonts
+/type1/public/scalable-cyrfonts-tex/ftmr6w.pfb>
+Output written on report.pdf (8 pages, 80643 bytes).
 PDF statistics:
  40 PDF objects out of 1000 (max. 8388607)
  27 compressed objects within 1 object stream

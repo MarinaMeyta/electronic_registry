@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{}
 \def\selectlanguageifdefined#1{
 \expandafter\ifx\csname date#1\endcsname\relax
 \else\language\csname l@#1\endcsname\fi}
@@ -6,12 +6,5 @@
 \ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
 \ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
 \ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
-
-\bibitem{fedotovforenzika}
-\selectlanguageifdefined{russian}
-Федотов~Николай~Николаевич. {Форензика -
-  компьютерная криминалистика}.
-\newblock Юрид. мир, 2007.
-\newblock 432~с.{}
 
 \end{thebibliography}
