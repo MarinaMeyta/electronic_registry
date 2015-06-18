@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="hospital_register/EnrollWindow2.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="hospital_register/MainWindow.cs">
     <Files>
-      <File FileName="hospital_register/EnrollWindow2.cs" Line="317" Column="49" />
+      <File FileName="hospital_register/EnrollWindow2.cs" Line="354" Column="5" />
+      <File FileName="hospital_register/AdminWindow.cs" Line="1" Column="1" />
+      <File FileName="hospital_register/MainWindow.cs" Line="36" Column="66" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
