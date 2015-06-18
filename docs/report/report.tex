@@ -1,0 +1,85 @@
+\input{config}
+
+\begin{document}
+
+\input{title}
+\input{referat}
+
+\newpage
+\ESKDstyle{plain}
+\tableofcontents
+
+\newpage
+\ESKDstyle{plain}
+\section*{Введение}
+\addcontentsline{toc}{section}{Введение}
+\input{intro}
+
+\section{Проектирование инфологической модели данных}
+\input{inf_model}
+
+\section{Описание базы данных}
+\setcounter{figure}{0}
+
+\subsection{Таблица <<patient>>}
+\input{tables/patient}
+\subsection{Таблица <<passport>>}
+\input{tables/passport}
+\subsection{Таблица <<policy>>}
+\input{tables/policy}
+\subsection{Таблица <<talon>>}
+\input{tables/talon}
+\subsection{Таблица <<timetable>>}
+\input{tables/timetable}
+\subsection{Таблица <<employee>>}
+\input{tables/employee}
+
+
+\section{Описание процесса деятельности} 
+\setcounter{figure}{0}
+
+\subsection{Постановка задачи}
+\input{problem_form}
+\subsection{Описание данных программы}
+\input{data_description}
+\subsection{Основные технические решения}
+\input{technical_solutions}
+
+\section{Руководство пользователя}
+\setcounter{figure}{0}
+
+\section{Перспективы применения программы}
+\setcounter{figure}{0}
+
+\section{Заключение}
+\setcounter{figure}{0}
+
+% \section{Инструменты}
+% \setcounter{figure}{0}
+% \subsection{Система контроля версий Git}
+% \input{git}
+% \subsection{Система компьютерной вёрстки \TeX}
+% \input{tex}
+% \section{Технические характеристики}
+% \input{technical_attributes}
+
+
+
+\newpage
+\section*{Заключение}
+\addcontentsline{toc}{section}{Заключение}
+\textbf{ПРАВИТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}
+
+\newpage
+\renewcommand{\refname}{Список использованных источников}
+\bibliography{lit}
+
+\ESKDappendix{Обязательное}{\normalfont Компакт-диск}
+Компакт-диск содержит: 
+\begin{itemize}
+\item электронную версию пояснительной записки в форматах *.tex и *.pdf;
+\item актуальную версию программного комплекса для проведения компьютерной экспертизы;
+\item базу данных.
+\end{itemize}
+
+\end{document}
