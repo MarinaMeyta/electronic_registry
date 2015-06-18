@@ -1,0 +1,13 @@
+INSERT INTO talon (
+'talon_id',
+'patient_id',
+'timetable_id',
+'date'
+)
+
+VALUES (
+'5000000001',
+'0000000001',
+'4000000001',
+(select date('now', '+7 days'))
+);

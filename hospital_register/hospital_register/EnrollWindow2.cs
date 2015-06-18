@@ -65,7 +65,7 @@ namespace hospital_register
 		// формирует новый talon_id
 		protected string GetTalonId ()
 		{
-			string max_id = "SELECT MAX(talon_id) FROM 'talon';";
+			string max_id = "SELECT MAX(talon_id) FROM talon;";
 			string new_id = "";
 			long id = 0;
 
@@ -98,6 +98,36 @@ namespace hospital_register
 			return new_id;
 		}
 
+		// проверить, есть ли уже такая запись в базе (талон)
+		protected bool CheckTalon (string passport, string week_day, string doctor_name)
+		{
+			string talon_id = "SELECT talon_id from talon " +
+				"WHERE patient_id = (SELECT patient_id FROM patient WHERE passport_series = '" + passport + "') " +
+					"AND timetable_id = (SELECT timetable_id FROM timetable WHERE week_day = '" + week_day + "' " +
+					"AND employee_id = (SELECT employee_id FROM employee WHERE employee_name = '" + doctor_name + "')) " +
+					"AND date = (SELECT date('now', '+7 days'));";
+
+			using (SqliteConnection dbConnection = new SqliteConnection (connection)) {
+				dbConnection.Open ();
+
+				try {
+					using (SqliteCommand talon_id_cmd = new SqliteCommand (talon_id, dbConnection)) {
+						SqliteDataReader reader = talon_id_cmd.ExecuteReader ();
+						if (reader.Read () == false) {
+							return false;
+						} else {
+							return true;
+						}
+					} 
+				}catch (Exception e) {
+					hospital_register.DatabaseErrorWindow err_win = new DatabaseErrorWindow ();
+					err_win.Show ();
+					return false;
+				}
+				dbConnection.Close ();
+			}
+		}
+
 
 		// THIS IS ТАЛООООООООН!!!!!!!!!
 		protected List<string> GetTalon (string doctor_name, string week_day, string passport)
@@ -116,20 +146,7 @@ namespace hospital_register
 							cmd.Transaction = tr;
 							string talon_id = GetTalonId ();
 
-							// проверить, есть ли уже такая запись в базе (талон)
-							cmd.CommandText = "SELECT patient_id FROM patient WHERE passport_series = '" + passport + "';";
-							string patient_id = cmd.ExecuteScalar ().ToString ();
-							cmd.CommandText = "SELECT timetable_id FROM timetable WHERE week_day = '" + week_day + "' AND employee_id = " + 
-								"(SELECT employee_id FROM employee WHERE employee_name = '" + doctor_name + "');";
-							string timetable_id = cmd.ExecuteScalar ().ToString ();
-							cmd.CommandText = "SELECT date('now', '+7 days');";
-							string date = cmd.ExecuteScalar ().ToString ();
-							cmd.CommandText = "SELECT talon_id from talon " +
-								"WHERE patient_id = '" + patient_id + "' " +
-								"AND timetable_id = '" + timetable_id + "' " +
-								"AND date = '" + date + "';";
-
-							if (cmd.ExecuteScalar () != null) {
+							if (CheckTalon (passport, week_day, doctor_name) == false) {
 								// найти имя пациента в БД
 								cmd.CommandText = "SELECT name FROM patient WHERE passport_series = '" + passport + "';";
 								result.Add (cmd.ExecuteScalar ().ToString ());
@@ -159,7 +176,10 @@ namespace hospital_register
 								// добавить новый талон в таблицу
 								cmd.CommandText = "INSERT INTO talon (talon_id, " +
 									"patient_id, timetable_id, 'date') " +
-									"VALUES ( '" + talon_id + "', '" + patient_id + "', '" + timetable_id + "', '" + date + "');";
+										"VALUES ( '" + talon_id + "', (SELECT patient_id FROM patient " +
+										"WHERE passport_series = '" + passport + "'), (SELECT timetable_id FROM timetable " +
+										"WHERE week_day = '" + week_day + "' AND employee_id = (SELECT employee_id FROM employee " +
+										"WHERE employee_name = '" + doctor_name + "')), (SELECT date('now', '+7 days')));";
 								cmd.ExecuteNonQuery ();
 
 								hospital_register.TalonSuccessWindow suc_talon_win = new TalonSuccessWindow ();
