@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.11.22)  18 JUN 2015 19:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.11.22)  18 JUN 2015 21:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1029,42 +1029,30 @@ Package caption Info: End \AtBeginDocument code.
 \tf@toc=\write3
 \openout3 = `report.toc'.
 
- [3] (./intro.tex) (./inf_model.tex
-LaTeX Font Info:    Font shape `T2A/ftm/bx/n' in size <12> not available
-(Font)              Font shape `T2A/ftm/b/n' tried instead on input line 3.
-
-
-LaTeX Warning: Reference `' on page 4 undefined on input line 3.
-
-
-LaTeX Warning: Reference `' on page 4 undefined on input line 3.
-
-<images/idef0_1.png, id=13, 738.76pt x 492.84125pt>
+ [3] (./tz/tz_main.tex) [4] (./intro.tex) [5] (./inf_model.tex
+<images/idef0_1.png, id=19, 738.76pt x 492.84125pt>
 File: images/idef0_1.png Graphic file (type png)
  <use images/idef0_1.png>
 Package pdftex.def Info: images/idef0_1.png used on input line 6.
-(pdftex.def)             Requested size: 458.37083pt x 305.78401pt.
+(pdftex.def)             Requested size: 254.65219pt x 169.88pt.
 
-<images/idef0_2.png, id=14, 1050.92625pt x 740.7675pt>
+<images/idef0_2.png, id=20, 1050.92625pt x 740.7675pt>
 File: images/idef0_2.png Graphic file (type png)
 
 <use images/idef0_2.png>
 Package pdftex.def Info: images/idef0_2.png used on input line 12.
 (pdftex.def)             Requested size: 458.37083pt x 323.0903pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<images/dfd.png, id=15, 1100.11pt x 733.74126pt>
+ <images/dfd.png, id=21, 1100.11pt x 733.74126pt>
 File: images/dfd.png Graphic file (type png)
- <use images/dfd.png>
+
+<use images/dfd.png>
 Package pdftex.def Info: images/dfd.png used on input line 18.
 (pdftex.def)             Requested size: 458.37083pt x 305.71732pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/idef3_1.png, id=16, 1025.8325pt x 563.10374pt>
+<images/idef3_1.png, id=22, 1025.8325pt x 563.10374pt>
 File: images/idef3_1.png Graphic file (type png)
 
 <use images/idef3_1.png>
@@ -1074,64 +1062,58 @@ Package pdftex.def Info: images/idef3_1.png used on input line 24.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/idef3_2.png, id=17, 353.32pt x 741.77126pt>
+<images/idef3_2.png, id=23, 353.32pt x 741.77126pt>
 File: images/idef3_2.png Graphic file (type png)
  <use images/idef3_2.png>
 Package pdftex.def Info: images/idef3_2.png used on input line 30.
-(pdftex.def)             Requested size: 458.37083pt x 962.33313pt.
-
-
-LaTeX Warning: Float too large for page by 229.3053pt on input line 33.
+(pdftex.def)             Requested size: 203.71864pt x 427.69229pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/idef1x.png, id=18, 857.2025pt x 646.415pt>
+[6 <./images/idef0_1.png> <./images/idef0_2.png>] [7 <./images/dfd.png> <./imag
+es/idef3_1.png>] [8 <./images/idef3_2.png>]) (./datalog_model.tex
+<images/idef1x.png, id=34, 857.2025pt x 646.415pt>
 File: images/idef1x.png Graphic file (type png)
  <use images/idef1x.png>
-Package pdftex.def Info: images/idef1x.png used on input line 36.
+Package pdftex.def Info: images/idef1x.png used on input line 6.
 (pdftex.def)             Requested size: 458.37083pt x 345.65599pt.
 
+[9
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) (./datalog_model.tex) (./tables/patient.tex) (./tables/passport.tex)
+ <./images/idef1x.png>]) (./tables/patient.tex) (./tables/passport.tex)
 (./tables/policy.tex) (./tables/talon.tex) (./tables/timetable.tex)
-(./tables/employee.tex) (./problem_form.tex) (./data_description.tex)
-(./technical_solutions.tex) [4 <./images/idef0_1.png>]
-Overfull \vbox (394.56374pt too high) has occurred while \output is active []
+(./tables/employee.tex [10
 
-
-[5 <./images/idef0_2.png> <./images/dfd.png>] [6 <./images/idef3_1.png>]
+]) [11] (./process_activity.tex) [12]
+(./data_description.tex) (./technical_solutions.tex) [13] [14] [15]
+LaTeX Font Info:    Font shape `T2A/ftm/bx/n' in size <12> not available
+(Font)              Font shape `T2A/ftm/b/n' tried instead on input line 97.
+ [16]
 (./report.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 10.
 
-) [7] [8 <./images/idef3_2.png>] [9 <./images/idef1x.png>]
-
+) [17] 
 AED: lastpage setting LastPage
-[10
+[18
 
-] (./report.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 8412 strings out of 493104
- 124259 string characters out of 6136931
- 209428 words of memory out of 5000000
- 11607 multiletter control sequences out of 15000+600000
+ 8422 strings out of 493104
+ 124434 string characters out of 6136931
+ 208435 words of memory out of 5000000
+ 11613 multiletter control sequences out of 15000+600000
  20534 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 52i,7n,42p,883b,328s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/scalable-cyrfonts-tex/6r.enc}</usr/share/te
-xmf/fonts/type1/public/scalable-cyrfonts-tex/ftmb6w.pfb></usr/share/texmf/fonts
-/type1/public/scalable-cyrfonts-tex/ftmr6w.pfb>
-Output written on report.pdf (10 pages, 230374 bytes).
+ 52i,7n,42p,883b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/scalable-cyrfonts-tex/6r.en
+c}</usr/share/texmf/fonts/type1/public/scalable-cyrfonts-tex/ftmb6w.pfb></usr/s
+hare/texmf/fonts/type1/public/scalable-cyrfonts-tex/ftmr6w.pfb>
+Output written on report.pdf (18 pages, 233324 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 77 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

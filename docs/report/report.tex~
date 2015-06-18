@@ -6,18 +6,6 @@
 \input{referat}
 
 \newpage
-\ESKDthisStyle{empty}
-\section*{Список исполнителей}
-
-Моргуненко А.В. -- документатор.
-
-Никифоров Д.С. -- программист, ответственный исполнитель, ответственный за написание части системы, работающей с логами системы.
-
-Поляков И.Ю. -- программист, ответственный за написание части системы, работающей с логами мессенджеров.
-
-Пономарёв А.К. -- аналитик.
-
-\newpage
 \ESKDstyle{plain}
 \tableofcontents
 
@@ -27,63 +15,74 @@
 \addcontentsline{toc}{section}{Введение}
 \input{intro}
 
-\section{Назначение и область применения}
-Разрабатываемый комплекс предназначен для автоматизации процесса сбора информации с исследуемого образа жёсткого диска.
-\section{Постановка задачи}
-\setcounter{figure}{0}
-\input{problem_form}
-\section{Инструменты}
-\setcounter{figure}{0}
-\subsection{Система контроля версий Git}
-\input{git}
-\subsection{Система компьютерной вёрстки \TeX}
-\input{tex}
-\subsection{Qt - кроссплатформенный инструментарий разработки ПО}
-\input{individual_reports/qt_doc}
-
-\section{Технические характеристики}
-\input{individual_reports/technical_attributes}
-\subsection{Выбор единого формата выходных файлов}
-\input{xml}
-
-\section{Разработка программного обеспечения}
-\setcounter{figure}{0}
-
-\subsection{Архитектура}
-\input{individual_reports/architech}
-\subsection{Сбор и анализ системных журналов Windows (III семестр)} % - Отчёт Димы
-\input{individual_reports/Nikiforov}
-\subsection{Сбор и анализ системных журналов Windows (IV семестр)} 
-\input{individual_reports/NewNikiforov}
 \newpage
-\subsection{Cбор и анализ истории переписки мессенджеров (III семестр)} % - Отчёт Игоря
-\input{individual_reports/Polyakov}
-\subsection{Cбор и анализ истории переписки мессенджеров (IV семестр)} 
-\input{individual_reports/NewPolyakov}
-
-\section{Некоторые аспекты сертификации программных средств объектов\\ информатизации по требованиям информационной безопасности} % - Отчёт Лёши
+\section{Проектирование инфологической модели данных}
 \setcounter{figure}{0}
-\input{individual_reports/Ponomarev}
+\input{inf_model}
 
-\section{Создание собственного репозитория для debian и ubuntu}
+\newpage
+\section{Проектирование даталогической модели данных}
 \setcounter{figure}{0}
-\input{individual_reports/NewPonomarev}
+\input{datalog_model}
 
-\section{Поисковая система Apache Solr}
+\newpage
+\section{Глоссарий}
 \setcounter{figure}{0}
-\input{individual_reports/PonomarevLast}
-\input{individual_reports/Morgunenko}
+\input{glossary}
 
+\newpage
+\section{Описание базы данных}
 \setcounter{figure}{0}
-\input{individual_reports/PolyakovLast}
+В данном разделе рассмотрены ограничения, накладываемые на входные данные записей в различных таблицах проектируемой БД, типы входных данных и другие особенности содаваемых таблиц.
 
+\subsection{Таблица <<patient>>}
+\input{tables/patient}
+\subsection{Таблица <<passport>>}
+\input{tables/passport}
+\subsection{Таблица <<policy>>}
+\input{tables/policy}
+\subsection{Таблица <<talon>>}
+\input{tables/talon}
+\subsection{Таблица <<timetable>>}
+\input{tables/timetable}
+\subsection{Таблица <<employee>>}
+\input{tables/employee}
+
+
+\section{Описание процесса деятельности} 
 \setcounter{figure}{0}
-\input{individual_reports/NikiforovLast}
+
+\subsection{Постановка задачи}
+\input{problem_form}
+\subsection{Описание данных программы}
+\input{data_description}
+\subsection{Основные технические решения}
+\input{technical_solutions}
+
+\section{Руководство пользователя}
+\setcounter{figure}{0}
+
+\section{Перспективы применения программы}
+\setcounter{figure}{0}
+
+\section{Заключение}
+\setcounter{figure}{0}
+
+% \section{Инструменты}
+% \setcounter{figure}{0}
+% \subsection{Система контроля версий Git}
+% \input{git}
+% \subsection{Система компьютерной вёрстки \TeX}
+% \input{tex}
+% \section{Технические характеристики}
+% \input{technical_attributes}
+
+
 
 \newpage
 \section*{Заключение}
 \addcontentsline{toc}{section}{Заключение}
-В данном семестре нашей группой была выполнена часть работы по созданию автоматизированного программного комплекса для проведения компьютерной экспертизы, проанализированы дальнейшие перспективы и поставлены цели для будущих поколений.
+\textbf{ПРАВИТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}
 
 \newpage
 \renewcommand{\refname}{Список использованных источников}
@@ -93,8 +92,8 @@
 Компакт-диск содержит: 
 \begin{itemize}
 \item электронную версию пояснительной записки в форматах *.tex и *.pdf;
-\item актуальную версию программного комплекса для проведения компьютерной экспертизы;
-\item тестовые данные для работы с программным комплексом.
+\item актуальную версию клиентской программы с графическим интерфейсом;
+\item базу данных, содержащую тестовые данные.
 \end{itemize}
 
 \end{document}

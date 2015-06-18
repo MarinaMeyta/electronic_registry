@@ -11,18 +11,30 @@
 
 \newpage
 \ESKDstyle{plain}
+\section*{ТЕХНИЧЕСКОЕ ЗАДАНИЕ}
+\addcontentsline{toc}{section}{ТЕХНИЧЕСКОЕ ЗАДАНИЕ}
+\input{tz/tz_main}
+
+\newpage
+\ESKDstyle{plain}
 \section*{Введение}
 \addcontentsline{toc}{section}{Введение}
 \input{intro}
 
+\newpage
 \section{Проектирование инфологической модели данных}
+\setcounter{figure}{0}
 \input{inf_model}
 
+\newpage
 \section{Проектирование даталогической модели данных}
+\setcounter{figure}{0}
 \input{datalog_model}
 
+\newpage
 \section{Описание базы данных}
 \setcounter{figure}{0}
+В данном разделе рассмотрены ограничения, накладываемые на входные данные записей в различных таблицах проектируемой БД, типы входных данных и другие особенности содаваемых таблиц.
 
 \subsection{Таблица <<patient>>}
 \input{tables/patient}
@@ -38,24 +50,35 @@
 \input{tables/employee}
 
 
+\newpage
 \section{Описание процесса деятельности} 
 \setcounter{figure}{0}
+\input{process_activity}
 
-\subsection{Постановка задачи}
-\input{problem_form}
-\subsection{Описание данных программы}
+
+
+
+
+
+\newpage
+
 \input{data_description}
+
+
+\newpage
 \subsection{Основные технические решения}
 \input{technical_solutions}
 
+
+\newpage
 \section{Руководство пользователя}
 \setcounter{figure}{0}
 
+
+\newpage
 \section{Перспективы применения программы}
 \setcounter{figure}{0}
 
-\section{Заключение}
-\setcounter{figure}{0}
 
 % \section{Инструменты}
 % \setcounter{figure}{0}
