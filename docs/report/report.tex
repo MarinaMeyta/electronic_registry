@@ -16,6 +16,7 @@
 
 \titleformat{\section}{\centering\normalfont\normalsize}{\thesection}{1.0em}{}
 \titleformat{\subsection}{\centering\normalfont\normalsize}{\thesubsection}{1.0em}{}
+\titleformat{\subsubsection}{\centering\normalfont\normalsize}{\thesubsection}{1.0em}{}
 
 \newpage
 \ESKDstyle{plain}
@@ -51,7 +52,10 @@
 \input{tables/timetable}
 \subsection{Таблица <<employee>>}
 \input{tables/employee}
-
+\subsection{Роли базы данных}
+\input{db_roles}
+\subsection{Защита от SQL–инъекций}
+\input{sql_injections}
 
 \newpage
 \section{Описание процесса деятельности} 
@@ -59,23 +63,18 @@
 \input{process_activity}
 
 
-
-
-
-
-\newpage
-
-\input{data_description}
-
-
-\newpage
 \subsection{Основные технические решения}
 \input{technical_solutions}
 
+\newpage
+\section{Руководство пользователя} 
+\setcounter{figure}{0}
+\input{user_guide}
 
 \newpage
-\section{Руководство пользователя}
+\section{Руководство программиста} 
 \setcounter{figure}{0}
+\input{programmer_guide}
 
 
 \newpage

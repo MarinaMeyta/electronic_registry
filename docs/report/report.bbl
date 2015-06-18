@@ -1,4 +1,4 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
 \def\selectlanguageifdefined#1{
 \expandafter\ifx\csname date#1\endcsname\relax
 \else\language\csname l@#1\endcsname\fi}
@@ -6,5 +6,24 @@
 \ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
 \ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
 \ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{monodoc}
+\selectlanguageifdefined{russian}
+{Mono Documentation [Электронный ресурс]}~//
+  {docs.go-mono.com:[сайт]}.
+\newblock {[2015]}. URL: http://docs.go-mono.com/index.aspx?link=T:Gtk.Entry.{}
+
+\bibitem{sqlitedoc}
+\selectlanguageifdefined{russian}
+{SQLite Documentation [Электронный ресурс]}~//
+  {www.sqlite.org:[сайт]}.
+\newblock {[2015]}. URL: https://www.sqlite.org/docs.html.{}
+
+\bibitem{itextsharp}
+\selectlanguageifdefined{russian}
+{iTextSharp, a .NET PDF library [Электронный ресурс]}~//
+  {www.sourceforge.net:[сайт]}.
+\newblock {[2015]}. URL:
+  http://sourceforge.net/projects/itextsharp/?source=typ_redirect.{}
 
 \end{thebibliography}
