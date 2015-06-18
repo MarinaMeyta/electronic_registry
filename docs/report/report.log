@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.11.22)  18 JUN 2015 22:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.11.22)  18 JUN 2015 23:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1043,11 +1043,31 @@ Underfull \hbox (badness 1558) in paragraph at lines 10--10
 ских (программно- 
  []
 
+[3]
+Overfull \hbox (1.17595pt too wide) detected at line 53
+\T2A/ftm/m/n/12 13.0.1 
+ []
+
+
+Overfull \hbox (1.90796pt too wide) detected at line 54
+\T2A/ftm/m/n/12 13.0.2 
+ []
+
+
+Overfull \hbox (1.90796pt too wide) detected at line 55
+\T2A/ftm/m/n/12 13.0.3 
+ []
+
+
+Overfull \hbox (1.90796pt too wide) detected at line 56
+\T2A/ftm/m/n/12 13.0.4 
+ []
+
 )
 \tf@toc=\write3
 \openout3 = `report.toc'.
 
- [3] (./tz/tz_main.tex (./tz/tz_title.tex) [4] (./tz/tz_1.tex
+ [4] (./tz/tz_main.tex (./tz/tz_title.tex) [5] (./tz/tz_1.tex
 Underfull \hbox (badness 10000) in paragraph at lines 49--49
 []|\T2A/ftm/m/n/12 Подготовительный этап.
  []
@@ -1112,22 +1132,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--49
 []|\T2A/ftm/m/n/12 Оформление по-яс-ни-тель-ной
  []
 
-) (./tz/tz_2.tex) (./tz/tz_3.tex) (./tz/tz_4.tex) (./tz/tz_5.tex)
-(./tz/tz_6.tex) (./tz/tz_7.tex) (./tz/tz_8.tex) (./tz/tz_9.tex)) [5]
-(./intro.tex) [6] (./inf_model.tex
-<images/idef0_1.png, id=22, 738.76pt x 492.84125pt>
+) (./tz/tz_2.tex) [6] (./tz/tz_3.tex) (./tz/tz_4.tex) (./tz/tz_5.tex [7])
+(./tz/tz_6.tex [8]) (./tz/tz_7.tex
+LaTeX Font Info:    Font shape `T2A/ftm/bx/n' in size <12> not available
+(Font)              Font shape `T2A/ftm/b/n' tried instead on input line 3.
+) (./tz/tz_8.tex) (./tz/tz_9.tex)) [9]
+(./intro.tex) [10] (./inf_model.tex
+<images/idef0_1.png, id=36, 738.76pt x 492.84125pt>
 File: images/idef0_1.png Graphic file (type png)
  <use images/idef0_1.png>
 Package pdftex.def Info: images/idef0_1.png used on input line 6.
 (pdftex.def)             Requested size: 254.65219pt x 169.88pt.
 
-<images/idef0_2.png, id=23, 1050.92625pt x 740.7675pt>
+<images/idef0_2.png, id=37, 1050.92625pt x 740.7675pt>
 File: images/idef0_2.png Graphic file (type png)
 
 <use images/idef0_2.png>
 Package pdftex.def Info: images/idef0_2.png used on input line 12.
 (pdftex.def)             Requested size: 458.37083pt x 323.0903pt.
- <images/dfd.png, id=24, 1100.11pt x 733.74126pt>
+ <images/dfd.png, id=38, 1100.11pt x 733.74126pt>
 File: images/dfd.png Graphic file (type png)
 
 <use images/dfd.png>
@@ -1137,7 +1160,7 @@ Package pdftex.def Info: images/dfd.png used on input line 18.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/idef3_1.png, id=25, 1025.8325pt x 563.10374pt>
+<images/idef3_1.png, id=39, 1025.8325pt x 563.10374pt>
 File: images/idef3_1.png Graphic file (type png)
 
 <use images/idef3_1.png>
@@ -1147,7 +1170,7 @@ Package pdftex.def Info: images/idef3_1.png used on input line 24.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/idef3_2.png, id=26, 353.32pt x 741.77126pt>
+<images/idef3_2.png, id=40, 353.32pt x 741.77126pt>
 File: images/idef3_2.png Graphic file (type png)
  <use images/idef3_2.png>
 Package pdftex.def Info: images/idef3_2.png used on input line 30.
@@ -1156,49 +1179,46 @@ Package pdftex.def Info: images/idef3_2.png used on input line 30.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7 <./images/idef0_1.png> <./images/idef0_2.png>] [8 <./images/dfd.png> <./imag
-es/idef3_1.png>] [9 <./images/idef3_2.png>]) (./datalog_model.tex
-<images/idef1x.png, id=37, 857.2025pt x 646.415pt>
+[11 <./images/idef0_1.png> <./images/idef0_2.png>] [12 <./images/dfd.png> <./im
+ages/idef3_1.png>] [13 <./images/idef3_2.png>]) (./datalog_model.tex
+<images/idef1x.png, id=51, 857.2025pt x 646.415pt>
 File: images/idef1x.png Graphic file (type png)
  <use images/idef1x.png>
 Package pdftex.def Info: images/idef1x.png used on input line 6.
 (pdftex.def)             Requested size: 458.37083pt x 345.65599pt.
 
-[10
+[14
 
  <./images/idef1x.png>]) (./tables/patient.tex) (./tables/passport.tex)
 (./tables/policy.tex) (./tables/talon.tex) (./tables/timetable.tex)
-(./tables/employee.tex [11
+(./tables/employee.tex [15
 
-]) [12] (./process_activity.tex) [13]
-(./data_description.tex) (./technical_solutions.tex) [14] [15] [16]
-LaTeX Font Info:    Font shape `T2A/ftm/bx/n' in size <12> not available
-(Font)              Font shape `T2A/ftm/b/n' tried instead on input line 99.
- [17]
+]) [16] (./process_activity.tex) [17]
+(./data_description.tex) (./technical_solutions.tex) [18] [19] [20] [21]
 (./report.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 10.
 
-) [18] 
+) [22] 
 AED: lastpage setting LastPage
-[19
+[23
 
 ] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 8454 strings out of 493104
- 124763 string characters out of 6136931
- 212449 words of memory out of 5000000
- 11615 multiletter control sequences out of 15000+600000
+ 8457 strings out of 493104
+ 124819 string characters out of 6136931
+ 212458 words of memory out of 5000000
+ 11618 multiletter control sequences out of 15000+600000
  20534 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  52i,10n,42p,2956b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/scalable-cyrfonts-tex/6r.en
 c}</usr/share/texmf/fonts/type1/public/scalable-cyrfonts-tex/ftmb6w.pfb></usr/s
 hare/texmf/fonts/type1/public/scalable-cyrfonts-tex/ftmr6w.pfb>
-Output written on report.pdf (19 pages, 238140 bytes).
+Output written on report.pdf (23 pages, 243657 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 93 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
