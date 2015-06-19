@@ -239,8 +239,8 @@ namespace hospital_register
 
 			// форматирование даты получения паспорта
 			string issue_day = entry12.Text.Trim ();
-			if (birth_day.Length == 1) {
-				birth_day = "0" + birth_day;
+			if (issue_day.Length == 1) {
+				issue_day = "0" + issue_day;
 			}
 			string issue_month = GetMonth (combobox13.ActiveText);
 			string issue_year = entry13.Text.Trim ();
