@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.11.22)  19 JUN 2015 03:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.11.22)  19 JUN 2015 04:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -902,7 +902,17 @@ Package: listings 2014/03/04 1.5c (Carsten Heinz)
 LaTeX Font Info:    Try loading font information for T2A+cmr on input line 5.
 (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-))
+)
+
+LaTeX Warning: Label `tab:tab_1' multiply defined.
+
+
+LaTeX Warning: Label `tab:tab_2' multiply defined.
+
+
+LaTeX Warning: Label `tab:tab_3' multiply defined.
+
+)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -920,8 +930,7 @@ LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Try loading font information for OT1+ftm on input line 3.
-
-(/usr/share/texmf/tex/latex/scalable-cyrfonts-tex/ot1ftm.fd
+ (/usr/share/texmf/tex/latex/scalable-cyrfonts-tex/ot1ftm.fd
 File: ot1ftm.fd 2014/01/03 Fontinst v1.933 font definitions for OT1/ftm.
 )
 LaTeX Font Info:    Try loading font information for T2A+ftm on input line 3.
@@ -1112,9 +1121,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--49
 []|\T2A/ftm/m/n/12 Оформление по-яс-ни-тель-ной
  []
 
-) (./tz/tz_2.tex) [7] (./tz/tz_3.tex) (./tz/tz_4.tex) (./tz/tz_5.tex [8])
-(./tz/tz_6.tex [9]) (./tz/tz_7.tex) (./tz/tz_8.tex) (./tz/tz_9.tex) [10]
-(./tz/developed.tex
+) (./tz/tz_2.tex) [7] (./tz/tz_3.tex) (./tz/tz_4.tex (./input.tex [8]
+Underfull \hbox (badness 2689) in paragraph at lines 37--37
+[]|\T2A/ftm/m/n/12 Диапазон до-пу-сти-мых зна-че-
+ []
+
+
+Underfull \hbox (badness 1337) in paragraph at lines 37--37
+\T2A/ftm/m/n/12 зна-че-ний (<<Пн>>, <<Вт>>, <<Ср>>,
+ []
+
+
+Underfull \hbox (badness 5667) in paragraph at lines 37--37
+[]|\T2A/ftm/m/n/12 Строка фор-ма-та <<ЧЧ:ММ>>,
+ []
+
+
+Underfull \hbox (badness 5667) in paragraph at lines 37--37
+[]|\T2A/ftm/m/n/12 Строка фор-ма-та <<ЧЧ:ММ>>,
+ []
+
+
+Underfull \hbox (badness 2689) in paragraph at lines 61--61
+[]|\T2A/ftm/m/n/12 Диапазон до-пу-сти-мых зна-че-
+ []
+
+
+Underfull \hbox (badness 1337) in paragraph at lines 61--61
+\T2A/ftm/m/n/12 зна-че-ний (<<Пн>>, <<Вт>>, <<Ср>>,
+ []
+
+
+Underfull \hbox (badness 2689) in paragraph at lines 101--101
+[]|\T2A/ftm/m/n/12 Диапазон до-пу-сти-мых зна-че-
+ []
+
+! Undefined control sequence.
+l.105 \clearpagepage
+                    
+? 
+) (./output.tex) [9] [10] [11]
+
+! Package inputenc Error: Unicode char \u8:В° not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 ... РѕРєСЂСѓР¶Р°СЋС‰РµРіРѕ РІРѕР·РґСѓС…Р°, В°
+                                                  РЎ вЂ“ РѕС‚ 5 РґРѕ 50;
+? 
+
+! Package inputenc Error: Unicode char \u8:В° not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 ...Р°Р¶РЅРѕСЃС‚СЊ РІРѕР·РґСѓС…Р° РїСЂРё 25 В°
+                                                  РЎ вЂ“ 45-80\%.
+? 
+[12
+
+]) [13] (./tz/tz_5.tex) (./tz/tz_6.tex) (./tz/tz_7.tex) (./tz/tz_8.tex
+[14]) (./tz/tz_9.tex) [15] (./tz/developed.tex
 Underfull \hbox (badness 10000) in paragraph at lines 14--14
 []|\T2A/ftm/m/n/12 Наименование
  []
@@ -1174,20 +1244,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--14
 []|\T2A/ftm/m/n/12 Аспирант каф.
  []
 
-)) [11] (./intro.tex) [12] (./inf_model.tex
-<images/idef0_1.png, id=41, 738.76pt x 492.84125pt>
+)) [16] (./intro.tex) [17] (./inf_model.tex
+<images/idef0_1.png, id=57, 738.76pt x 492.84125pt>
 File: images/idef0_1.png Graphic file (type png)
  <use images/idef0_1.png>
 Package pdftex.def Info: images/idef0_1.png used on input line 6.
 (pdftex.def)             Requested size: 254.65219pt x 169.88pt.
 
-<images/idef0_2.png, id=42, 1050.92625pt x 740.7675pt>
+<images/idef0_2.png, id=58, 1050.92625pt x 740.7675pt>
 File: images/idef0_2.png Graphic file (type png)
 
 <use images/idef0_2.png>
 Package pdftex.def Info: images/idef0_2.png used on input line 12.
 (pdftex.def)             Requested size: 458.37083pt x 323.0903pt.
- <images/dfd.png, id=43, 1100.11pt x 733.74126pt>
+ <images/dfd.png, id=59, 1100.11pt x 733.74126pt>
 File: images/dfd.png Graphic file (type png)
 
 <use images/dfd.png>
@@ -1197,7 +1267,7 @@ Package pdftex.def Info: images/dfd.png used on input line 18.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/idef3_1.png, id=44, 1025.8325pt x 563.10374pt>
+<images/idef3_1.png, id=60, 1025.8325pt x 563.10374pt>
 File: images/idef3_1.png Graphic file (type png)
 
 <use images/idef3_1.png>
@@ -1207,7 +1277,7 @@ Package pdftex.def Info: images/idef3_1.png used on input line 24.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/idef3_2.png, id=45, 353.32pt x 741.77126pt>
+<images/idef3_2.png, id=61, 353.32pt x 741.77126pt>
 File: images/idef3_2.png Graphic file (type png)
  <use images/idef3_2.png>
 Package pdftex.def Info: images/idef3_2.png used on input line 30.
@@ -1216,19 +1286,19 @@ Package pdftex.def Info: images/idef3_2.png used on input line 30.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13 <./images/idef0_1.png> <./images/idef0_2.png>] [14 <./images/dfd.png> <./im
-ages/idef3_1.png>] [15 <./images/idef3_2.png>]) (./datalog_model.tex
-<images/idef1x.png, id=56, 857.2025pt x 646.415pt>
+[18 <./images/idef0_1.png> <./images/idef0_2.png>] [19 <./images/dfd.png> <./im
+ages/idef3_1.png>] [20 <./images/idef3_2.png>]) (./datalog_model.tex
+<images/idef1x.png, id=72, 857.2025pt x 646.415pt>
 File: images/idef1x.png Graphic file (type png)
  <use images/idef1x.png>
 Package pdftex.def Info: images/idef1x.png used on input line 6.
 (pdftex.def)             Requested size: 458.37083pt x 345.65599pt.
 
-[16
+[21
 
  <./images/idef1x.png>]) (./tables/patient.tex) (./tables/passport.tex)
 (./tables/policy.tex) (./tables/talon.tex) (./tables/timetable.tex)
-(./tables/employee.tex [17
+(./tables/employee.tex [22
 
 ]) (./db_roles.tex
 Underfull \hbox (badness 1484) in paragraph at lines 1--2
@@ -1236,73 +1306,74 @@ Underfull \hbox (badness 1484) in paragraph at lines 1--2
 н-ных и не ис-поль-зу-ет па-ра-диг-му
  []
 
-) (./sql_injections.tex) [18] (./process_activity.tex
-Underfull \hbox (badness 2689) in paragraph at lines 44--44
+) (./sql_injections.tex) [23] (./process_activity.tex (./input.tex
+Underfull \hbox (badness 2689) in paragraph at lines 37--37
 []|\T2A/ftm/m/n/12 Диапазон до-пу-сти-мых зна-че-
  []
 
 
-Underfull \hbox (badness 1337) in paragraph at lines 44--44
+Underfull \hbox (badness 1337) in paragraph at lines 37--37
 \T2A/ftm/m/n/12 зна-че-ний (<<Пн>>, <<Вт>>, <<Ср>>,
  []
 
 
-Underfull \hbox (badness 5667) in paragraph at lines 44--44
+Underfull \hbox (badness 5667) in paragraph at lines 37--37
 []|\T2A/ftm/m/n/12 Строка фор-ма-та <<ЧЧ:ММ>>,
  []
 
 
-Underfull \hbox (badness 5667) in paragraph at lines 44--44
+Underfull \hbox (badness 5667) in paragraph at lines 37--37
 []|\T2A/ftm/m/n/12 Строка фор-ма-та <<ЧЧ:ММ>>,
  []
 
 
-Underfull \hbox (badness 2689) in paragraph at lines 68--68
+Underfull \hbox (badness 2689) in paragraph at lines 61--61
 []|\T2A/ftm/m/n/12 Диапазон до-пу-сти-мых зна-че-
  []
 
 
-Underfull \hbox (badness 1337) in paragraph at lines 68--68
+Underfull \hbox (badness 1337) in paragraph at lines 61--61
 \T2A/ftm/m/n/12 зна-че-ний (<<Пн>>, <<Вт>>, <<Ср>>,
  []
 
 
-Underfull \hbox (badness 2689) in paragraph at lines 108--108
+Underfull \hbox (badness 2689) in paragraph at lines 101--101
 []|\T2A/ftm/m/n/12 Диапазон до-пу-сти-мых зна-че-
  []
 
 ! Undefined control sequence.
-l.112 \clearpagepage
+l.105 \clearpagepage
                     
 ? 
-) [19
+) (./output.tex)) [24
 
-] [20] [21] (./technical_solutions.tex
+] [25] [26] (./technical_solutions.tex
 Underfull \hbox (badness 6876) in paragraph at lines 21--22
 []\T2A/ftm/m/n/12 Если дан-ных о па-ци-ен-те в ба-зе нет, то по-явит-ся фор-ма 
 ре-ги-стра-ции па-ци-ен-та
  []
 
+<images/block.png, id=92, 583.17876pt x 726.715pt>
+File: images/block.png Graphic file (type png)
+ <use images/block.png>
+Package pdftex.def Info: images/block.png used on input line 38.
+(pdftex.def)             Requested size: 407.44505pt x 507.7434pt.
 
-! LaTeX Error: File `block' not found.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.38 ...ncludegraphics[width=0.5\linewidth]{block}
-                                                  }
-? 
-[22
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-]) [23] (./user_guide.tex) [24
+[27
 
-] (./programmer_guide.tex) [25
+] [28 <./images/block.png>]) [29] (./user_guide.tex) [30
 
-] [26
+]
+(./programmer_guide.tex) [31
 
-] [27]
-(./report.bbl
+] [32
+
+] [33
+
+] (./report.bbl
 Underfull \hbox (badness 5475) in paragraph at lines 12--15
 []\T2A/ftm/m/n/12 Mono Documentation [Элек-трон-ный ре-сурс] // docs.go-mono.co
 m:[сайт].  [2015]. URL:
@@ -1338,30 +1409,36 @@ l.28
 l.28 
      
 ? 
-) [28]
+) [34
+
+]
 LaTeX Font Info:    Font shape `T2A/ftm/bx/n' in size <12> not available
-(Font)              Font shape `T2A/ftm/b/n' tried instead on input line 106.
+(Font)              Font shape `T2A/ftm/b/n' tried instead on input line 95.
  
 AED: lastpage setting LastPage
-[29
+[35
 
-] (./report.aux) ) 
+] (./report.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 8494 strings out of 493104
- 125198 string characters out of 6136931
- 225590 words of memory out of 5000000
- 11628 multiletter control sequences out of 15000+600000
+ 8495 strings out of 493104
+ 125320 string characters out of 6136931
+ 225629 words of memory out of 5000000
+ 11633 multiletter control sequences out of 15000+600000
  20183 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  52i,10n,42p,2956b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/scalable-cyrfonts-tex/6r.en
-c}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
-/texmf/fonts/type1/public/scalable-cyrfonts-tex/ftmr6w.pfb>
-Output written on report.pdf (29 pages, 246732 bytes).
+{/usr/share/texmf/fonts/enc/dvips/scalable-cyrfonts-tex/6r.enc}</usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf/fonts/typ
+e1/public/scalable-cyrfonts-tex/ftmr6w.pfb>
+Output written on report.pdf (35 pages, 273042 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 136 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
