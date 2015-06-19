@@ -15,10 +15,11 @@
 \begin{itemize}
   \item ОС Linux Ubuntu 14.10;
   \item язык программирования C\#;
-  \item среда разработки MonoDevelop 4.0.12;
-  \item встраиваемая реляционная база данных SQLite;
+  \item среда разработки MonoDevelop 4.0.12 \cite{monodoc};
+  \item встраиваемая реляционная база данных SQLite \cite{sqlitedoc};
   \item СУБД SQLiteman 1.2.2;
   \item кроссплатформенная библиотека элементов графического интерфейса GTKSharp;
+  \item iTextSharp --- .NET PDF библиотека для генерации PDF-документов \cite{itextsharp};
   \item система контроля версий Git.
 \end{itemize}
 

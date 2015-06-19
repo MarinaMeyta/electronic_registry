@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.11.22)  19 JUN 2015 04:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.11.22)  19 JUN 2015 05:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1056,7 +1056,7 @@ Underfull \hbox (badness 1558) in paragraph at lines 10--10
 \tf@toc=\write3
 \openout3 = `report.toc'.
 
- [4] [5] (./tz/tz_main.tex (./tz/tz_title.tex) [6] (./tz/tz_1.tex
+ [4] (./tz/tz_main.tex (./tz/tz_title.tex) [5] (./tz/tz_1.tex
 Underfull \hbox (badness 10000) in paragraph at lines 49--49
 []|\T2A/ftm/m/n/12 Подготовительный этап.
  []
@@ -1121,7 +1121,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--49
 []|\T2A/ftm/m/n/12 Оформление по-яс-ни-тель-ной
  []
 
-) (./tz/tz_2.tex) [7] (./tz/tz_3.tex) (./tz/tz_4.tex (./input.tex [8]
+) (./tz/tz_2.tex) [6] (./tz/tz_3.tex) (./tz/tz_4.tex (./input.tex [7]
 Underfull \hbox (badness 2689) in paragraph at lines 37--37
 []|\T2A/ftm/m/n/12 Диапазон до-пу-сти-мых зна-че-
  []
@@ -1160,7 +1160,7 @@ Underfull \hbox (badness 2689) in paragraph at lines 101--101
 l.105 \clearpagepage
                     
 ? 
-) (./output.tex) [9] [10] [11]
+) (./output.tex) [8] [9] [10]
 
 ! Package inputenc Error: Unicode char \u8:В° not set up for use with LaTeX.
 
@@ -1181,10 +1181,10 @@ Type  H <return>  for immediate help.
 l.21 ...Р°Р¶РЅРѕСЃС‚СЊ РІРѕР·РґСѓС…Р° РїСЂРё 25 В°
                                                   РЎ вЂ“ 45-80\%.
 ? 
-[12
+[11
 
-]) [13] (./tz/tz_5.tex) (./tz/tz_6.tex) (./tz/tz_7.tex) (./tz/tz_8.tex
-[14]) (./tz/tz_9.tex) [15] (./tz/developed.tex
+]) [12] (./tz/tz_5.tex) (./tz/tz_6.tex) (./tz/tz_7.tex) (./tz/tz_8.tex
+[13]) (./tz/tz_9.tex) [14] (./tz/developed.tex
 Underfull \hbox (badness 10000) in paragraph at lines 14--14
 []|\T2A/ftm/m/n/12 Наименование
  []
@@ -1244,20 +1244,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--14
 []|\T2A/ftm/m/n/12 Аспирант каф.
  []
 
-)) [16] (./intro.tex) [17] (./inf_model.tex
-<images/idef0_1.png, id=57, 738.76pt x 492.84125pt>
+)) [15] (./intro.tex) [16] (./inf_model.tex
+<images/idef0_1.png, id=54, 738.76pt x 492.84125pt>
 File: images/idef0_1.png Graphic file (type png)
  <use images/idef0_1.png>
 Package pdftex.def Info: images/idef0_1.png used on input line 6.
 (pdftex.def)             Requested size: 254.65219pt x 169.88pt.
 
-<images/idef0_2.png, id=58, 1050.92625pt x 740.7675pt>
+<images/idef0_2.png, id=55, 1050.92625pt x 740.7675pt>
 File: images/idef0_2.png Graphic file (type png)
 
 <use images/idef0_2.png>
 Package pdftex.def Info: images/idef0_2.png used on input line 12.
 (pdftex.def)             Requested size: 458.37083pt x 323.0903pt.
- <images/dfd.png, id=59, 1100.11pt x 733.74126pt>
+ <images/dfd.png, id=56, 1100.11pt x 733.74126pt>
 File: images/dfd.png Graphic file (type png)
 
 <use images/dfd.png>
@@ -1267,7 +1267,7 @@ Package pdftex.def Info: images/dfd.png used on input line 18.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/idef3_1.png, id=60, 1025.8325pt x 563.10374pt>
+<images/idef3_1.png, id=57, 1025.8325pt x 563.10374pt>
 File: images/idef3_1.png Graphic file (type png)
 
 <use images/idef3_1.png>
@@ -1277,7 +1277,7 @@ Package pdftex.def Info: images/idef3_1.png used on input line 24.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/idef3_2.png, id=61, 353.32pt x 741.77126pt>
+<images/idef3_2.png, id=58, 353.32pt x 741.77126pt>
 File: images/idef3_2.png Graphic file (type png)
  <use images/idef3_2.png>
 Package pdftex.def Info: images/idef3_2.png used on input line 30.
@@ -1286,19 +1286,19 @@ Package pdftex.def Info: images/idef3_2.png used on input line 30.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[18 <./images/idef0_1.png> <./images/idef0_2.png>] [19 <./images/dfd.png> <./im
-ages/idef3_1.png>] [20 <./images/idef3_2.png>]) (./datalog_model.tex
-<images/idef1x.png, id=72, 857.2025pt x 646.415pt>
+[17 <./images/idef0_1.png> <./images/idef0_2.png>] [18 <./images/dfd.png> <./im
+ages/idef3_1.png>] [19 <./images/idef3_2.png>]) (./datalog_model.tex
+<images/idef1x.png, id=69, 857.2025pt x 646.415pt>
 File: images/idef1x.png Graphic file (type png)
  <use images/idef1x.png>
 Package pdftex.def Info: images/idef1x.png used on input line 6.
 (pdftex.def)             Requested size: 458.37083pt x 345.65599pt.
 
-[21
+[20
 
  <./images/idef1x.png>]) (./tables/patient.tex) (./tables/passport.tex)
 (./tables/policy.tex) (./tables/talon.tex) (./tables/timetable.tex)
-(./tables/employee.tex [22
+(./tables/employee.tex [21
 
 ]) (./db_roles.tex
 Underfull \hbox (badness 1484) in paragraph at lines 1--2
@@ -1306,7 +1306,7 @@ Underfull \hbox (badness 1484) in paragraph at lines 1--2
 н-ных и не ис-поль-зу-ет па-ра-диг-му
  []
 
-) (./sql_injections.tex) [23] (./process_activity.tex (./input.tex
+) (./sql_injections.tex) [22] (./process_activity.tex (./input.tex
 Underfull \hbox (badness 2689) in paragraph at lines 37--37
 []|\T2A/ftm/m/n/12 Диапазон до-пу-сти-мых зна-че-
  []
@@ -1345,15 +1345,15 @@ Underfull \hbox (badness 2689) in paragraph at lines 101--101
 l.105 \clearpagepage
                     
 ? 
-) (./output.tex)) [24
+) (./output.tex)) [23
 
-] [25] [26] (./technical_solutions.tex
+] [24] [25] (./technical_solutions.tex
 Underfull \hbox (badness 6876) in paragraph at lines 21--22
 []\T2A/ftm/m/n/12 Если дан-ных о па-ци-ен-те в ба-зе нет, то по-явит-ся фор-ма 
 ре-ги-стра-ции па-ци-ен-та
  []
 
-<images/block.png, id=92, 583.17876pt x 726.715pt>
+<images/block.png, id=89, 583.17876pt x 726.715pt>
 File: images/block.png Graphic file (type png)
  <use images/block.png>
 Package pdftex.def Info: images/block.png used on input line 38.
@@ -1362,18 +1362,112 @@ Package pdftex.def Info: images/block.png used on input line 38.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[27
+[26
 
-] [28 <./images/block.png>]) [29] (./user_guide.tex) [30
+] [27 <./images/block.png>]) [28] (./user_guide.tex
+<images/main_win_patient.png, id=99, 443.6575pt x 314.17375pt>
+File: images/main_win_patient.png Graphic file (type png)
+
+<use images/main_win_patient.png>
+Package pdftex.def Info: images/main_win_patient.png used on input line 4.
+(pdftex.def)             Requested size: 254.65219pt x 180.3273pt.
+
+<images/main_window_admin.png, id=100, 443.6575pt x 313.17pt>
+File: images/main_window_admin.png Graphic file (type png)
+
+<use images/main_window_admin.png>
+Package pdftex.def Info: images/main_window_admin.png used on input line 10.
+(pdftex.def)             Requested size: 254.65219pt x 179.75117pt.
+
+<images/enroll.png, id=101, 597.23125pt x 617.30624pt>
+File: images/enroll.png Graphic file (type png)
+ <use images/enroll.png>
+Package pdftex.def Info: images/enroll.png used on input line 19.
+(pdftex.def)             Requested size: 458.37083pt x 473.7825pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/register_win.png, id=102, 664.4825pt x 838.13126pt>
+File: images/register_win.png Graphic file (type png)
+
+<use images/register_win.png>
+Package pdftex.def Info: images/register_win.png used on input line 25.
+(pdftex.def)             Requested size: 458.37083pt x 578.15773pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/talon.png, id=103, 1064.97874pt x 517.935pt>
+File: images/talon.png Graphic file (type png)
+ <use images/talon.png>
+Package pdftex.def Info: images/talon.png used on input line 31.
+(pdftex.def)             Requested size: 458.37083pt x 222.92108pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/admin_find.png, id=104, 660.4675pt x 572.1375pt>
+File: images/admin_find.png Graphic file (type png)
+
+<use images/admin_find.png>
+Package pdftex.def Info: images/admin_find.png used on input line 39.
+(pdftex.def)             Requested size: 458.37083pt x 397.08005pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/admin_insert.png, id=105, 660.4675pt x 569.12625pt>
+File: images/admin_insert.png Graphic file (type png)
+
+<use images/admin_insert.png>
+Package pdftex.def Info: images/admin_insert.png used on input line 45.
+(pdftex.def)             Requested size: 458.37083pt x 394.99016pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/admin_delete.png, id=106, 653.44125pt x 564.1075pt>
+File: images/admin_delete.png Graphic file (type png)
+
+<use images/admin_delete.png>
+Package pdftex.def Info: images/admin_delete.png used on input line 51.
+(pdftex.def)             Requested size: 356.5115pt x 307.77249pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/err_win.png, id=107, 287.0725pt x 153.57375pt>
+File: images/err_win.png Graphic file (type png)
+
+<use images/err_win.png>
+Package pdftex.def Info: images/err_win.png used on input line 59.
+(pdftex.def)             Requested size: 254.65219pt x 136.23262pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/suc_win.png, id=108, 380.42125pt x 170.6375pt>
+File: images/suc_win.png Graphic file (type png)
+
+<use images/suc_win.png>
+Package pdftex.def Info: images/suc_win.png used on input line 65.
+(pdftex.def)             Requested size: 254.65219pt x 114.22757pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [29
+
+ <./images/main_win_patient.png> <./images/main_window_admin.png>]
+[30 <./images/enroll.png>] [31 <./images/register_win.png>] [32 <./images/talon
+.png> <./images/admin_find.png>] [33 <./images/admin_insert.png>] [34 <./images
+/admin_delete.png> <./images/err_win.png> <./images/suc_win.png>] [35
+
+] [36
 
 ]
-(./programmer_guide.tex) [31
-
-] [32
-
-] [33
-
-] (./report.bbl
+(./report.bbl
 Underfull \hbox (badness 5475) in paragraph at lines 12--15
 []\T2A/ftm/m/n/12 Mono Documentation [Элек-трон-ный ре-сурс] // docs.go-mono.co
 m:[сайт].  [2015]. URL:
@@ -1409,14 +1503,14 @@ l.28
 l.28 
      
 ? 
-) [34
+) [37
 
 ]
 LaTeX Font Info:    Font shape `T2A/ftm/bx/n' in size <12> not available
 (Font)              Font shape `T2A/ftm/b/n' tried instead on input line 95.
  
 AED: lastpage setting LastPage
-[35
+[38
 
 ] (./report.aux)
 
@@ -1424,10 +1518,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8495 strings out of 493104
- 125320 string characters out of 6136931
- 225629 words of memory out of 5000000
- 11633 multiletter control sequences out of 15000+600000
+ 8551 strings out of 493104
+ 126685 string characters out of 6136931
+ 225741 words of memory out of 5000000
+ 11683 multiletter control sequences out of 15000+600000
  20183 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  52i,10n,42p,2956b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1435,10 +1529,10 @@ Here is how much of TeX's memory you used:
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf/fonts/typ
 e1/public/scalable-cyrfonts-tex/ftmr6w.pfb>
-Output written on report.pdf (35 pages, 273042 bytes).
+Output written on report.pdf (38 pages, 612671 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 158 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
